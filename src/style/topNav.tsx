@@ -5,7 +5,7 @@ export const navContainer = css({
     justifyContent: 'center',
     alignContent: 'center',
     py: '2rem',
-    px: '5rem',
+    px: '3rem',
     columnGap: '2%',
     w: '100%',
 })
@@ -19,15 +19,15 @@ export const hr = css({
 
 export const navSearchContainer = css.raw({
     py: '.8rem',
-    px: '1.5rem',
+    px: '1rem',
     border: '2px solid #BCE3C9',
-    w: '50%',
+    w: '35%',
     borderRadius: '4px',
     alignSelf: "center"
 })
 
 export const navInput = css({
-    w: '60%',
+    w: '40%',
     fontSize: '.8rem',
     fontFamily: 'lato',
 
@@ -46,8 +46,12 @@ export const navInput = css({
 export const navLocationCont = css.raw({
     border: '1px solid #ECECEC',
     alignSelf: 'center',
-    p: '.5rem',
+    p: '.3rem',
     rounded: '4px',
     boxShadow: '2px 2px 4px #ECECEC'
 
+})
+
+export const navUserCont = css.raw({
+    alignSelf: 'center'
 })

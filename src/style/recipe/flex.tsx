@@ -7,15 +7,17 @@ export const flex = cva({
     },
     variants: {
         type: {
-            center: {alignItems: 'center', justifyContent: 'center'}
+            center: {alignItems: 'center', justifyContent: 'center'},
+            end: {alignItems: 'end', justifyContent: 'center'}
         },
         rowGap: {
             sm: {rowGap: '.5rem'},
             md: {rowGap: '1rem'}
         },
         columnGap: {
+            xsm: {columnGap: '.3rem'},
             sm: {columnGap: '.5rem'},
-            md: {columnGap: '1rem'}
+            md: {columnGap: '.7rem'}
         }
     },
     defaultVariants: {
