@@ -1,4 +1,4 @@
-import TopNavBar from "./layouts/TopNavBar";
+import TopNavBar from "./layouts/TopNav";
 
 function App() {
   return (
