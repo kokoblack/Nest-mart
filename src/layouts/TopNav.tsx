@@ -15,7 +15,7 @@ import {
   navUserText,
   navMenuIcon,
   navImage,
-} from "../style/topNav";
+} from "../style/nav/topNav";
 import { flex } from "../style/recipe/flex";
 import { css } from "../../styled-system/css";
 import { marginRight, marginLeft } from "../style/global";
