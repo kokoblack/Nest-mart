@@ -23,6 +23,12 @@ export const flex = cva({
             sm: {columnGap: '.5rem'},
             md: {columnGap: '.7rem'}
         },
+        vertical: {
+            vertical: {flexDirection: 'column'}
+        },
+        horizontal: {
+            horizontal: {flexDirection: 'row'}
+        }
     },
     defaultVariants: {
         type: 'center'
