@@ -8,7 +8,11 @@ export const flex = cva({
     variants: {
         type: {
             center: {alignItems: 'center', justifyContent: 'center'},
-            end: {alignItems: 'end', justifyContent: 'center'}
+            endY: {alignItems: 'end', justifyContent: 'center'},
+            startY: {alignItems: 'start', justifyContent: 'center'},
+            endX: {alignItems: 'center', justifyContent: 'end'},
+            startX: {alignItems: 'center', justifyContent: 'start'},
+            spaceBetween: {alignItems: 'center', justifyContent: 'space-between'},
         },
         rowGap: {
             sm: {rowGap: '.5rem'},
@@ -18,7 +22,7 @@ export const flex = cva({
             xsm: {columnGap: '.3rem'},
             sm: {columnGap: '.5rem'},
             md: {columnGap: '.7rem'}
-        }
+        },
     },
     defaultVariants: {
         type: 'center'

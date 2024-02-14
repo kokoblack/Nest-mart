@@ -1,4 +1,4 @@
-import { css } from "../../styled-system/css";
+import { css } from "../../../styled-system/css";
 
 export const navIconCount = css({
     position: "absolute",
