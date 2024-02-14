@@ -12,6 +12,7 @@ export const flex = cva({
             startY: {alignItems: 'start', justifyContent: 'center'},
             endX: {alignItems: 'center', justifyContent: 'end'},
             startX: {alignItems: 'center', justifyContent: 'start'},
+            spaceBetween: {alignItems: 'center', justifyContent: 'space-between'},
         },
         rowGap: {
             sm: {rowGap: '.5rem'},
