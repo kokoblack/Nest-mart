@@ -1,7 +1,7 @@
 import { css } from "../../../styled-system/css";
 
 export const container = css.raw({
-    w: '30%',
+    w: '100%',
     bg: 'secondary.1100',
     rounded: '5rem'
 })
