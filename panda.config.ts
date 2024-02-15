@@ -32,6 +32,7 @@ export default defineConfig({
           900: { value: "#F2F3F4" },
           1000: { value: "#6A6A6A" },
           1100: { value: "#e8e8e8" },
+          1200: { value: "#292F46" },
         },
         card_bg: {
           100: { value: "#F2FCE4" },
@@ -44,8 +45,8 @@ export default defineConfig({
           800: { value: "#FEEFEA" },
           900: { value: "#FFFCEB" },
           1000: { value: "#FEEFEA" },
-          1100: { value: "#253D4E" },
-          1200: { value: "#253D4E" },
+          1100: { value: "#292F46" },
+          1200: { value: "#000000" },
           1300: { value: "#253D4E" },
         },
         pink: { value: "#F74B81" },

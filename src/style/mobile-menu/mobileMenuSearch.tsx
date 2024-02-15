@@ -3,17 +3,19 @@ import { css } from "../../../styled-system/css";
 export const container = css.raw({
     w: '100%',
     bg: 'secondary.1100',
-    rounded: '5rem'
+    rounded: '5rem',
+    boxSizing: 'border-box'
 })
 
 export const searchIcon = css({
     color: 'secondary.1000',
-    ml: '1rem'
+    ml: '.5rem',
+    fontSize: '.8rem'
 })
 
 export const input = css({
     fontFamily: 'quicksand',
-    // fontSize: '.625rem',
+    fontSize: '.7rem',
     bg: 'transparent',
 
     _focus: {
@@ -25,7 +27,8 @@ export const input = css({
 export const button = css({
     bg: 'primary.100',
     color: 'secondary.500',
-    py: '1rem',
-    px: '2rem',
-    rounded: '3rem'
+    py: '.5rem',
+    px: '1rem',
+    rounded: '3rem',
+    fontSize: '.7rem'
 })
