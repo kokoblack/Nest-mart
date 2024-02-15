@@ -4,7 +4,7 @@ export const navContainer = css({
     display: 'flex',
     justifyContent: ['space-between', 'space-between', 'space-between', 'space-between', 'center'],
     alignContent: 'center',
-    py: '2rem',
+    py: ['1rem', '1rem', '2rem'],
     px: ['1rem', '1rem', '3rem'],
     columnGap: '2%',
     w: '100%',
