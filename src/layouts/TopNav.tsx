@@ -5,6 +5,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { GrCart } from "react-icons/gr";
 import { LuUser } from "react-icons/lu";
 import { FiMenu } from "react-icons/fi";
+import { IoMdClose } from "react-icons/io";
 import {
   navContainer,
   hr,
@@ -15,21 +16,40 @@ import {
   navUserText,
   navMenuIcon,
   navImage,
+  mobileMenuView,
 } from "../style/nav/topNav";
 import { flex } from "../style/recipe/flex";
 import { css } from "../../styled-system/css";
-import { marginRight, marginLeft } from "../style/global";
+import { marginRight, marginLeft, hide, show } from "../style/global";
 import TopNavIcon from "../components/TopNavIcon";
+import MobileMenu from "./MobileMenu";
+import { useState } from "react";
 
 const TopNavBar = () => {
+  const [view, setView] = useState(false);
+
+  const handleMobileMenuView = () => {
+    setView((prevState) => !prevState);
+  };
+
   return (
     <nav className={navContainer}>
-      <div className={css(flex.raw(), navMenuIcon)}>
-      <FiMenu />
-      </div>
+      <span
+        className={css(flex.raw(), navMenuIcon, !view ? show : hide)}
+        onClick={handleMobileMenuView}
+      >
+        <FiMenu />
+      </span>
 
-      <div className={css({ mr: ['0', '0', '0', '0', 'auto']})}>
-        <img src={logo} className={navImage}/>
+      <span
+        className={css(flex.raw(), navMenuIcon, view ? show : hide)}
+        onClick={handleMobileMenuView}
+      >
+        <IoMdClose />
+      </span>
+
+      <div className={css({ mr: ["0", "0", "0", "0", "auto"] })}>
+        <img src={logo} className={navImage} />
       </div>
 
       <div className={css(flex.raw({ columnGap: "md" }), navSearchContainer)}>
@@ -52,7 +72,12 @@ const TopNavBar = () => {
 
         <input placeholder="Search for items..." className={navInput} />
 
-        <CiSearch className={css(marginLeft, { color: "secondary.400", fontSize: '1.2rem' })} />
+        <CiSearch
+          className={css(marginLeft, {
+            color: "secondary.400",
+            fontSize: "1.2rem",
+          })}
+        />
       </div>
 
       <div className={css(flex.raw({ columnGap: "sm" }), navLocationCont)}>
@@ -70,15 +95,15 @@ const TopNavBar = () => {
         <TopNavIcon icon={<GrCart />} count="5" name="Cart" />
 
         <div className={css(flex.raw({ columnGap: "xsm" }))}>
-          <div className={css({ fontSize: "1.2rem", hideBelow: 'md' })}>
+          <span className={css({ fontSize: "1.2rem", hideBelow: "md" })}>
             <LuUser />
-          </div>
-          <p
-            className={navUserText}
-          >
-            Account
-          </p>
+          </span>
+          <p className={navUserText}>Account</p>
         </div>
+      </div>
+
+      <div className={css(mobileMenuView, view ? show : hide)}>
+        <MobileMenu />
       </div>
     </nav>
   );
