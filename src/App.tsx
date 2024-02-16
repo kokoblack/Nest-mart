@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       <TopNavBar/>
-      <MobileMenu/>
+      {/* <MobileMenu/> */}
     </div>
   );
 }

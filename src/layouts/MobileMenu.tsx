@@ -12,8 +12,8 @@ const MobileMenu = () => {
       <img src={logo} alt="logo" className={image}/>
       <MobileMenuSearch />
       <ul className={css({w: '100%'})}>
-        {option.map((option) => (
-          <li className={css(flex.raw({type: 'startX', columnGap: 'sm'}), optionContainer)}>
+        {option.map((option, index) => (
+          <li key={index} className={css(flex.raw({type: 'startX', columnGap: 'sm'}), optionContainer)}>
             <span className={icon}>{option.icon}</span>
             <p className={text}>{option.name}</p>
           </li>

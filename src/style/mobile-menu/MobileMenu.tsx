@@ -2,15 +2,18 @@ import { css } from "../../../styled-system/css";
 
 export const container = css.raw({
     width: '15rem',
-    p: '.4rem',
+    px: '.5rem',
+    pt: '1rem',
     border: '1px solid #ECECEC',
     boxSizing: 'border-box',
-    ml: '1rem',
-    boxShadow: '2px 2px 4px #ECECEC',
+    boxShadow: '-3px 3px 4px #ECECEC',
     maxH: 'screen',
     overflowY: 'scroll',
     scrollbarWidth: 'none',
     zIndex: 100,
+    bg: 'secondary.500',
+    borderTopLeftRadius: '6px',
+    borderBottomLeftRadius:'6px',
     // position: 'absolute',
     // overflow
 
@@ -22,8 +25,9 @@ export const container = css.raw({
 
 export const image = css({
     w: 'auto',
-    h: '2.2rem',
-    m: '0 auto'
+    h: '2.5rem',
+    m: '0 auto',
+    mb: '.5rem'
 })
 
 export const optionContainer = css.raw({
