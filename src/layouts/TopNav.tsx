@@ -20,7 +20,7 @@ import {
 } from "../style/nav/topNav";
 import { flex } from "../style/recipe/flex";
 import { css } from "../../styled-system/css";
-import { marginRight, marginLeft, hide, show } from "../style/global";
+import { marginLeft, hide, show } from "../style/global";
 import TopNavIcon from "../components/TopNavIcon";
 import MobileMenu from "./MobileMenu";
 import { useState } from "react";
@@ -32,21 +32,28 @@ const TopNavBar = () => {
     setView((prevState) => !prevState);
   };
 
+  const navIcon = [
+    {
+      icon: <FiMenu />,
+      type: !view
+    },
+    {
+      icon: <IoMdClose />,
+      type: view
+    }
+  ]
+
   return (
     <nav className={navContainer}>
-      <span
-        className={css(flex.raw(), navMenuIcon, !view ? show : hide)}
+      {navIcon.map((data, index) => (
+        <span
+        key={index}
+        className={css(flex.raw(), navMenuIcon, data.type ? show : hide)}
         onClick={handleMobileMenuView}
       >
-        <FiMenu />
+        {data.icon}
       </span>
-
-      <span
-        className={css(flex.raw(), navMenuIcon, view ? show : hide)}
-        onClick={handleMobileMenuView}
-      >
-        <IoMdClose />
-      </span>
+      ))}
 
       <div className={css({ mr: ["0", "0", "0", "0", "auto"] })}>
         <img src={logo} className={navImage} />

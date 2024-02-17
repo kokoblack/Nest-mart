@@ -15,3 +15,7 @@ export const show = css.raw({
 export const hide = css.raw({
     display: 'none'
 })
+
+export const menuActive = css.raw({
+    bg: 'primary.400'
+})

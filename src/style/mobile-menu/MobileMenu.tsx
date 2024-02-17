@@ -7,19 +7,19 @@ export const container = css.raw({
     border: '1px solid #ECECEC',
     boxSizing: 'border-box',
     boxShadow: '-3px 3px 4px #ECECEC',
-    maxH: 'screen',
-    overflowY: 'scroll',
     scrollbarWidth: 'none',
     zIndex: 100,
+    h: '10rem',
+    // overflow: 'scroll',
     bg: 'secondary.500',
     borderTopLeftRadius: '6px',
     borderBottomLeftRadius:'6px',
     // position: 'absolute',
     // overflow
 
-    '&::-webkit-scrollbar': {
-        display: 'none'
-    }
+    // '&::-webkit-scrollbar': {
+    //     display: 'none'
+    // }
 
 })
 
@@ -33,10 +33,16 @@ export const image = css({
 export const optionContainer = css.raw({
     px: '.5rem',
     py: '.8rem',
-    bg: 'primary.400',
+    // bg: 'primary.400',
     w: '100%',
     rounded: '.5rem',
-    mb: '.3rem'
+    mb: '.3rem',
+
+    '@media(hover: hover)': {
+        _hover: {
+            bg: 'primary.400'
+        }
+    }
 })
 
 export const icon = css({
