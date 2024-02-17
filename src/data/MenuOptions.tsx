@@ -11,44 +11,54 @@ import React from "react";
 
 type Option = {
   icon: React.ReactNode;
-  name: String;
+  name: string;
+  index: number
 }[];
 
 export const option: Option = [
   {
     icon: <RiHome2Line />,
     name: "Home",
+    index: 0
   },
   {
     icon: <PiShoppingBagLight />,
     name: "Shop",
+    index: 1
   },
   {
     icon: <HiOutlineHomeModern />,
     name: "Vendor",
+    index: 2
   },
   {
     icon: <BiFoodMenu />,
     name: "Mega Menu",
+    index: 3
   },
   {
     icon: <GrBlog />,
     name: "Blog",
+    index: 4
   },
   {
     icon: <PiNotepad />,
     name: "Pages",
+    index: 5
   },
   {
     icon: <IoLanguageOutline />,
     name: "Language",
+    index: 6
   },
   {
     icon: <MdOutlineReviews />,
     name: "Reviews",
+    index: 7
   },
   {
     icon: <MdOutlineNoFood />,
     name: "Brand",
+    index: 8
   },
 ];

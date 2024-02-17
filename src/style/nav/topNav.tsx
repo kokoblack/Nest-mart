@@ -14,7 +14,8 @@ export const navContainer = css({
   px: ["1rem", "1rem", "1rem", "3rem"],
   columnGap: "2%",
   w: "100%",
-  position: 'relative'
+  position: 'relative',
+  borderBottom: '1px solid #dedfe2'
 });
 
 export const hr = css({
@@ -93,5 +94,5 @@ export const mobileMenuView = css.raw({
     position: 'absolute',
     right: 0,
     top: 0,
-    w: 'fit-content'
+    boxSizing: 'border-box'
 })
