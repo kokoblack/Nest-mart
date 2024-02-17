@@ -17,7 +17,7 @@ export const button = cva({
     radius: {
       sm: { rounded: "4px" },
       mg: { rounded: "6px" },
-      lg: { rounded: "5rem" },
+      lg: { rounded: "3rem" },
     },
     columnGap: {
       xsm: { columnGap: ".3rem" },
@@ -40,6 +40,16 @@ export const button = cva({
       left: { justifyContent: "start" },
       right: { justifyContent: "end" },
     },
+    font: {
+        quicksand: {fontFamily: 'quicksand'},
+        lato: {fontFamily: 'lato'}
+    },
+    fontSize: {
+        xsm: {fontSize: '.5rem'},
+        sm: {fontSize: '.7rem'},
+        md: {fontSize: '.825rem'},
+        lg: {fontSize: '1rem'},
+    }
   },
   defaultVariants: {
     bg: "green",
@@ -47,6 +57,9 @@ export const button = cva({
     columnGap: "sm",
     px: "lg",
     py: "lg",
+    font: 'quicksand',
+    fontSize: 'sm',
+    radius: 'sm'
   },
 });
 
