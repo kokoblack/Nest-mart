@@ -21,7 +21,9 @@ export const flex = cva({
         columnGap: {
             xsm: {columnGap: '.3rem'},
             sm: {columnGap: '.5rem'},
-            md: {columnGap: '.7rem'}
+            md: {columnGap: '.7rem'},
+            lg: {columnGap: '1rem'},
+            xlg: {columnGap: '1.5rem'}
         },
         vertical: {
             vertical: {flexDirection: 'column'}
