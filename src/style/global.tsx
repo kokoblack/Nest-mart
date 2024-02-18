@@ -19,3 +19,7 @@ export const hide = css.raw({
 export const menuActive = css.raw({
     bg: 'primary.400'
 })
+
+export const smallNavActive = css.raw({
+    color: 'primary.100'
+})
