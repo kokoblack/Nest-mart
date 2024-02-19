@@ -1,14 +1,10 @@
-
-import MobileMenu from "./layouts/MobileMenu";
-import MobileMenuSearch from "./components/MobileMenuSearch";
-import TopNavBar from "./layouts/TopNav";
-import SmallNav from "./layouts/SmallNav";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./routes/routes";
 
 function App() {
   return (
     <div>
-      <TopNavBar/>
-      <SmallNav/>
+      <RouterProvider router={router}/>
     </div>
   );
 }

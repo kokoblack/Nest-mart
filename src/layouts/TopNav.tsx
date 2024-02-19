@@ -60,7 +60,7 @@ const TopNavBar = () => {
       </div>
 
       <div className={css(flex.raw({ columnGap: "md" }), navSearchContainer)}>
-        <div className={css(flex.raw({ columnGap: "sm" }))}>
+        <div className={css(flex.raw({ columnGap: "sm" }), {cursor: 'pointer'})}>
           <p
             className={css({
               color: "secondary.100",
@@ -101,7 +101,7 @@ const TopNavBar = () => {
         <TopNavIcon icon={<FaRegHeart />} count="5" name="Wishlist" />
         <TopNavIcon icon={<GrCart />} count="5" name="Cart" />
 
-        <div className={css(flex.raw({ columnGap: "xsm" }))}>
+        <div className={css(flex.raw({ columnGap: "xsm" }), {cursor: 'pointer'})}>
           <span className={css({ fontSize: "1.2rem", hideBelow: "md" })}>
             <LuUser />
           </span>

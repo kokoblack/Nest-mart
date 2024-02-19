@@ -16,7 +16,7 @@ const SmallNav = () => {
   return (
     <nav className={css(flex.raw({ columnGap: "xlg" }), container)}>
       <button
-        className={css(button.raw({ px: "md", py: "sm", fontSize: "md" }))}
+        className={css(button.raw({ px: "md", py: "sm", fontSize: "md" }), {cursor: 'pointer'})}
       >
         <span>
           <PiSquaresFour />
@@ -27,7 +27,7 @@ const SmallNav = () => {
         </span>
       </button>
 
-      <div className={css(flex.raw({ columnGap: "xsm" }))}>
+      <div className={css(flex.raw({ columnGap: "xsm" }), {cursor: 'pointer'})}>
         <span className={css({ fontSize: "1.2rem", color: "primary.100" })}>
           <LiaFireAltSolid />
         </span>
@@ -50,7 +50,7 @@ const SmallNav = () => {
           </div>
         ))}
 
-        <p>Contact</p>
+        <p className={css({cursor: 'pointer'})}>Contact</p>
       </div>
 
       <div

@@ -11,7 +11,7 @@ type TopNavIconProps = {
 
 const TopNavIcon = ({ icon, count, name }: TopNavIconProps) => {
   return (
-    <div className={flex({ columnGap: "xsm" })}>
+    <div className={css(flex.raw({ columnGap: "xsm" }), {cursor: 'pointer'})}>
       <div className={css({ position: "relative" })}>
         <div className={css({ fontSize: "1rem" })}>{icon}</div>
         <p
