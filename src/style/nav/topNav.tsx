@@ -29,7 +29,7 @@ export const navMenuIcon = css.raw({
   fontSize: "1.5rem",
   alignSelf: "center",
 
-  hideFrom: "767px",
+  hideFrom: "768px",
 });
 
 export const navImage = css({
