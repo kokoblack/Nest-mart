@@ -1,12 +1,19 @@
 import { CiLocationOn } from "react-icons/ci";
 import { TfiHeadphoneAlt } from "react-icons/tfi";
+import { FaPinterestP } from "react-icons/fa6";
 import { PiClockCountdownBold } from "react-icons/pi";
+import {
+  TbBrandXFilled,
+  TbBrandFacebookFilled,
+  TbBrandInstagram,
+  TbBrandYoutubeFilled,
+} from "react-icons/tb";
 import { BiMailSend } from "react-icons/bi";
 
 export const info = [
   {
     icon: <CiLocationOn />,
-    text: "Address: 5171 W Campbell Ave, Address: 5171 W Campbell Ave",
+    text: "Address: 5171 W Campbell Ave",
   },
   {
     icon: <TfiHeadphoneAlt />,
@@ -60,4 +67,12 @@ export const popular = [
   "Sour Cream and Dips",
   "Tea & Kombucha",
   "Cheese",
+];
+
+export const icon = [
+  <TbBrandFacebookFilled />,
+  <TbBrandXFilled />,
+  <TbBrandInstagram />,
+  <FaPinterestP />,
+  <TbBrandYoutubeFilled />,
 ];
