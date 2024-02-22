@@ -17,9 +17,3 @@ export const container = css.raw({
         display: 'none'
     }
 })
-
-export const supportContainer = css.raw({
-    '@media screen and (max-width: 1129px)': {
-        display: 'none'
-    }
-})

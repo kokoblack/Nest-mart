@@ -5,10 +5,11 @@ import { TfiHeadphoneAlt } from "react-icons/tfi";
 import { smallNavOptions } from "../data/SmallNav";
 import { css } from "../../styled-system/css";
 import { flex } from "../style/recipe/flex";
-import { container, supportContainer } from "../style/nav/smallNav";
+import { container } from "../style/nav/smallNav";
 import { button } from "../style/recipe/button";
-import { marginLeft, menuActive, smallNavActive } from "../style/global";
+import { smallNavActive, marginLeft } from "../style/global";
 import { useState } from "react";
+import Support from "../components/Support";
 
 const SmallNav = () => {
   const [active, setActive] = useState(0);
@@ -59,38 +60,7 @@ const SmallNav = () => {
         </ul>
       </nav>
 
-      <div
-        className={css(
-          flex.raw({ columnGap: "md" }),
-          marginLeft,
-          supportContainer
-        )}
-      >
-        <span className={css({ color: "secondary.100", fontSize: "1.8rem" })}>
-          <TfiHeadphoneAlt />
-        </span>
-        <div>
-          <p
-            className={css({
-              color: "primary.100",
-              fontSize: "1.4rem",
-              fontWeight: "bold",
-              lineHeight: "1.3rem",
-            })}
-          >
-            1900 - 888
-          </p>
-          <p
-            className={css({
-              color: "secondary.400",
-              fontSize: ".7rem",
-              fontWeight: "normal",
-            })}
-          >
-            24/7 Support Center
-          </p>
-        </div>
-      </div>
+      <div className={css(marginLeft)}><Support iconColor="secondary.100" phone="1900 - 888" time="24/7 Support Center" icon={<TfiHeadphoneAlt/>} /></div>
     </header>
   );
 };
