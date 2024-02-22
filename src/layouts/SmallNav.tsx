@@ -14,9 +14,11 @@ const SmallNav = () => {
   const [active, setActive] = useState(0);
 
   return (
-    <nav className={css(flex.raw({ columnGap: "xlg" }), container)}>
+    <header className={css(flex.raw({ columnGap: "xlg" }), container)}>
       <button
-        className={css(button.raw({ px: "md", py: "sm", fontSize: "md" }), {cursor: 'pointer'})}
+        className={css(button.raw({ px: "md", py: "sm", fontSize: "md" }), {
+          cursor: "pointer",
+        })}
       >
         <span>
           <PiSquaresFour />
@@ -27,31 +29,35 @@ const SmallNav = () => {
         </span>
       </button>
 
-      <div className={css(flex.raw({ columnGap: "xsm" }), {cursor: 'pointer'})}>
+      <div
+        className={css(flex.raw({ columnGap: "xsm" }), { cursor: "pointer" })}
+      >
         <span className={css({ fontSize: "1.2rem", color: "primary.100" })}>
           <LiaFireAltSolid />
         </span>
         <p>Deal</p>
       </div>
 
-      <div className={css(flex.raw({ columnGap: "lg" }))}>
-        {smallNavOptions.map((option, index) => (
-          <div
-            key={index}
-            className={css(
-              flex.raw({ columnGap: "sm" }),
-              { cursor: "pointer" },
-              option.index === active ? smallNavActive : null
-            )}
-            onClick={() => setActive((prev) => (prev = option.index))}
-          >
-            <p>{option.name}</p>
-            <span>{option.icon}</span>
-          </div>
-        ))}
+      <nav>
+        <ul className={css(flex.raw({ columnGap: "lg" }))}>
+          {smallNavOptions.map((option, index) => (
+            <li
+              key={index}
+              className={css(
+                flex.raw({ columnGap: "sm" }),
+                { cursor: "pointer" },
+                option.index === active ? smallNavActive : null
+              )}
+              onClick={() => setActive((prev) => (prev = option.index))}
+            >
+              <p>{option.name}</p>
+              <span>{option.icon}</span>
+            </li>
+          ))}
 
-        <p className={css({cursor: 'pointer'})}>Contact</p>
-      </div>
+          <li className={css({ cursor: "pointer" })}>Contact</li>
+        </ul>
+      </nav>
 
       <div
         className={css(
@@ -85,7 +91,7 @@ const SmallNav = () => {
           </p>
         </div>
       </div>
-    </nav>
+    </header>
   );
 };
 

@@ -35,32 +35,36 @@ const TopNavBar = () => {
   const navIcon = [
     {
       icon: <FiMenu />,
-      type: !view
+      type: !view,
     },
     {
       icon: <IoMdClose />,
-      type: view
-    }
-  ]
+      type: view,
+    },
+  ];
 
   return (
-    <nav className={navContainer}>
+    <header className={navContainer}>
       {navIcon.map((data, index) => (
         <span
-        key={index}
-        className={css(flex.raw(), navMenuIcon, data.type ? show : hide)}
-        onClick={handleMobileMenuView}
-      >
-        {data.icon}
-      </span>
+          key={index}
+          className={css(flex.raw(), navMenuIcon, data.type ? show : hide)}
+          onClick={handleMobileMenuView}
+        >
+          {data.icon}
+        </span>
       ))}
 
-      <div className={css({ mr: ["0", "0", "0", "0", "auto"] })}>
+      <figure className={css({ mr: ["0", "0", "0", "0", "auto"] })}>
         <img src={logo} className={navImage} />
-      </div>
+      </figure>
 
-      <div className={css(flex.raw({ columnGap: "md" }), navSearchContainer)}>
-        <div className={css(flex.raw({ columnGap: "sm" }), {cursor: 'pointer'})}>
+      <section
+        className={css(flex.raw({ columnGap: "md" }), navSearchContainer)}
+      >
+        <div
+          className={css(flex.raw({ columnGap: "sm" }), { cursor: "pointer" })}
+        >
           <p
             className={css({
               color: "secondary.100",
@@ -85,9 +89,9 @@ const TopNavBar = () => {
             fontSize: "1.2rem",
           })}
         />
-      </div>
+      </section>
 
-      <div className={css(flex.raw({ columnGap: "sm" }), navLocationCont)}>
+      <section className={css(flex.raw({ columnGap: "sm" }), navLocationCont)}>
         <CiLocationOn className={css({ color: "secondary.700" })} />
         <p className={css({ fontSize: ".8rem", color: "primary.100" })}>
           Your Location
@@ -95,24 +99,30 @@ const TopNavBar = () => {
         <MdOutlineKeyboardArrowDown
           className={css({ color: "secondary.400" })}
         />
-      </div>
+      </section>
 
-      <div className={css(flex.raw({ columnGap: "md" }), navUserCont)}>
-        <TopNavIcon icon={<FaRegHeart />} count="5" name="Wishlist" />
-        <TopNavIcon icon={<GrCart />} count="5" name="Cart" />
+      <section className={css({h: 'fit-content', alignSelf: 'center'}, flex.raw())}>
+        <nav className={css(flex.raw({ columnGap: "md" }), navUserCont)}>
+          <TopNavIcon icon={<FaRegHeart />} count="5" name="Wishlist" />
+          <TopNavIcon icon={<GrCart />} count="5" name="Cart" />
 
-        <div className={css(flex.raw({ columnGap: "xsm" }), {cursor: 'pointer'})}>
-          <span className={css({ fontSize: "1.2rem", hideBelow: "md" })}>
-            <LuUser />
-          </span>
-          <p className={navUserText}>Account</p>
-        </div>
-      </div>
+          <div
+            className={css(flex.raw({ columnGap: "xsm" }), {
+              cursor: "pointer",
+            })}
+          >
+            <span className={css({ fontSize: "1.2rem", hideBelow: "md" })}>
+              <LuUser />
+            </span>
+            <p className={navUserText}>Account</p>
+          </div>
+        </nav>
+      </section>
 
-      <div className={css(mobileMenuView, view ? show : hide)}>
+      <section className={css(mobileMenuView, view ? show : hide)}>
         <MobileMenu />
-      </div>
-    </nav>
+      </section>
+    </header>
   );
 };
 
