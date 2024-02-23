@@ -4,11 +4,13 @@ export const button = cva({
   base: {
     display: "flex",
     alignItems: "center",
+    cursor: 'pointer'
   },
   variants: {
     bg: {
       green: { bg: "primary.100" },
       lightGreen: { bg: "primary.400" },
+      black: {bg: 'card_bg.1200'}
     },
     color: {
       white: { color: "secondary.500" },

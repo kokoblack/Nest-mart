@@ -13,6 +13,9 @@ export const flex = cva({
             endX: {alignItems: 'center', justifyContent: 'end'},
             startX: {alignItems: 'center', justifyContent: 'start'},
             spaceBetween: {alignItems: 'center', justifyContent: 'space-between'},
+            spaceBetweenStart: {alignItems: 'start', justifyContent: 'space-between'},
+            spaceEvenlyStart: {alignItems: 'start', justifyContent: 'space-evenly'},
+            spaceAroundStart: {alignItems: 'start', justifyContent: 'space-around'},
         },
         rowGap: {
             sm: {rowGap: '.5rem'},
@@ -25,11 +28,22 @@ export const flex = cva({
             lg: {columnGap: '1rem'},
             xlg: {columnGap: '1.5rem'}
         },
+        gap: {
+            xsm: {gap: '.3rem'},
+            sm: {gap: '.5rem'},
+            md: {gap: '.7rem'},
+            lg: {gap: '1rem'},
+            xlg: {gap: '1.5rem'}
+        },
         vertical: {
             vertical: {flexDirection: 'column'}
         },
         horizontal: {
             horizontal: {flexDirection: 'row'}
+        },
+        wrap: {
+            yes: {flexWrap: 'wrap'},
+            no: {flexWrap: 'nowrap'}
         }
     },
     defaultVariants: {
