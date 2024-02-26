@@ -43,7 +43,7 @@ export const optionContainer = css.raw({
             bg: 'primary.400'
         }
     }
-})
+}) 
 
 export const icon = css({
     fontSize: '1.5rem',
