@@ -9,9 +9,9 @@ export const footerContainer = css.raw({
 });
 
 export const sectionOne = css.raw({
-  // "@media screen and (max-width: 992px)": {
+  // "@media screen and (max-width: 1172px)": {
   //   display: "grid",
-  //   gridTemplateColumns: "250px repeat(auto-fill, 1fr)",
+  //   gridTemplateColumns: " repeat(3, 1fr)",
   // },
 
   "@media screen and (max-width: 480px)": {
