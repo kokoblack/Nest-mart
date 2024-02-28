@@ -23,14 +23,14 @@ const Hero = () => {
 
       <Subscribe />
 
-      <span className={css(HeroNavigation, {left: '1rem'})}>
+      <span className={css(HeroNavigation, {left: ['.5rem', '.5rem', '.5rem', '.5rem', '1rem']})}>
         <MdKeyboardArrowLeft />
       </span>
-      <span className={css(HeroNavigation, {right: '1rem'})}>
+      <span className={css(HeroNavigation, {right: ['.5rem', '.5rem', '.5rem', '.5rem', '1rem']})}>
         <MdKeyboardArrowRight />
       </span>
 
-      <div className={css(HeroIndicatorCont, flex.raw({columnGap: 'md'}))}>
+      <div className={css(HeroIndicatorCont, flex.raw({columnGap: 'xsm'}))}>
         <div ></div>
         <div></div>
         <div></div>

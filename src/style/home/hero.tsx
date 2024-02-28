@@ -2,32 +2,30 @@ import { css } from "../../../styled-system/css";
 import bgImage from "../../assets/section2.png";
 
 export const HeroContainer = css.raw({
-  // bgImage: 'url(../../assets/section2.png)',
   bgPosition: "center",
   bgSize: "cover",
   w: "100%",
-  my: "2rem",
+  my: ["1rem", "1rem", "1rem", "2rem"],
   rounded: "1rem",
-  pl: "5rem",
-  pt: "4rem",
+  pl: ["1rem", "1rem", "2rem", "3rem", "5rem"],
+  pt: ["1rem", "1rem", "2rem", "4rem"],
   pb: "1rem",
   boxSizing: "border-box",
-  // bg: "green",
   position: "relative",
 });
 
 export const HeroBigText = css.raw({
-  fontSize: "4rem",
+  fontSize: ['1.9rem', '1.9rem', '2.8rem', '4rem'],
   color: "secondary.100",
-  mb: "1.5rem",
+  mb: ['.7rem', '.7rem', '.8rem', '1.5rem'],
   fontWeight: "1000",
-  lineHeight: "4rem",
+  lineHeight: ['1.9rem', '1.9rem', '3rem', '4rem'],
 });
 
 export const HeroSmallText = css.raw({
-  fontSize: "1.5rem",
+  fontSize: ['.7rem', '.7rem', '1.1rem', '1.5rem'],
   color: "secondary.400",
-  mb: "2rem",
+  mb: ['.7rem', '.7rem', '1rem', '2rem'],
   fontWeight: "500",
 });
 
@@ -40,17 +38,21 @@ export const HeroNavigation = css.raw({
   color: "secondary.400",
   zIndex: "3",
   top: "50%",
-  translateY: "50%"
+  translateY: "50%",
+
+  "@media screen and (max-width: 767px)": {
+    display: "none",
+  },
 });
 
 export const HeroIndicatorCont = css.raw({
-  mt: "4rem",
-  mr: "5rem",
+  mt: ["1rem", "1rem", "2rem", "3rem"],
+  mr: ["1rem", "1rem", "2rem", "3rem", "5rem"],
 
-  '& div': {
+  "& div": {
     border: "1px solid #253D4E",
     rounded: "100%",
-    w: '.5rem',
-    h: '.5rem'
-  }
+    w: ".4rem",
+    h: ".4rem",
+  },
 });
