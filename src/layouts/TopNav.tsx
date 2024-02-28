@@ -44,7 +44,7 @@ const TopNavBar = () => {
   ];
 
   return (
-    <header className={navContainer}>
+    <header className={css(navContainer)}>
       {navIcon.map((data, index) => (
         <span
           key={index}

@@ -2,7 +2,6 @@ import { css } from "../../../styled-system/css";
 
 export const footerContainer = css.raw({
   fontFamily: "lato",
-  px: ["1rem", "1rem", "1rem", "3rem"],
   py: "1rem",
   color: "secondary.100",
   fontSize: ".9rem",

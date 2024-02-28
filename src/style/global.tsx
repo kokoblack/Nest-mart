@@ -23,3 +23,7 @@ export const menuActive = css.raw({
 export const smallNavActive = css.raw({
     color: 'primary.100'
 })
+
+export const paddingView = css.raw({
+    px: ["1rem", "1rem", "1rem", "3rem"],
+})
