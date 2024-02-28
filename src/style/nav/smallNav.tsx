@@ -2,7 +2,6 @@ import { css } from "../../../styled-system/css";
 
 export const container = css.raw({
     py: '1rem',
-    px: '3rem',
     w: '100%',
     borderBottom: '1px solid #dedfe2',
     color: 'secondary.100',

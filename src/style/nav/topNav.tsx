@@ -1,6 +1,6 @@
 import { css } from "../../../styled-system/css";
 
-export const navContainer = css({
+export const navContainer = css.raw({
   display: "flex",
   justifyContent: [
     "space-between",
@@ -11,11 +11,11 @@ export const navContainer = css({
   ],
   alignContent: "center",
   py: ["1rem", "1rem", "1rem", "1.5rem"],
-  px: ["1rem", "1rem", "1rem", "3rem"],
   columnGap: "2%",
   w: "100%",
   position: 'relative',
-  borderBottom: '1px solid #dedfe2'
+  borderBottom: '1px solid #dedfe2',
+  boxSizing: 'border-box'
 });
 
 export const hr = css({
