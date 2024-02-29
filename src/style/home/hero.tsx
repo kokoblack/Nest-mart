@@ -1,5 +1,4 @@
 import { css } from "../../../styled-system/css";
-import bgImage from "../../assets/section2.png";
 
 export const HeroContainer = css.raw({
   bgPosition: "center",
@@ -15,17 +14,17 @@ export const HeroContainer = css.raw({
 });
 
 export const HeroBigText = css.raw({
-  fontSize: ['1.9rem', '1.9rem', '2.8rem', '4rem'],
+  fontSize: ["1.9rem", "1.9rem", "2.8rem", "4rem"],
   color: "secondary.100",
-  mb: ['.7rem', '.7rem', '.8rem', '1.5rem'],
+  mb: [".7rem", ".7rem", ".8rem", "1.5rem"],
   fontWeight: "1000",
-  lineHeight: ['1.9rem', '1.9rem', '3rem', '4rem'],
+  lineHeight: ["1.9rem", "1.9rem", "3rem", "4rem"],
 });
 
 export const HeroSmallText = css.raw({
-  fontSize: ['.7rem', '.7rem', '1.1rem', '1.5rem'],
+  fontSize: [".7rem", ".7rem", "1.1rem", "1.5rem"],
   color: "secondary.400",
-  mb: ['.7rem', '.7rem', '1rem', '2rem'],
+  mb: [".7rem", ".7rem", "1rem", "2rem"],
   fontWeight: "500",
 });
 
@@ -48,11 +47,18 @@ export const HeroNavigation = css.raw({
 export const HeroIndicatorCont = css.raw({
   mt: ["1rem", "1rem", "2rem", "3rem"],
   mr: ["1rem", "1rem", "2rem", "3rem", "5rem"],
+});
 
-  "& div": {
-    border: "1px solid #253D4E",
-    rounded: "100%",
-    w: ".4rem",
-    h: ".4rem",
-  },
+export const HeroIndicator = css.raw({
+  borderStyle: 'solid',
+  borderWidth: '1px',
+  borderColor: "secondary.100",
+  rounded: "100%",
+  w: ".4rem",
+  h: ".4rem",
+});
+
+export const HeroActive = css.raw({
+  bg: "primary.100",
+  borderColor: "primary.100",
 });
