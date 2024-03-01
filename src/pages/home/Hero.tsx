@@ -29,14 +29,26 @@ const Hero = () => {
     },
   ];
 
+  const handleForwardClick = () => {
+    if (active === 0) {
+      setActive(1);
+      animate.current.style.animation = "slideOut .5s ease-in alternate";
+    }
+  };
+
+  const handleBackWardClick = () => {
+    if (active === 1) {
+      setActive(0);
+      animate.current.style.animation = "slideIn .5s ease-in alternate";
+    }
+  };
+
   useEffect(() => {
     const interval = setInterval(() => {
       if (active === 0) {
-        setActive(1);
-        animate.current.style.animation = "slideOut .5s ease-in alternate";
+        handleForwardClick();
       } else {
-        setActive(0);
-        animate.current.style.animation = "slideIn .5s ease-in alternate";
+        handleBackWardClick();
       }
     }, 5000);
 
@@ -61,7 +73,7 @@ const Hero = () => {
       </div>
 
       <span
-        onClick={() => setActive(0)}
+        onClick={handleBackWardClick}
         className={css(HeroNavigation, {
           left: [".5rem", ".5rem", ".5rem", ".5rem", "1rem"],
         })}
@@ -69,7 +81,7 @@ const Hero = () => {
         <MdKeyboardArrowLeft />
       </span>
       <span
-        onClick={() => setActive(1)}
+        onClick={handleForwardClick}
         className={css(HeroNavigation, {
           right: [".5rem", ".5rem", ".5rem", ".5rem", "1rem"],
         })}
