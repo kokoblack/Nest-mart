@@ -1,17 +1,23 @@
-import { css } from "../../../styled-system/css";
+import { css, } from "../../../styled-system/css";
 
 export const HeroContainer = css.raw({
+  w: "100%",
+  my: ["1rem", "1rem", "1rem", "2rem"],
+  rounded: "1.2rem",
+  boxSizing: "border-box",
+  position: "relative",
+  overflow: 'hidden'
+});
+
+export const HeroDiscountContainer = css.raw({
   bgPosition: "center",
   bgSize: "cover",
   w: "100%",
-  my: ["1rem", "1rem", "1rem", "2rem"],
-  rounded: "1rem",
   pl: ["1rem", "1rem", "2rem", "3rem", "5rem"],
   pt: ["1rem", "1rem", "2rem", "4rem"],
-  pb: "1rem",
-  boxSizing: "border-box",
-  position: "relative",
-});
+  pb: ['3rem', '3rem', '3rem', '6rem'],
+  rounded: "1.2rem",
+})
 
 export const HeroBigText = css.raw({
   fontSize: ["1.9rem", "1.9rem", "2.8rem", "4rem"],
@@ -24,7 +30,7 @@ export const HeroBigText = css.raw({
 export const HeroSmallText = css.raw({
   fontSize: [".7rem", ".7rem", "1.1rem", "1.5rem"],
   color: "secondary.400",
-  mb: [".7rem", ".7rem", "1rem", "2rem"],
+  mb: [".9rem", ".9rem", "1rem", "2rem"],
   fontWeight: "500",
 });
 
@@ -38,6 +44,9 @@ export const HeroNavigation = css.raw({
   zIndex: "3",
   top: "50%",
   translateY: "50%",
+  cursor: 'pointer',
+  transition: 'all 2s ease-in ',
+  animation: 'bounce 2s ease-in infinite alternate',
 
   "@media screen and (max-width: 767px)": {
     display: "none",
@@ -45,8 +54,10 @@ export const HeroNavigation = css.raw({
 });
 
 export const HeroIndicatorCont = css.raw({
-  mt: ["1rem", "1rem", "2rem", "3rem"],
-  mr: ["1rem", "1rem", "2rem", "3rem", "5rem"],
+  position: 'absolute',
+  top: ['90%', '90%', '95%'],
+  left: '50%',
+  translateX: '50%'
 });
 
 export const HeroIndicator = css.raw({
