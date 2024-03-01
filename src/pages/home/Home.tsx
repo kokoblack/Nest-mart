@@ -4,6 +4,7 @@ import Footer from '../../layouts/Footer'
 import Hero from './Hero'
 import { css } from '../../../styled-system/css'
 import { paddingView } from '../../style/global'
+import PopularProduct from './PopularProduct'
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
         <TopNavBar/>
         <SmallNav/>
         <Hero/>
+        <PopularProduct/>
         <Footer/>
     </main>
   )
