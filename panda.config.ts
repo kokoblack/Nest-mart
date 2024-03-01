@@ -58,14 +58,30 @@ export default defineConfig({
         quicksand: { value: "Quicksand, sans-serif" },
       },
     },
+    extend: {
+      keyframes: {
+        bounce: {
+          "0%": { scale: "0.8" },
+          "100%": { scale: "1" },
+        },
+        slideIn: {
+          '0%': {translate: '-10%', opacity: 1 },
+          '100%': {translate: '0%', opacity: 1 }
+        },
+        slideOut: {
+          '0%': {translate: '10%', opacity: 1 },
+          '100%': {translate: '0%', opacity: 1 }
+        }
+      },
+    },
     breakpoints: {
-      base: '0px',
-      sm: '480px',
-      md: '768px',
-      lg: '992px',
-      xl: '1280px',
-      '2xl': '1536px'
-    }
+      base: "0px",
+      sm: "480px",
+      md: "768px",
+      lg: "992px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
   },
 
   // The output directory for your css system
