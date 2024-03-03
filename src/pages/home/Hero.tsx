@@ -18,6 +18,8 @@ const Hero = () => {
   const [active, setActive] = useState(0);
 
   const animate = useRef<HTMLDivElement>(null!);
+  const inputRef = useRef<HTMLInputElement>(null!);
+  console.log(inputRef.current.focus())
   const text = [
     {
       text: "Fresh Vegetable",
@@ -32,6 +34,7 @@ const Hero = () => {
   const handleForwardClick = () => {
     if (active === 0) {
       setActive(1);
+      animate.current.style.backgroundImage = "url(assets/section1.png)";
       animate.current.style.animation = "slideOut .5s ease-in alternate";
     }
   };
@@ -39,6 +42,7 @@ const Hero = () => {
   const handleBackWardClick = () => {
     if (active === 1) {
       setActive(0);
+      animate.current.style.backgroundImage = "url(assets/section0.png)";
       animate.current.style.animation = "slideIn .5s ease-in alternate";
     }
   };
@@ -60,7 +64,7 @@ const Hero = () => {
       <div
         ref={animate}
         onAnimationEnd={() => (animate.current.style.animation = "none")}
-        className={css({ bgImage: text[active]?.url }, HeroDiscountContainer)}
+        className={css(HeroDiscountContainer)}
       >
         <h3 className={css(HeroBigText)}>
           {text[active]?.text} <br /> Big discount
@@ -69,7 +73,7 @@ const Hero = () => {
           Save up to 50% off on your first order
         </p>
 
-        <Subscribe />
+        <Subscribe ref={inputRef}/>
       </div>
 
       <span
