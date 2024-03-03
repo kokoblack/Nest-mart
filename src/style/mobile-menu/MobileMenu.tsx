@@ -10,16 +10,9 @@ export const container = css.raw({
     scrollbarWidth: 'none',
     zIndex: 100,
     h: '10rem',
-    // overflow: 'scroll',
     bg: 'secondary.500',
     borderTopLeftRadius: '6px',
     borderBottomLeftRadius:'6px',
-    // position: 'absolute',
-    // overflow
-
-    // '&::-webkit-scrollbar': {
-    //     display: 'none'
-    // }
 
 })
 

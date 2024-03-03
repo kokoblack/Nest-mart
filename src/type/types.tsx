@@ -8,4 +8,5 @@ export type ProductCardProps = {
   color: string;
   type: string;
   image: string;
+  fullCat: string
 };
