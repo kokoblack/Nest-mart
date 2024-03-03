@@ -28,6 +28,8 @@ export const hr = css({
 export const navMenuIcon = css.raw({
   fontSize: "1.5rem",
   alignSelf: "center",
+  position: 'relative',
+  zIndex:'200',
 
   hideFrom: "768px",
 });
@@ -92,7 +94,8 @@ export const navUserText = css({
 export const mobileMenuView = css.raw({
     display: 'block',
     position: 'absolute',
-    right: 0,
+    right: '-1rem',
     top: 0,
+    zIndex: '100',
     boxSizing: 'border-box'
 })

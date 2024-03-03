@@ -10,13 +10,14 @@ export const container = css.raw({
 export const searchIcon = css({
     color: 'secondary.1000',
     ml: '.5rem',
-    fontSize: '.8rem'
+    fontSize: '.9rem'
 })
 
 export const input = css({
     fontFamily: 'quicksand',
-    fontSize: '.7rem',
+    fontSize: '.8rem',
     bg: 'transparent',
+    w: '45%',
 
     _focus: {
         outline: 'none',

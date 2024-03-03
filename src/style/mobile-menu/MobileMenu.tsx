@@ -1,7 +1,7 @@
 import { css } from "../../../styled-system/css";
 
 export const container = css.raw({
-    width: '15rem',
+    width: '16rem',
     px: '.5rem',
     pt: '1rem',
     border: '1px solid #ECECEC',
@@ -14,19 +14,22 @@ export const container = css.raw({
     borderTopLeftRadius: '6px',
     borderBottomLeftRadius:'6px',
 
+    '@media screen and (max-width: 319px)': {
+        w: '100vw',
+    },
+
 })
 
 export const image = css({
     w: 'auto',
     h: '2.5rem',
-    m: '0 auto',
+    mx: 'auto',
     mb: '.5rem'
 })
 
 export const optionContainer = css.raw({
     px: '.5rem',
     py: '.8rem',
-    // bg: 'primary.400',
     w: '100%',
     rounded: '.5rem',
     mb: '.3rem',

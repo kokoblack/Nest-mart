@@ -9,7 +9,7 @@ const MobileMenuSearch = () => {
     <div className={css(flex.raw({columnGap: 'sm', type: 'spaceBetween'}), container)}>
         <span className={searchIcon}><CiSearch/></span>
         <input placeholder="Search for items" className={input}/>
-        <button className={button({radius: 'lg', py: 'sm'})}>Search</button>
+        <button className={css(button.raw({radius: 'lg', fontSize: 'md'}), {px: '1.4rem', py: '.7rem', ml: 'auto'})}>Search</button>
     </div>
   )
 }

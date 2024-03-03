@@ -16,6 +16,7 @@ import { useEffect, useState, useRef } from "react";
 
 const Hero = () => {
   const [active, setActive] = useState(0);
+  const [focused, setFocused] = useState(false);
 
   const animate = useRef<HTMLDivElement>(null!);
   const inputRef = useRef<HTMLInputElement>(null!);
@@ -31,32 +32,30 @@ const Hero = () => {
   ];
 
   const handleForwardClick = () => {
-    if (active === 0) {
-      setActive(1);
-      animate.current.style.backgroundImage = "url(assets/section1.png)";
-      animate.current.style.animation = "slideOut .5s ease-in alternate";
-    }
+    setActive(1);
+    animate.current.style.backgroundImage = "url(assets/section1.png)";
+    animate.current.style.animation = "slideOut .5s ease-in alternate";
   };
 
   const handleBackWardClick = () => {
-    if (active === 1) {
-      setActive(0);
-      animate.current.style.backgroundImage = "url(assets/section0.png)";
-      animate.current.style.animation = "slideIn .5s ease-in alternate";
-    }
+    setActive(0);
+    animate.current.style.backgroundImage = "url(assets/section0.png)";
+    animate.current.style.animation = "slideIn .5s ease-in alternate";
   };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (active === 0) {
-        handleForwardClick();
-      } else {
-        handleBackWardClick();
-      }
-    }, 5000);
+    if (!focused) {
+      var interval = setInterval(() => {
+        if (active === 0) {
+          handleForwardClick();
+        } else {
+          handleBackWardClick();
+        }
+      }, 5000);
+    }
 
     return () => clearInterval(interval);
-  }, [active]);
+  }, [active, focused]);
 
   return (
     <section className={css(HeroContainer)}>
@@ -72,7 +71,7 @@ const Hero = () => {
           Save up to 50% off on your first order
         </p>
 
-        <Subscribe ref={inputRef}/>
+        <Subscribe ref={inputRef} setFocused={setFocused} />
       </div>
 
       <span
