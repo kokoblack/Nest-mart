@@ -19,7 +19,6 @@ const Hero = () => {
 
   const animate = useRef<HTMLDivElement>(null!);
   const inputRef = useRef<HTMLInputElement>(null!);
-  console.log(inputRef.current.focus())
   const text = [
     {
       text: "Fresh Vegetable",

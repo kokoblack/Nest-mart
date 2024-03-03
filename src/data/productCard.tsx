@@ -19,7 +19,8 @@ export const productCardData = [
         initialPrice: '$32.8',
         color: '#F74B81',
         type: 'Hot',
-        image: img1
+        image: img1,
+        fullCat: 'Fruits'
     },
     {
         name: 'All Natural Italian-Style Chicken Meatballs',
@@ -30,7 +31,8 @@ export const productCardData = [
         initialPrice: '$55.8',
         color: '#67BCEE',
         type: 'Sale',
-        image: img2
+        image: img2,
+        fullCat: 'Pet Foods'
     },
     {
         name: 'Angie’s Boomchickapop Sweet & Salty Kettle Corn',
@@ -41,7 +43,8 @@ export const productCardData = [
         initialPrice: '$52.8',
         color: '#3BB77E',
         type: 'New',
-        image: img3
+        image: img3,
+        fullCat: 'Fruits'
     },
     {
         name: 'Foster Farms Takeout Crispy Classic Buffalo Wings',
@@ -52,7 +55,8 @@ export const productCardData = [
         initialPrice: '$19.8',
         color: '',
         type: '',
-        image: img4
+        image: img4,
+        fullCat: 'Vegetables'
     },
     {
         name: 'Blue Diamond Almonds Lightly Salted Vegetables',
@@ -63,7 +67,8 @@ export const productCardData = [
         initialPrice: '$25.8',
         color: '#F59758',
         type: '-14%',
-        image: img5
+        image: img5,
+        fullCat: 'Pet Foods'
     },
     {
         name: 'Haagen-Dazs Caramel Cone Ice Cream Ketchup',
@@ -74,7 +79,8 @@ export const productCardData = [
         initialPrice: '$24.8',
         color: '',
         type: '',
-        image: img10
+        image: img10,
+        fullCat: 'Milks & Dairies'
     },
     {
         name: 'Gorton’s Beer Battered Fish Fillets with soft paper',
@@ -85,7 +91,8 @@ export const productCardData = [
         initialPrice: '$25.8',
         color: '#F74B81',
         type: 'Hot',
-        image: img9
+        image: img9,
+        fullCat: 'Coffes & Teas'
     },
     {
         name: 'Encore Seafoods Stuffed Alaskan Salmon',
@@ -96,7 +103,8 @@ export const productCardData = [
         initialPrice: '$37.8',
         color: '#67BCEE',
         type: 'Sale',
-        image: img8
+        image: img8,
+        fullCat: 'Fruits'
     },
     {
         name: 'Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g',
@@ -107,7 +115,8 @@ export const productCardData = [
         initialPrice: '$33.8',
         color: '',
         type: '',
-        image: img7
+        image: img7,
+        fullCat: 'Meats'
     },
     {
         name: 'Chobani Complete Vanilla Greek Yogurt',
@@ -118,6 +127,7 @@ export const productCardData = [
         initialPrice: '$55.8',
         color: '',
         type: '',
-        image: img6
+        image: img6,
+        fullCat: 'Pet Foods'
     },
 ]
