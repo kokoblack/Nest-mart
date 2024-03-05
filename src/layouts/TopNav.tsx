@@ -31,7 +31,7 @@ const TopNavBar = () => {
   const handleMobileMenuView = () => {
     setView((prevState) => !prevState);
   };
-
+ 
   const navIcon = [
     {
       icon: <FiMenu />,
@@ -101,7 +101,9 @@ const TopNavBar = () => {
         />
       </section>
 
-      <section className={css({h: 'fit-content', alignSelf: 'center'}, flex.raw())}>
+      <section
+        className={css({ h: "fit-content", alignSelf: "center" }, flex.raw())}
+      >
         <nav className={css(flex.raw({ columnGap: "md" }), navUserCont)}>
           <TopNavIcon icon={<FaRegHeart />} count="5" name="Wishlist" />
           <TopNavIcon icon={<GrCart />} count="5" name="Cart" />

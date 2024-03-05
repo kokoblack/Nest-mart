@@ -2,29 +2,35 @@ import { css } from "../../styled-system/css";
 import { defineKeyframes } from "@pandacss/dev";
 
 export const marginRight = css.raw({
-    mr: 'auto'
-})
+  mr: "auto",
+});
 
 export const marginLeft = css.raw({
-    ml: 'auto'
-})
+  ml: "auto",
+});
 
 export const show = css.raw({
-    display: 'block'
-})
+  display: "block",
+});
 
 export const hide = css.raw({
-    display: 'none'
-})
+  display: "none",
+});
 
 export const menuActive = css.raw({
-    bg: 'primary.400'
-})
+  bg: "primary.400",
+});
 
 export const smallNavActive = css.raw({
-    color: 'primary.100'
-})
+  color: "primary.100",
+});
 
 export const paddingView = css.raw({
-    px: ["1rem", "1rem", "1rem", "3rem"],
-})
+  px: ["1rem", "1rem", "1rem", "3rem"],
+});
+
+export const stickyNav = css.raw({
+  position: "fixed",
+  top: 0,
+
+});

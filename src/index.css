@@ -11,3 +11,8 @@ body {
   font-family: "Quicksand", sans-serif;
   box-sizing: border-box;
 }
+
+.sticky {
+  position: sticky;
+  top: 0;
+}
