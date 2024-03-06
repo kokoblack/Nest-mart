@@ -1,15 +1,14 @@
 import logo from "../assets/Header.png";
 import { FiPhoneCall } from "react-icons/fi";
 import { BsGooglePlay,BsApple } from "react-icons/bs";
-import { IoLogoApple } from "react-icons/io5";
 import { account, company, corporate, icon, info, popular } from "../data/footer";
 import payment from "../assets/payment-method.png.png";
-import Support from "../components/Support";
-import DownloadCard from "../components/DownloadCard";
+import Support from "../components/layouts/Support";
+import DownloadCard from "../components/layouts/DownloadCard";
 import { css } from "../../styled-system/css";
 import { flex } from "../style/recipe/flex";
 import { contactContainer, copyRight, footerContainer, sectionOne, sectionTwo, socials, socialsIcons } from "../style/footer/footer";
-import FooterInfo from "../components/FooterInfo";
+import FooterInfo from "../components/layouts/FooterInfo";
 
 const Footer = () => {
   return (

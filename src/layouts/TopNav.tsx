@@ -21,7 +21,7 @@ import {
 import { flex } from "../style/recipe/flex";
 import { css } from "../../styled-system/css";
 import { marginLeft, hide, show } from "../style/global";
-import TopNavIcon from "../components/TopNavIcon";
+import TopNavIcon from "../components/layouts/TopNavIcon";
 import MobileMenu from "./MobileMenu";
 import { useState } from "react";
 

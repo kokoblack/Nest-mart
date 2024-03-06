@@ -1,5 +1,5 @@
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
-import Subscribe from "../../components/Subscribe";
+import Subscribe from "../../components/global/Subscribe";
 import { css } from "../../../styled-system/css";
 import {
   HeroActive,

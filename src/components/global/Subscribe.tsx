@@ -1,13 +1,13 @@
 import { SiMinutemailer } from "react-icons/si";
-import { flex } from "../style/recipe/flex";
-import { css } from "../../styled-system/css";
+import { flex } from "../../style/recipe/flex";
+import { css } from "../../../styled-system/css";
 import {
   container,
   input,
   icon,
   subscribeButton,
-} from "../style/component/subscribe";
-import { button } from "../style/recipe/button";
+} from "../../style/component/subscribe";
+import { button } from "../../style/recipe/button";
 import { forwardRef } from "react";
 
 type Ref = HTMLInputElement;
