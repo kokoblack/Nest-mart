@@ -1,7 +1,6 @@
 import React from "react";
-import { css } from "../../styled-system/css";
-import { flex } from "../style/recipe/flex";
-import { button } from "../style/recipe/button";
+import { css } from "../../../styled-system/css";
+import { button } from "../../style/recipe/button";
 
 type DownloadCardProps = {
   text: string;

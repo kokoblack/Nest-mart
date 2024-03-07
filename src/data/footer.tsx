@@ -10,7 +10,12 @@ import {
 } from "react-icons/tb";
 import { BiMailSend } from "react-icons/bi";
 
-export const info = [
+type Info = {
+  icon: React.ReactNode;
+  text: string;
+}[];
+
+export const info: Info = [
   {
     icon: <CiLocationOn />,
     text: "Address: 5171 W Campbell Ave",

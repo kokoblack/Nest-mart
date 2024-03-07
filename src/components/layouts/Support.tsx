@@ -1,6 +1,6 @@
 import React from "react";
-import { css } from "../../styled-system/css";
-import { flex } from "../style/recipe/flex";
+import { css } from "../../../styled-system/css";
+import { flex } from "../../style/recipe/flex";
 
 type SupportProps = {
     phone: string

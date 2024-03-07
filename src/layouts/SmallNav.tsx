@@ -9,7 +9,7 @@ import { container } from "../style/nav/smallNav";
 import { button } from "../style/recipe/button";
 import { smallNavActive, marginLeft } from "../style/global";
 import { useState } from "react";
-import Support from "../components/Support";
+import Support from "../components/layouts/Support";
 
 const SmallNav = () => {
   const [active, setActive] = useState(0);

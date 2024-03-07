@@ -21,7 +21,7 @@ import {
 import { flex } from "../style/recipe/flex";
 import { css } from "../../styled-system/css";
 import { marginLeft, hide, show } from "../style/global";
-import TopNavIcon from "../components/TopNavIcon";
+import TopNavIcon from "../components/layouts/TopNavIcon";
 import MobileMenu from "./MobileMenu";
 import { useState } from "react";
 
@@ -31,7 +31,7 @@ const TopNavBar = () => {
   const handleMobileMenuView = () => {
     setView((prevState) => !prevState);
   };
-
+ 
   const navIcon = [
     {
       icon: <FiMenu />,
@@ -101,7 +101,9 @@ const TopNavBar = () => {
         />
       </section>
 
-      <section className={css({h: 'fit-content', alignSelf: 'center'}, flex.raw())}>
+      <section
+        className={css({ h: "fit-content", alignSelf: "center" }, flex.raw())}
+      >
         <nav className={css(flex.raw({ columnGap: "md" }), navUserCont)}>
           <TopNavIcon icon={<FaRegHeart />} count="5" name="Wishlist" />
           <TopNavIcon icon={<GrCart />} count="5" name="Cart" />

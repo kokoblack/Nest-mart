@@ -1,7 +1,7 @@
 import React from "react";
-import { flex } from "../style/recipe/flex";
-import { css } from "../../styled-system/css";
-import { navIconCount, navIconText } from "../style/nav/topNavIcon";
+import { flex } from "../../style/recipe/flex";
+import { css } from "../../../styled-system/css";
+import { navIconCount, navIconText } from "../../style/nav/topNavIcon";
 
 type TopNavIconProps = {
   icon: React.ReactNode;

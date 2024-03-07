@@ -1,5 +1,5 @@
 import { useState } from "react";
-import MobileMenuSearch from "../components/MobileMenuSearch";
+import MobileMenuSearch from "../components/layouts/MobileMenuSearch";
 import { option } from "../data/MenuOptions";
 import logo from "../assets/Header.png";
 import { css } from "../../styled-system/css";
