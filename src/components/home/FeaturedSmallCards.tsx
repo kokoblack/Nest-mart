@@ -21,6 +21,8 @@ const FeaturedSmallCards = ({
         textAlign: "center",
         w: "fit-content",
         bg: bg,
+        flexShrink: '0',
+        cursor: 'pointer'
       })}
       style={{backgroundColor: bg}}
     >

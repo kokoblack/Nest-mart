@@ -9,6 +9,7 @@ export const featuredBigCardCont = css.raw({
   w: ["15.5rem", "15.5rem", "20rem", "20rem", "28rem"],
   h: ["9rem", "9rem", "12rem", "12rem", "15rem"],
   position: "relative",
+  flexShrink: '0'
 });
 
 export const featuredTitle = css.raw({

@@ -19,9 +19,6 @@ export const productFirstSection = css.raw({
   },
 
   "@media screen and (max-width: 479px)": {
-    flexDirection: "column",
-    alignItems: "start",
-    gap: ".5rem",
     mb: "1rem",
 
     "& > nav": {
@@ -42,7 +39,7 @@ export const productFirstSection = css.raw({
 });
 
 export const productSecondSection = css.raw({
-    display: 'grid',
+    display: 'grid', 
     w: '100%',
     gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
     justifyItems: 'center',
