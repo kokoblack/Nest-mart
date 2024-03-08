@@ -33,13 +33,11 @@ const Hero = () => {
 
   const handleForwardClick = () => {
     setActive(1);
-    animate.current.style.backgroundImage = "url(assets/section1.png)";
     animate.current.style.animation = "slideOut .5s ease-in alternate";
   };
 
   const handleBackWardClick = () => {
     setActive(0);
-    animate.current.style.backgroundImage = "url(assets/section0.png)";
     animate.current.style.animation = "slideIn .5s ease-in alternate";
   };
 
@@ -62,7 +60,7 @@ const Hero = () => {
       <div
         ref={animate}
         onAnimationEnd={() => (animate.current.style.animation = "none")}
-        className={css(HeroDiscountContainer)}
+        className={css(HeroDiscountContainer, {bgImage: active === 0? "url(assets/section0.png)" : "url(assets/section1.png)" })}
       >
         <h3 className={css(HeroBigText)}>
           {text[active]?.text} <br /> Big discount

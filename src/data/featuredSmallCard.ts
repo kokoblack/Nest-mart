@@ -14,60 +14,60 @@ export const data = [
         img: img1,
         name: 'cake & Milk',
         qty: '26 items',
-        bg: 'card_bg.100'
+        bg: '#F2FCE4'
     },
     {
         img: img2,
         name: 'Oganic Kiwi',
         qty: '28 items',
-        bg: 'card_bg.200'
+        bg: '#FFFCEB'
     },
     {
         img: img3,
         name: 'Peach',
         qty: '14 items',
-        bg: 'card_bg.300'
+        bg: '#ECFFEC'
     },
     {
         img: img4,
         name: 'Red Apple',
         qty: '54 items',
-        bg: 'card_bg.400'
+        bg: '#FEEFEA'
     },
     {
         img: img5,
         name: 'Snack',
         qty: '56 items',
-        bg: 'card_bg.500'
+        bg: '#FFF3EB'
     },
     {
         img: img6,
         name: 'Vegetables',
         qty: '72 items',
-        bg: 'card_bg.600'
+        bg: '#FFF3FF'
     },
     {
         img: img7,
         name: 'Strawberry',
         qty: '36 items',
-        bg: 'card_bg.700'
+        bg: '#F2FCE4'
     },
     {
         img: img8,
         name: 'Black plum',
         qty: '123 items',
-        bg: 'card_bg.800'
+        bg: '#FEEFEA'
     },
     {
         img: img9,
         name: 'Custard apple',
         qty: '34 items',
-        bg: 'card_bg.900'
+        bg: '#FFFCEB'
     },
     {
         img: img10,
         name: 'Coffe & Tea',
         qty: '89 items',
-        bg: 'card_bg.1000'
+        bg: '#FEEFEA'
     },
 ]
