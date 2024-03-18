@@ -13,10 +13,15 @@ import {
   featuredSecondSection,
   featuredThirdSection,
 } from "../../style/home/feaured";
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const FeaturedCategories = () => {
   const [active, setActive] = useState(0);
+  const [divWidth, setDivWidth] = useState(0);
+  const [divider, setDivider] = useState(0);
+  const [currentPosition, setCurrentPosition] = useState(0);
+
+  const divref = useRef<HTMLDivElement>(null);
 
   const link = ["Cake & Milk", "Coffes & Teas", "Pet Foods", "Vegetables"];
   const title = [
@@ -24,6 +29,35 @@ const FeaturedCategories = () => {
     "Make your Breakfast Healthy and Easy",
     "The best Organic Products Online",
   ];
+
+  const updateScrollPosition = () => {
+    setCurrentPosition((prev) => (prev = divref.current?.scrollLeft!));
+  };
+
+  const handleForwardClick = () => {
+    if (divWidth !== currentPosition) {
+      divref.current!.scrollLeft = currentPosition + divider;
+    }
+  };
+
+  const handleBackwardClick = () => {
+    if (currentPosition !== 0) {
+      divref.current!.scrollLeft = currentPosition - divider;
+    }
+  };
+
+  useEffect(() => {
+    const divWidth = divref.current?.scrollWidth!;
+    setDivider(divWidth / 10);
+    setDivWidth(divWidth);
+
+    divref.current?.addEventListener("scroll", updateScrollPosition);
+
+    return () => {
+      divref.current?.removeEventListener("scroll", updateScrollPosition);
+    };
+  }, []);
+
   return (
     <section className={css(featuredContainer)}>
       <section
@@ -54,15 +88,16 @@ const FeaturedCategories = () => {
         </nav>
         <div className={css(flex.raw({ columnGap: "sm" }), featuredIconCont)}>
           <span className={css(featuredIcon)}>
-            <TiArrowLeft />
+            <TiArrowLeft onClick={handleBackwardClick}/>
           </span>
           <span className={css(featuredIcon)}>
-            <TiArrowRight />
+            <TiArrowRight onClick={handleForwardClick} />
           </span>
         </div>
       </section>
 
       <section
+        ref={divref}
         className={css(
           flex.raw({ columnGap: "md", wrap: "no" }),
           featuredSecondSection

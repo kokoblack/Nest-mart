@@ -1,12 +1,13 @@
-import { css, } from "../../../styled-system/css";
+import { css } from "../../../styled-system/css";
 
 export const HeroContainer = css.raw({
   w: "100%",
-  my: ["1rem", "1rem", "1rem", "2rem"],
+  mt: ["1rem", "1rem", "1rem", "2rem"],
+  mb: "3rem",
   rounded: "1.2rem",
   boxSizing: "border-box",
   position: "relative",
-  overflow: 'hidden'
+  overflow: "hidden",
 });
 
 export const HeroDiscountContainer = css.raw({
@@ -15,9 +16,9 @@ export const HeroDiscountContainer = css.raw({
   w: "100%",
   pl: ["1rem", "1rem", "2rem", "3rem", "5rem"],
   pt: ["1rem", "1rem", "2rem", "4rem"],
-  pb: ['3rem', '3rem', '3rem', '6rem'],
+  pb: ["3rem", "3rem", "3rem", "6rem"],
   rounded: "1.2rem",
-})
+});
 
 export const HeroBigText = css.raw({
   fontSize: ["1.9rem", "1.9rem", "2.8rem", "4rem"],
@@ -44,9 +45,9 @@ export const HeroNavigation = css.raw({
   zIndex: "3",
   top: "50%",
   translateY: "50%",
-  cursor: 'pointer',
-  transition: 'all 2s ease-in ',
-  animation: 'bounce 2s ease-in infinite alternate',
+  cursor: "pointer",
+  transition: "all 2s ease-in ",
+  animation: "bounce 2s ease-in infinite alternate",
 
   "@media screen and (max-width: 767px)": {
     display: "none",
@@ -54,15 +55,15 @@ export const HeroNavigation = css.raw({
 });
 
 export const HeroIndicatorCont = css.raw({
-  position: 'absolute',
-  top: ['90%', '90%', '95%'],
-  left: '50%',
-  translateX: '50%'
+  position: "absolute",
+  top: ["90%", "90%", "95%"],
+  left: "50%",
+  translateX: "50%",
 });
 
 export const HeroIndicator = css.raw({
-  borderStyle: 'solid',
-  borderWidth: '1px',
+  borderStyle: "solid",
+  borderWidth: "1px",
   borderColor: "secondary.100",
   rounded: "100%",
   w: ".4rem",

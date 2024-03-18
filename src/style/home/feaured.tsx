@@ -5,7 +5,7 @@ export const featuredContainer = css.raw({
   color: "secondary.100",
   w: "100%",
   boxSizing: "border-box",
-  mb: "2rem",
+  mb: "3rem",
 });
 
 export const featuredFirstSection = css.raw({

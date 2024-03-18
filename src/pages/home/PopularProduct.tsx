@@ -44,8 +44,8 @@ const PopularProduct = () => {
 
   return (
     <section className={css(productContainer)}>
-      <section className={css(flex.raw({}), productFirstSection)}>
-        <h3>Popular Products</h3>
+      <section className={css(flex.raw({type: 'endY', columnGap: "xlg",}), productFirstSection)}>
+        <h3 className={css({lineHeight: '2rem'})}>Popular Products</h3>
         <nav
           className={css(
             { ml: [undefined, undefined, undefined, undefined, "auto"] },
