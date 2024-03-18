@@ -15,7 +15,7 @@ export const productFirstSection = css.raw({
   "@media screen and (max-width: 991px)": {
     flexDirection: "column",
     alignItems: "start",
-    gap: ".5rem",
+    gap: "1rem",
   },
 
   "@media screen and (max-width: 479px)": {
@@ -23,7 +23,7 @@ export const productFirstSection = css.raw({
 
     "& > nav": {
       overflowX: "scroll",
-      width: "100%",
+      width: "90%",
       justifyContent: "flex-start",
       px: ".2rem",
 
