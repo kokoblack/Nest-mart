@@ -5,7 +5,6 @@ import {
   productContainer,
   productSecondSection,
 } from "../../style/home/product";
-import { flex } from "../../style/recipe/flex";
 import { productCardData } from "../../data/productCard";
 import TitleLink from "../../components/global/TitleLink";
 
