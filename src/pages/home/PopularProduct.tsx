@@ -3,16 +3,15 @@ import ProductCard from "../../components/home/ProductCard";
 import { css } from "../../../styled-system/css";
 import {
   productContainer,
-  productFirstSection,
   productSecondSection,
 } from "../../style/home/product";
-import { flex } from "../../style/recipe/flex";
 import { productCardData } from "../../data/productCard";
+import TitleLink from "../../components/global/TitleLink";
 
 const PopularProduct = () => {
-  const [active, setActive] = useState(0);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [productType, setProductType] = useState("All");
+  console.log(screenWidth)
 
   const filterdProduct = productCardData.filter((card) => {
     return card.fullCat === productType;
@@ -32,7 +31,7 @@ const PopularProduct = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setScreenWidth(window.innerHeight);
+      setScreenWidth(window.innerWidth);
     };
 
     window.addEventListener("resize", handleResize);
@@ -40,42 +39,11 @@ const PopularProduct = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [screenWidth]);
+  }, []);
 
   return (
     <section className={css(productContainer)}>
-      <section className={css(flex.raw({type: 'endY', columnGap: "xlg",}), productFirstSection)}>
-        <h3 className={css({lineHeight: '2rem'})}>Popular Products</h3>
-        <nav
-          className={css(
-            { ml: [undefined, undefined, undefined, undefined, "auto"] },
-            flex.raw()
-          )}
-        >
-          <ul
-            className={css(flex.raw({ columnGap: "md" }), {
-              fontSize: [".8rem", ".8rem", ".8rem", ".9rem", ".9rem"],
-              fontWeight: "500",
-            })}
-          >
-            {product.map((data, index) => (
-              <li
-                onClick={() => {
-                  setActive(index);
-                  setProductType(data);
-                }}
-                key={index}
-                className={css({
-                  color: active === index ? "primary.100" : "null",
-                  cursor: "pointer",
-                })}
-              >
-                {data}
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </section>
+      <TitleLink title="Popular Product" link={product} setProductType={setProductType}/>
 
       <section className={css(productSecondSection)}>
         {productType !== "All"
