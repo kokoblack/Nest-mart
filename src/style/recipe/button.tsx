@@ -41,6 +41,7 @@ export const button = cva({
     move: {
       left: { justifyContent: "start" },
       right: { justifyContent: "end" },
+      center: {justifyContent: 'center'}
     },
     font: {
         quicksand: {fontFamily: 'quicksand'},
