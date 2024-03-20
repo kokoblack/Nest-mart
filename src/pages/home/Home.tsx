@@ -2,6 +2,7 @@ import Hero from "./Hero";
 import { css } from "../../../styled-system/css";
 import FeaturedCategories from "./FeaturedCategories";
 import PopularProduct from "./PopularProduct";
+import DailyBestSells from "./DailyBestSells";
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
       <Hero />
       <FeaturedCategories />
       <PopularProduct />
+      <DailyBestSells/>
     </main>
   );
 };

@@ -9,7 +9,7 @@ import img8 from '../assets/Link → product-8-1.jpg.jpg'
 import img9 from '../assets/Link → product-9-1.jpg.jpg'
 import img10 from '../assets/Link → product-10-1.jpg.jpg'
 
-export const productCardData = [
+export const product = [
     {
         name: 'Seeds of Change OrganicQuinoa, & Red Rice',
         category: 'Snack',
@@ -20,7 +20,8 @@ export const productCardData = [
         color: '#F74B81',
         type: 'Hot',
         image: img1,
-        fullCat: 'Fruits'
+        fullCat: 'Fruits',
+        cat: 'Popular'
     },
     {
         name: 'All Natural Italian-Style Chicken Meatballs',
@@ -32,7 +33,8 @@ export const productCardData = [
         color: '#67BCEE',
         type: 'Sale',
         image: img2,
-        fullCat: 'Pet Foods'
+        fullCat: 'Pet Foods',
+        cat: ''
     },
     {
         name: 'Angie’s Boomchickapop Sweet & Salty Kettle Corn',
@@ -44,7 +46,8 @@ export const productCardData = [
         color: '#3BB77E',
         type: 'New',
         image: img3,
-        fullCat: 'Fruits'
+        fullCat: 'Fruits',
+        cat: 'New added'
     },
     {
         name: 'Foster Farms Takeout Crispy Classic Buffalo Wings',
@@ -56,7 +59,8 @@ export const productCardData = [
         color: '',
         type: '',
         image: img4,
-        fullCat: 'Vegetables'
+        fullCat: 'Vegetables',
+        cat: ''
     },
     {
         name: 'Blue Diamond Almonds Lightly Salted Vegetables',
@@ -68,7 +72,8 @@ export const productCardData = [
         color: '#F59758',
         type: '-14%',
         image: img5,
-        fullCat: 'Pet Foods'
+        fullCat: 'Pet Foods',
+        cat: 'Popular'
     },
     {
         name: 'Haagen-Dazs Caramel Cone Ice Cream Ketchup',
@@ -80,7 +85,8 @@ export const productCardData = [
         color: '',
         type: '',
         image: img10,
-        fullCat: 'Milks & Dairies'
+        fullCat: 'Milks & Dairies',
+        cat: ''
     },
     {
         name: 'Gorton’s Beer Battered Fish Fillets with soft paper',
@@ -92,7 +98,8 @@ export const productCardData = [
         color: '#F74B81',
         type: 'Hot',
         image: img9,
-        fullCat: 'Coffes & Teas'
+        fullCat: 'Coffes & Teas',
+        cat: 'Popular'
     },
     {
         name: 'Encore Seafoods Stuffed Alaskan Salmon',
@@ -104,7 +111,8 @@ export const productCardData = [
         color: '#67BCEE',
         type: 'Sale',
         image: img8,
-        fullCat: 'Fruits'
+        fullCat: 'Fruits',
+        cat: ''
     },
     {
         name: 'Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g',
@@ -116,7 +124,8 @@ export const productCardData = [
         color: '',
         type: '',
         image: img7,
-        fullCat: 'Meats'
+        fullCat: 'Meats',
+        cat: ''
     },
     {
         name: 'Chobani Complete Vanilla Greek Yogurt',
@@ -128,6 +137,7 @@ export const productCardData = [
         color: '',
         type: '',
         image: img6,
-        fullCat: 'Pet Foods'
+        fullCat: 'Pet Foods',
+        cat: ''
     },
 ]

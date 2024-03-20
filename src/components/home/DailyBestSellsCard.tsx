@@ -2,13 +2,13 @@ import { FaStar } from "react-icons/fa";
 import { css } from "../../../styled-system/css";
 import { flex } from "../../style/recipe/flex";
 import { button } from "../../style/recipe/button";
-import { ProductCardProps } from "../../type/types";
+import { Product } from "../../type/types";
 import {
   dailyBestSellsCardContainer,
   dailyBestSellsCardImg,
   dailyBestSellsCardRange,
   dailyBestSellsCardSpecial,
-} from "../../style/component/home/DailyBestSellsCard";
+} from "../../style/component/home/dailyBestSellsCard";
 
 const DailyBestSellsCard = ({
   name,
@@ -19,7 +19,7 @@ const DailyBestSellsCard = ({
   initialPrice,
   currentPrice,
   image,
-}: ProductCardProps) => {
+}: Product) => {
   return (
     <div className={css(dailyBestSellsCardContainer)}>
       {type && (

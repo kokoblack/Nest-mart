@@ -8,7 +8,7 @@ import {
 } from "../../style/component/home/productCard";
 import { flex } from "../../style/recipe/flex";
 import { button } from "../../style/recipe/button";
-import { ProductCardProps } from "../../type/types";
+import { Product } from "../../type/types";
 
 const ProductCard = ({
   name,
@@ -20,7 +20,7 @@ const ProductCard = ({
   currentPrice,
   brand,
   image,
-}: ProductCardProps) => {
+}: Product) => {
   return (
     <div className={css(productCardContainer)}>
       {type && (

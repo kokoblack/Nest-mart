@@ -1,4 +1,4 @@
-export type ProductCardProps = {
+export type Product = {
   name: string;
   category: string;
   rating: string;
@@ -9,4 +9,5 @@ export type ProductCardProps = {
   type: string;
   image: string;
   fullCat?: string
+  cat?: string
 };
