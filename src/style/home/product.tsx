@@ -3,9 +3,7 @@ import { css } from "../../../styled-system/css";
 export const productContainer = css.raw({
   w: "100%",
   boxSizing: "border-box",
-  color: "secondary.100",
-  fontSize: ["1.7rem", "1.7rem", "1.7rem", "1.9rem", "1.9rem"],
-  fontWeight: "bold",
+  mb: "3rem"
 });
 
 export const productSecondSection = css.raw({

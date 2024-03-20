@@ -1,16 +1,16 @@
-import { IoCartOutline } from "react-icons/io5";
 import { FaStar } from "react-icons/fa";
 import { css } from "../../../styled-system/css";
-import {
-  productCardContainer,
-  productCardImg,
-  productCardSpecial,
-} from "../../style/component/home/productCard";
 import { flex } from "../../style/recipe/flex";
 import { button } from "../../style/recipe/button";
 import { Product } from "../../type/types";
+import {
+  dailyBestSellsCardContainer,
+  dailyBestSellsCardImg,
+  dailyBestSellsCardRange,
+  dailyBestSellsCardSpecial,
+} from "../../style/component/home/dailyBestSellsCard";
 
-const ProductCard = ({
+const DailyBestSellsCard = ({
   name,
   category,
   color,
@@ -18,18 +18,20 @@ const ProductCard = ({
   type,
   initialPrice,
   currentPrice,
-  brand,
   image,
 }: Product) => {
   return (
-    <div className={css(productCardContainer)}>
+    <div className={css(dailyBestSellsCardContainer)}>
       {type && (
-        <div style={{backgroundColor: color}} className={css(productCardSpecial)}>
+        <div
+          style={{ backgroundColor: color }}
+          className={css(dailyBestSellsCardSpecial)}
+        >
           <p>{type}</p>
         </div>
       )}
 
-      <figure className={css(productCardImg)}>
+      <figure className={css(dailyBestSellsCardImg)}>
         <img src={image} alt="product" />
       </figure>
 
@@ -69,15 +71,9 @@ const ProductCard = ({
         </span>
         <p>{rating}</p>
       </div>
-      <p className={css({ fontFamily: "lato" })}>
-        By{" "}
-        <span className={css({ color: "primary.100", fontWeight: "bold" })}>
-          {brand}
-        </span>{" "}
-      </p>
 
       <div
-        className={css(flex.raw({ columnGap: "md" }), {
+        className={css(flex.raw({ columnGap: "md", type: "startX" }), {
           fontWeight: "bold",
           mt: ".8rem",
         })}
@@ -93,27 +89,43 @@ const ProductCard = ({
         >
           {initialPrice}
         </p>
-        <button
-          className={css(
-            button.raw({
-              bg: "lightGreen",
-              color: "green",
-              px: "lg",
-              py: "sm",
-              fontSize: "md",
-              font: "lato",
-            }),
-            { ml: "auto", lineHeight: ".5rem" }
-          )}
-        >
-          <span className={css({ fontSize: "1.2rem" })}>
-            <IoCartOutline />
-          </span>
-          <p>Add</p>
-        </button>
       </div>
+
+      <input type="range" className={[css(dailyBestSellsCardRange), 'range'].join(" ")}/>
+
+      <p
+        className={css({
+          color: "secondary.100",
+          fontFamily: "lato",
+          fontSize: ".8rem",
+          fontWeight: '700',
+        })}
+      >
+        Sold: 90/120
+      </p>
+
+      <button
+        className={css(
+          button.raw({
+            bg: "green",
+            color: "white",
+            py: "lg",
+            fontSize: "md",
+            move: "center",
+          }),
+          {
+            lineHeight: ".5rem",
+            w: "100%",
+            px: 0,
+            fontWeight: "bold",
+            mt: "1rem",
+          }
+        )}
+      >
+        <p>Add To Cart</p>
+      </button>
     </div>
   );
 };
 
-export default ProductCard;
+export default DailyBestSellsCard;
