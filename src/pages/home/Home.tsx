@@ -3,6 +3,8 @@ import { css } from "../../../styled-system/css";
 import FeaturedCategories from "./FeaturedCategories";
 import PopularProduct from "./PopularProduct";
 import DailyBestSells from "./DailyBestSells";
+import DealOfThDayCard from "../../components/home/DealOfThDayCard";
+import DealOfTheDay from "./DealOfTheDay";
 
 const Home = () => {
   return (
@@ -11,6 +13,7 @@ const Home = () => {
       <FeaturedCategories />
       <PopularProduct />
       <DailyBestSells/>
+      <DealOfTheDay/>
     </main>
   );
 };

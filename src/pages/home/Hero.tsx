@@ -86,7 +86,7 @@ const Hero = () => {
           right: [".5rem", ".5rem", ".5rem", ".5rem", "1rem"],
         })}
       >
-        <MdKeyboardArrowRight className="bounce" />
+        <MdKeyboardArrowRight />
       </span>
 
       <div className={css(HeroIndicatorCont, flex.raw({ columnGap: "xsm" }))}>

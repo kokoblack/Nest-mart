@@ -75,7 +75,9 @@ const DailyBestSellsCard = ({
       <div
         className={css(flex.raw({ columnGap: "md", type: "startX" }), {
           fontWeight: "bold",
-          mt: ".8rem",
+          mt: "1rem",
+          mb: "1rem",
+          lineHeight: 0
         })}
       >
         <p className={css({ color: "primary.100", fontSize: "1.05rem" })}>

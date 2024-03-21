@@ -3,8 +3,10 @@ import { css } from "../../../../styled-system/css";
 export const dailyBestSellsCont = css.raw({
   w: "100%",
   boxSizing: "border-box",
-  mb: "3rem",
-//   overflow: 'hidden'
+
+  "@media screen and (max-width: 767px)": {
+    mb: "3rem",
+  },
 });
 
 export const dailyBestSellsNature = css.raw({
@@ -12,7 +14,7 @@ export const dailyBestSellsNature = css.raw({
   pl: "2rem",
   pr: "3.5rem",
   pt: "3rem",
-  pb: "10rem",
+  pb: "9.5rem",
   mb: "4rem",
   w: "21rem",
   rounded: "15px",
@@ -31,7 +33,7 @@ export const dailyBestSellsNature = css.raw({
   "@media screen and (max-width: 991px)": {
     w: "11rem",
     pr: "2rem",
-    pb: '7.5rem'
+    pb: '7.2rem'
   },
 
   "@media screen and (max-width: 767px)": {
