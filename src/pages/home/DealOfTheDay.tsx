@@ -4,6 +4,7 @@ import { css } from "../../../styled-system/css";
 import { flex } from "../../style/recipe/flex";
 import { DealOfTheDayFirstCont, DealOfTheDaySecondCont } from "../../style/pages/home/DealOfTheDay";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import DealOfTheDayProduct from "../../components/home/DealOfTheDayProduct";
 
 const DealOfTheDay = () => {
   return (
@@ -25,6 +26,10 @@ const DealOfTheDay = () => {
         <DealOfThDayCard />
         <DealOfThDayCard />
         <DealOfThDayCard />
+      </section>
+
+      <section>
+        <DealOfTheDayProduct/>
       </section>
     </section>
   );
