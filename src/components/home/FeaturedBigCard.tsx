@@ -1,5 +1,5 @@
 import { css } from "../../../styled-system/css";
-import { featuredBigCardCont, featuredButton, featuredTitle } from "../../style/home/featuredBigCard";
+import { featuredBigCardCont, featuredButton, featuredTitle } from "../../style/pages/home/featuredBigCard";
 import { button } from "../../style/recipe/button";
 
 type FeaturedBigCardProps = {

@@ -1,4 +1,4 @@
-import { css } from "../../../styled-system/css";
+import { css } from "../../../../styled-system/css";
 
 export const featuredContainer = css.raw({
   fontSize: ["1.7rem", "1.7rem", "1.7rem", "1.9rem"],

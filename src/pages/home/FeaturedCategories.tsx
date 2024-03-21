@@ -12,7 +12,7 @@ import {
   featuredIconCont,
   featuredSecondSection,
   featuredThirdSection,
-} from "../../style/home/feaured";
+} from "../../style/pages/home/feaured";
 import { useEffect, useState, useRef } from "react";
 
 const FeaturedCategories = () => {

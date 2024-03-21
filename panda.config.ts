@@ -76,7 +76,7 @@ export default defineConfig({
       },
     },
     breakpoints: {
-      base: "0px",
+      base: "319px",
       sm: "480px",
       md: "768px",
       lg: "992px",
