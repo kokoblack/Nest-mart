@@ -17,20 +17,23 @@ const FeaturedSmallCards = ({
     <div
       className={css({
         rounded: "10px",
-        p: "1rem",
+        p: [".7rem", ".7rem", "1rem"],
         textAlign: "center",
         w: "fit-content",
         bg: bg,
+        flexShrink: '0',
+        cursor: 'pointer'
       })}
+      style={{backgroundColor: bg}}
     >
       <img
         src={img}
         alt="vegetables"
-        className={css({ w: ["5rem"], h: "auto", mx: "auto", mb: ".5rem" })}
+        className={css({ w: ["4rem", "4rem", "5rem"], h: "auto", mx: "auto", mb: ".5rem" })}
       />
       <p
         className={css({
-          fontSize: ["1rem"],
+          fontSize: [".85rem", ".85rem", "1rem"],
           color: "secondary.100",
           fontWeight: "bold",
         })}
@@ -39,7 +42,7 @@ const FeaturedSmallCards = ({
       </p>
       <p
         className={css({
-          fontSize: [".8rem"],
+          fontSize: [".65rem", ".65rem", ".8rem"],
           fontFamily: "lato",
           color: "secondary.700",
         })}

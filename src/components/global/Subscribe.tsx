@@ -6,7 +6,7 @@ import {
   input,
   icon,
   subscribeButton,
-} from "../../style/component/subscribe";
+} from "../../style/component/global/subscribe";
 import { button } from "../../style/recipe/button";
 import { forwardRef } from "react";
 
