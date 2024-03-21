@@ -5,7 +5,7 @@ import { TfiHeadphoneAlt } from "react-icons/tfi";
 import { smallNavOptions } from "../data/SmallNav";
 import { css } from "../../styled-system/css";
 import { flex } from "../style/recipe/flex";
-import { container } from "../style/nav/smallNav";
+import { container } from "../style/layout/nav/smallNav";
 import { button } from "../style/recipe/button";
 import { smallNavActive, marginLeft } from "../style/global";
 import { useState } from "react";

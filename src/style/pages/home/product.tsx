@@ -1,4 +1,4 @@
-import { css } from "../../../styled-system/css";
+import { css } from "../../../../styled-system/css";
 
 export const productContainer = css.raw({
   w: "100%",

@@ -10,7 +10,7 @@ import {
   HeroIndicatorCont,
   HeroNavigation,
   HeroSmallText,
-} from "../../style/home/hero";
+} from "../../style/pages/home/hero";
 import { flex } from "../../style/recipe/flex";
 import { useEffect, useState, useRef } from "react";
 

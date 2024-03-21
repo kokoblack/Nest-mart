@@ -4,7 +4,7 @@ import { css } from "../../../styled-system/css";
 import {
   productContainer,
   productSecondSection,
-} from "../../style/home/product";
+} from "../../style/pages/home/product";
 import { product } from "../../data/product";
 import TitleLink from "../../components/global/TitleLink";
 import useScreenWidth from "../../hooks/useScreenWidth";
