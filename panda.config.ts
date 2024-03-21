@@ -72,6 +72,10 @@ export default defineConfig({
         slideOut: {
           '0%': {translate: '10%', opacity: 1 },
           '100%': {translate: '0%', opacity: 1 }
+        },
+        sideway: {
+          '0%': {left: '5px',},
+          '100%': {right: '0',}
         }
       },
     },

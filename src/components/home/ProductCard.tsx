@@ -80,6 +80,7 @@ const ProductCard = ({
         className={css(flex.raw({ columnGap: "md" }), {
           fontWeight: "bold",
           mt: ".8rem",
+          lineHeight: 0
         })}
       >
         <p className={css({ color: "primary.100", fontSize: "1.05rem" })}>
