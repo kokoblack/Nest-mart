@@ -1,21 +1,26 @@
-import { FaStar } from "react-icons/fa";
 import { css } from "../../../styled-system/css";
 import { flex } from "../../style/recipe/flex";
 import DealOfTheDayProductCard from "./DealOfTheDayProductCard";
 import { DealOfTheDayProductCont } from "../../style/component/home/dealOfTheDayProduct";
+import { DOTDProduct } from "../../type/types";
 
-const DealOfTheDayProduct = () => {
+type DealOfTheDayProductProps = {
+  product: DOTDProduct[]
+  title: string
+}
+
+const DealOfTheDayProduct = ({product, title}: DealOfTheDayProductProps) => {
   return (
     <section className={css(DealOfTheDayProductCont)}>
-      <h3>Top Selling</h3>
+      <h3>{title}</h3>
 
       <div>
         <hr />
         <hr />
       </div>
 
-      <div>
-        <DealOfTheDayProductCard />
+      <div className={css(flex.raw({vertical: 'vertical', gap: 'lg'}))}>
+        {product.map((data, index) => (<DealOfTheDayProductCard key={index} {...data}/>))}
       </div>
     </section>
   );
