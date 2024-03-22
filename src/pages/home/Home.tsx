@@ -5,6 +5,7 @@ import PopularProduct from "./PopularProduct";
 import DailyBestSells from "./DailyBestSells";
 import DealOfThDayCard from "../../components/home/DealOfThDayCard";
 import DealOfTheDay from "./DealOfTheDay";
+import Banner from "../../components/global/Banner";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <PopularProduct />
       <DailyBestSells/>
       <DealOfTheDay/>
+      <Banner id={1}/>
     </main>
   );
 };

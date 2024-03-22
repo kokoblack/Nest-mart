@@ -7,7 +7,7 @@ export const HeroContainer = css.raw({
   rounded: "1.2rem",
   boxSizing: "border-box",
   position: "relative",
-  overflow: "hidden",
+  overflow: "hidden", 
 });
 
 export const HeroDiscountContainer = css.raw({
