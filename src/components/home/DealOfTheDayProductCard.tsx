@@ -1,29 +1,31 @@
 import { css } from "../../../styled-system/css";
 import { flex } from "../../style/recipe/flex";
 import { FaStar } from "react-icons/fa";
-import img from "../../assets/Article1.jpg";
+import { DOTDProduct } from "../../type/types";
 
-const DealOfTheDayProductCard = () => {
+const DealOfTheDayProductCard = ({name, rating, currentPrice, initialPrice, image}:DOTDProduct) => {
   const cont = css.raw({
-    w: "17rem",
+    w: "18rem",
 
     "@media screen and (max-width: 319px)": {
       w: "auto",
 
-      '& > figure': {
-        w: '8rem'
+      "& > figure": {
+        w: "40%",
+      },
+
+      '& > div': {
+        w: '60%'
       }
     },
   });
 
   return (
-    <div
-      className={css(flex.raw({ type: "startY" }), cont)}
-    >
-      <figure className={css({ w: "7.5rem", mr: ".5rem" })}>
-        <img src={img} alt="product" className={css({ rounded: "10px" })} />
+    <div className={css(flex.raw({}), cont)}>
+      <figure className={css({ w: "30%", h: 'auto', mr: ".5rem" })}>
+        <img src={image} alt="product" className={css({ rounded: "10px" })} />
       </figure>
-      <div>
+      <div className={css({w: '70%'})}>
         <p
           className={css({
             fontSize: ".8rem",
@@ -32,7 +34,7 @@ const DealOfTheDayProductCard = () => {
             fontWeight: "bold",
           })}
         >
-          Nestle Original Coffee-Mate Coffee Creamer
+          {name}
         </p>
         <div
           className={css(flex.raw({ type: "startX", columnGap: "sm" }), {
@@ -49,18 +51,17 @@ const DealOfTheDayProductCard = () => {
             <FaStar />
             <FaStar />
           </span>
-          <p>4.0</p>
+          <p>{rating}</p>
         </div>
 
         <div
           className={css(flex.raw({ columnGap: "md", type: "startX" }), {
             fontWeight: "bold",
-            mt: "1.2rem",
-            lineHeight: 0,
+            mt: ".5rem",
           })}
         >
           <p className={css({ color: "primary.100", fontSize: ".9rem" })}>
-            $15.85
+            {currentPrice}
           </p>
           <p
             className={css({
@@ -69,7 +70,7 @@ const DealOfTheDayProductCard = () => {
               fontSize: ".8rem",
             })}
           >
-            $16.8
+            {initialPrice}
           </p>
         </div>
       </div>

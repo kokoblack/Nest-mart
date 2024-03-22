@@ -27,7 +27,7 @@ const PopularProduct = () => {
     "Milks & Dairies",
   ];
 
-  const howMany = screenWidth <= 525 ? 5 : product.length;
+  const howMany = screenWidth <= 524 ? 3 : product.length;
 
   useScreenWidth(setScreenWidth)
 

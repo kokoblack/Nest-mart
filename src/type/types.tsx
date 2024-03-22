@@ -11,3 +11,13 @@ export type Product = {
   fullCat?: string
   cat?: string
 };
+
+export type DOTDProduct = {
+  name: string;
+  rating: string;
+  brand?: string;
+  currentPrice: string;
+  initialPrice: string;
+  image?: string;
+  id?: number
+};

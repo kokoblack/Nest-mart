@@ -35,7 +35,7 @@ export const DealOfTheDayFirstCont = css.raw({
 });
 
 export const DealOfTheDaySecondCont = css.raw({
-  mb: "7rem",
+  mb: "8rem",
   justifyContent: "space-around",
   rowGap: "9rem",
 
@@ -62,3 +62,27 @@ export const DealOfTheDaySecondCont = css.raw({
     rowGap: "8rem",
   },
 });
+
+export const DealOfTheDayThirdCont = css.raw({
+  justifyContent: 'space-around',
+
+  "@media screen and (max-width: 1295px)": {
+    '& > section:first-child': {
+      display: 'none'
+    }
+  },
+
+  "@media screen and (max-width: 990px)": {
+    '& > section:last-child': {
+      display: 'none'
+    }
+  },
+
+  "@media screen and (max-width: 623px)": {
+    justifyContent: 'start',
+    
+    '& > section:nth-child(3)': {
+      display: 'none'
+    }
+  }
+})

@@ -4,12 +4,40 @@ import { css } from "../../../styled-system/css";
 import { FaStar } from "react-icons/fa";
 import { button } from "../../style/recipe/button";
 import { IoCartOutline } from "react-icons/io5";
-import { dealOfTheDayCardCont, dealOfTheDayCardFirstSection, dealOfTheDayCardSecondSection } from "../../style/component/home/dealOfTheDayCard";
+import {
+  dealOfTheDayCardCont,
+  dealOfTheDayCardFirstSection,
+  dealOfTheDayCardSecondSection,
+} from "../../style/component/home/dealOfTheDayCard";
+import { DOTDProduct } from "../../type/types";
 
-const DealOfThDayCard = () => {
+const DealOfThDayCard = ({
+  name,
+  rating,
+  currentPrice,
+  initialPrice,
+  brand,
+  id,
+}: DOTDProduct) => {
   return (
-    <div className={css(dealOfTheDayCardCont)}>
-      <section className={css(flex.raw({columnGap: 'md'}), dealOfTheDayCardFirstSection)}>
+    <div
+      className={css(dealOfTheDayCardCont, {
+        bgImage:
+          id === 1
+            ? "url(assets/banner-5.png)"
+            : id === 2
+            ? "url(assets/banner-6.png)"
+            : id === 3
+            ? "url(assets/banner-7.png)"
+            : "url(assets/banner-8.png)",
+      })}
+    >
+      <section
+        className={css(
+          flex.raw({ columnGap: "md" }),
+          dealOfTheDayCardFirstSection
+        )}
+      >
         <div>
           <p>567</p>
           <p>Days</p>
@@ -40,11 +68,12 @@ const DealOfThDayCard = () => {
             fontWeight: "bold",
           })}
         >
-          Simply Lemonade with Raspberry Juice
+          {name}
         </p>
         <div
           className={css(flex.raw({ type: "startX", columnGap: "sm" }), {
-            my: ".3rem", fontSize: ".8rem",
+            my: ".3rem",
+            fontSize: ".8rem",
           })}
         >
           <span
@@ -56,24 +85,21 @@ const DealOfThDayCard = () => {
             <FaStar />
             <FaStar />
           </span>
-          <p>4.0</p>
+          <p>{rating}</p>
         </div>
-        <p className={css({ fontFamily: "lato", fontSize: ".8rem", })}>
-          By
-          <span className={css({ color: "primary.100", fontWeight: "bold" })}>
-          Yoplait
-          </span>
+        <p className={css({ fontFamily: "lato", fontSize: ".8rem" })}>
+          By <span className={css({ color: "primary.100", fontWeight: "bold" })}>{brand}</span>
         </p>
 
         <div
           className={css(flex.raw({ columnGap: "md" }), {
             fontWeight: "bold",
             mt: ".8rem",
-            lineHeight: 0
+            lineHeight: 0,
           })}
         >
           <p className={css({ color: "primary.100", fontSize: ".9rem" })}>
-            $15.85
+            {currentPrice}
           </p>
           <p
             className={css({
@@ -82,7 +108,7 @@ const DealOfThDayCard = () => {
               fontSize: ".8rem",
             })}
           >
-            $16.8
+            {initialPrice}
           </p>
           <button
             className={css(
