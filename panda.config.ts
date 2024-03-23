@@ -34,6 +34,7 @@ export default defineConfig({
           1100: { value: "#e8e8e8" },
           1200: { value: "#292F46" },
           1300: { value: "#ADADAD" },
+          1400: { value: "#f4f6fa" },
         },
         card_bg: {
           100: { value: "#F2FCE4" },

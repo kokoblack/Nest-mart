@@ -1,16 +1,16 @@
 import { css } from "../../../../styled-system/css";
 
 export const featuredContainer = css.raw({
-  fontSize: ["1.7rem", "1.7rem", "1.7rem", "1.9rem"],
-  color: "secondary.100",
   w: "100%",
   boxSizing: "border-box",
-  mb: "3rem",
+  // mb: "3rem",
 });
 
 export const featuredFirstSection = css.raw({
   mb: "2rem",
   position: "relative",
+  fontSize: ["1.7rem", "1.7rem", "1.7rem", "1.9rem"],
+  color: "secondary.100",
 
   "@media screen and (max-width: 991px)": {
     flexDirection: "column",
