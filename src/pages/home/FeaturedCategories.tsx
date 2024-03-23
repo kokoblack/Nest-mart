@@ -1,6 +1,5 @@
 import { TiArrowLeft, TiArrowRight } from "react-icons/ti";
 import FeaturedSmallCards from "../../components/home/FeaturedSmallCards";
-import FeaturedBigCard from "../../components/home/FeaturedBigCard";
 import { data } from "../../data/featuredSmallCard";
 import { flex } from "../../style/recipe/flex";
 import { css } from "../../../styled-system/css";
@@ -11,7 +10,6 @@ import {
   featuredIcon,
   featuredIconCont,
   featuredSecondSection,
-  featuredThirdSection,
 } from "../../style/pages/home/feaured";
 import { useEffect, useState, useRef } from "react";
 
@@ -24,14 +22,9 @@ const FeaturedCategories = () => {
   const divref = useRef<HTMLDivElement>(null);
 
   const link = ["Cake & Milk", "Coffes & Teas", "Pet Foods", "Vegetables"];
-  const title = [
-    "Everyday Fresh & Clean with Our Products",
-    "Make your Breakfast Healthy and Easy",
-    "The best Organic Products Online",
-  ];
 
   const updateScrollPosition = () => {
-    setCurrentPosition((prev) => prev = divref.current?.scrollLeft!);
+    setCurrentPosition((prev) => (prev = divref.current?.scrollLeft!));
   };
 
   const handleForwardClick = () => {
@@ -88,7 +81,7 @@ const FeaturedCategories = () => {
         </nav>
         <div className={css(flex.raw({ columnGap: "sm" }), featuredIconCont)}>
           <span className={css(featuredIcon)}>
-            <TiArrowLeft onClick={handleBackwardClick}/>
+            <TiArrowLeft onClick={handleBackwardClick} />
           </span>
           <span className={css(featuredIcon)}>
             <TiArrowRight onClick={handleForwardClick} />
@@ -106,14 +99,6 @@ const FeaturedCategories = () => {
         {data.map((item, index) => (
           <FeaturedSmallCards key={index} {...item} />
         ))}
-      </section>
-
-      <section
-        className={css(flex.raw({ columnGap: "md" }), featuredThirdSection)}
-      >
-        <FeaturedBigCard title={title[0]} num={1} />
-        <FeaturedBigCard title={title[1]} num={2} />
-        <FeaturedBigCard title={title[2]} num={3} />
       </section>
     </section>
   );
