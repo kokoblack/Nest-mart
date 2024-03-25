@@ -24,7 +24,7 @@ const FeaturedCategories = () => {
   const link = ["Cake & Milk", "Coffes & Teas", "Pet Foods", "Vegetables"];
 
   const updateScrollPosition = () => {
-    setCurrentPosition((prev) => (prev = divref.current?.scrollLeft!));
+    setCurrentPosition((prev) => prev = divref.current?.scrollLeft!);
   };
 
   const handleForwardClick = () => {

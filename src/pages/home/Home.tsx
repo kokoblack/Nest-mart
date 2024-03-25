@@ -3,11 +3,11 @@ import { css } from "../../../styled-system/css";
 import FeaturedCategories from "./FeaturedCategories";
 import PopularProduct from "./PopularProduct";
 import DailyBestSells from "./DailyBestSells";
-import DealOfThDayCard from "../../components/home/DealOfThDayCard";
 import DealOfTheDay from "./DealOfTheDay";
 import Banner from "../../components/global/Banner";
 import FeaturedBigCard from "../../components/home/FeaturedBigCard";
 import { flex } from "../../style/recipe/flex";
+import { homeCont, style, style2, style3 } from "../../style/pages/home/home";
 
 const Home = () => {
   const title = [
@@ -16,27 +16,8 @@ const Home = () => {
     "The best Organic Products Online",
   ];
 
-  const style = css.raw({
-    "@media screen and (max-width: 991px)": {
-      display: "none",
-    },
-  });
-
-  const style2 = css.raw({
-    overflowX: "scroll",
-          justifyContent: "flex-start",
-          scrollbar: "hidden",
-          mb: "3rem",
-  })
-
-  const style3 = css.raw({
-    "@media screen and (min-width: 991px)": {
-      display: "none",
-    },
-  });
-
   return (
-    <main className={css({ boxSizing: "border-box", w: "100%" })}>
+    <main className={css(homeCont)}>
       <Hero />
 
       <section className={css(style)}>

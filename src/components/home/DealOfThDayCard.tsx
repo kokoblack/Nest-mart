@@ -1,4 +1,3 @@
-import React from "react";
 import { flex } from "../../style/recipe/flex";
 import { css } from "../../../styled-system/css";
 import { FaStar } from "react-icons/fa";
