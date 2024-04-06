@@ -32,5 +32,18 @@ export const paddingView = css.raw({
 export const stickyNav = css.raw({
   position: "fixed",
   top: 0,
+});
 
+export const zigzagLiine = css.raw({
+  "&::before": {
+    height: "29px",
+    width: "55px",
+    background:
+      "linear-gradient(135deg, white 35%, transparent 25%) -25px 0, linear-gradient(225deg, white 35%, transparent 25%) -25px 0, linear-gradient(315deg, white 35%, transparent 25%), linear-gradient(45deg, white 35%, transparent 25%)",
+    backgroundColor: "#ffcc00",
+    display: "block",
+    content: "",
+    backgroundSize: "16px 31px",
+    backgroundRepeat: "repeat-x",
+  },
 });

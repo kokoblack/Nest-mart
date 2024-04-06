@@ -18,9 +18,9 @@ body {
 }
 
 .range::-webkit-slider-runnable-track {
-  background: linear-gradient(to right, #3BB77E 50%, #E9ECEF 50%);
+  background: linear-gradient(to right, #3bb77e 50%, #e9ecef 50%);
 }
 
 .range::-moz-range-track {
-  background: linear-gradient(#3BB77E, #E9ECEF);
+  background: linear-gradient(#3bb77e, #e9ecef);
 }
