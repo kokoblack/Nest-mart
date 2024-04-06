@@ -37,7 +37,7 @@ export const welcomeToNestContent = css.raw({
   // float: 'left',
   w: "55%",
 
-  "& > h3": {
+  "& > article > h3": {
     fontSize: ["1.8rem", "1.8rem", "2.5rem", "2.5rem"],
     lineHeight: "2rem",
     fontWeight: "bold",
@@ -45,7 +45,7 @@ export const welcomeToNestContent = css.raw({
     mb: ["2rem"],
   },
 
-  "& > p": {
+  "& > article > p": {
     fontSize: ".9rem",
     mb: ["1rem"],
     color: "secondary.400",
@@ -59,14 +59,14 @@ export const welcomeToNestContent = css.raw({
   "@media screen and (max-width: 1119px)": {
     w: "100%",
 
-    "& > h3": {
+    "& > article > h3": {
         textAlign: 'center'
     }
   },
 
   "@media screen and (max-width: 479px)": {
 
-    "& > h3": {
+    "& > article > h3": {
         mb: '1rem'
     }
   },
