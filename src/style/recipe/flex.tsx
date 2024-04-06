@@ -13,6 +13,7 @@ export const flex = cva({
             endX: {alignItems: 'center', justifyContent: 'end'},
             startX: {alignItems: 'center', justifyContent: 'start'},
             spaceBetween: {alignItems: 'center', justifyContent: 'space-between'},
+            spaceAround: {alignItems: 'center', justifyContent: 'space-around'},
             spaceBetweenStart: {alignItems: 'start', justifyContent: 'space-between'},
             spaceEvenlyStart: {alignItems: 'start', justifyContent: 'space-evenly'},
             spaceAroundStart: {alignItems: 'start', justifyContent: 'space-around'},
