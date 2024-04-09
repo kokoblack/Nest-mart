@@ -24,3 +24,7 @@ body {
 .range::-moz-range-track {
   background: linear-gradient(#3bb77e, #e9ecef);
 }
+
+.positionCenter {
+  transform: translate(-50%, -50%);
+}

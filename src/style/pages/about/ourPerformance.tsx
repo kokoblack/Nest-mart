@@ -69,8 +69,13 @@ export const ourPerformanceContent = css.raw({
 
   "@media screen and (max-width: 1119px)": {
     w: "100%",
+    textAlign: 'center',
 
     "& > p": {
+      textAlign: "center",
+    },
+
+    "& > article > h3": {
       textAlign: "center",
     },
   },
