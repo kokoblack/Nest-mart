@@ -4,6 +4,8 @@ import { flex } from "../../style/recipe/flex";
 import aboutImg from "../../assets/about-5.png";
 import {
   ourPerformanceArticleCont,
+  ourPerformanceBanner,
+  ourPerformanceBannerTextCont,
   ourPerformanceCont,
   ourPerformanceContent,
   ourPerformanceFirstSection,
@@ -39,7 +41,12 @@ const OurPerformance = () => {
         </div>
       </section>
 
-      <section className={css(flex.raw({gap: 'xlg', type: 'spaceBetween'}), ourPerformanceSecondSection)}>
+      <section
+        className={css(
+          flex.raw({ gap: "xlg", type: "spaceBetween" }),
+          ourPerformanceSecondSection
+        )}
+      >
         <article className={css(ourPerformanceArticleCont)}>
           <h3>Who we are</h3>
           <p>
@@ -66,6 +73,41 @@ const OurPerformance = () => {
             odio orci ultrices in.
           </p>
         </article>
+      </section>
+
+      <section
+        className={css(
+          flex.raw({ type: "spaceAround", columnGap: 'xlg', rowGap: 'xxl', wrap: 'yes' }),
+          ourPerformanceBanner,
+          {
+            bgImage: "url(assets/Main5.png)",
+          }
+        )}
+      >
+        <div className={css(ourPerformanceBannerTextCont)}>
+          <p>5+</p>
+          <p>Glorious years</p>
+        </div>
+
+        <div className={css(ourPerformanceBannerTextCont)}>
+          <p>10000+</p>
+          <p>Happy clients</p>
+        </div>
+
+        <div className={css(ourPerformanceBannerTextCont)}>
+          <p>10000+</p>
+          <p>Projects complete</p>
+        </div>
+
+        <div className={css(ourPerformanceBannerTextCont)}>
+          <p>3000+</p>
+          <p>Team advisor</p>
+        </div>
+
+        <div className={css(ourPerformanceBannerTextCont)}>
+          <p>90000+</p>
+          <p>Products Sale</p>
+        </div>
       </section>
     </section>
   );

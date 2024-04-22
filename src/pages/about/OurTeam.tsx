@@ -54,10 +54,6 @@ const OurTeam = () => {
           <OurTeamCard img={img1} name="Dilan Specter" title="Head Engineer" />
         </section>
       </section>
-
-      <section className={css({pt: '5rem'})}>
-        <Banner id={0} />
-      </section>
     </section>
   );
 };
