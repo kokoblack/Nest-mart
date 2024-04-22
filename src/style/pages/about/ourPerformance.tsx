@@ -1,12 +1,12 @@
 import { css } from "../../../../styled-system/css";
 
 export const ourPerformanceCont = css.raw({
-  px: ["1rem", "1rem", "1.5rem", "7%"],
-  py: ["1rem", "1rem", "1.5rem", "2rem"],
   w: "100%",
 });
 
 export const ourPerformanceFirstSection = css.raw({
+  px: ["1rem", "1rem", "1.5rem", "7%"],
+  py: ["1rem", "1rem", "1.5rem", "2rem"],
   mb: "3rem",
 
   "@media screen and (max-width: 1119px)": {
@@ -69,7 +69,7 @@ export const ourPerformanceContent = css.raw({
 
   "@media screen and (max-width: 1119px)": {
     w: "100%",
-    textAlign: 'center',
+    textAlign: "center",
 
     "& > p": {
       textAlign: "center",
@@ -90,6 +90,9 @@ export const ourPerformanceContent = css.raw({
 });
 
 export const ourPerformanceSecondSection = css.raw({
+  px: ["1rem", "1rem", "1.5rem", "7%"],
+  py: ["1rem", "1rem", "1.5rem", "2rem"],
+
   "@media screen and (max-width: 479px)": {
     flexDirection: "column",
   },
@@ -118,4 +121,43 @@ export const ourPerformanceArticleCont = css.raw({
     w: "auto",
     textAlign: "center",
   },
+});
+
+export const ourPerformanceBanner = css.raw({
+  w: "100%",
+  bgSize: "cover",
+  bgPosition: "center",
+  py: ["4rem"],
+  px: ["1rem"],
+  my: ['1rem'],
+  rounded: '1rem'
+});
+
+export const ourPerformanceBannerTextCont = css.raw({
+  // w:'fit-content',
+  flexShrink: 1,
+  textAlign: 'center',
+  color: "secondary.500",
+
+  "& > p:first-child": {
+    fontSize: "3rem",
+    fontWeight: "bold",
+    lineHeight: '3rem'
+  },
+
+  "& > p:last-child": {
+    fontSize: "1.2rem",
+  },
+
+  "@media screen and (max-width: 769px)": {
+    "& > p:first-child": {
+      fontSize: "2.5rem",
+      fontWeight: "bold",
+      lineHeight: '2.5rem'
+    },
+  
+    "& > p:last-child": {
+      fontSize: "1rem",
+    },
+  }
 });
