@@ -2,7 +2,7 @@ import { css } from "../../../../styled-system/css";
 
 export const ourTeamCont = css.raw({
   px: ["1rem", "1rem", "1.5rem", "7%"],
-  py: ["1rem", "1rem", "2rem", "3rem"],
+  pt: ["1rem", "1rem", "2rem", "3rem"],
   w: "100%",
   mb: '3rem',
 
@@ -13,6 +13,7 @@ export const ourTeamCont = css.raw({
     color: "secondary.100",
     textAlign: "center",
     mb: ["3rem"],
+    textDecoration: 'GrayText'
   },
 
   "@media screen and (max-width: 1119px)": {
