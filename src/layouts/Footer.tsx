@@ -7,7 +7,7 @@ import Support from "../components/layouts/Support";
 import DownloadCard from "../components/layouts/DownloadCard";
 import { css } from "../../styled-system/css";
 import { flex } from "../style/recipe/flex";
-import { contactContainer, copyRight, footerContainer, sectionOne, sectionTwo, socials, socialsIcons } from "../style/footer/footer";
+import { contactContainer, copyRight, footerContainer, sectionOne, sectionTwo, socials, socialsIcons } from "../style/layout/footer/footer";
 import FooterInfo from "../components/layouts/FooterInfo";
 
 const Footer = () => {

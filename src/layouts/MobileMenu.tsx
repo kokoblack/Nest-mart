@@ -9,7 +9,7 @@ import {
   image,
   optionContainer,
   text,
-} from "../style/mobile-menu/mobileMenu";
+} from "../style/layout/mobile-menu/mobileMenu";
 import { flex } from "../style/recipe/flex";
 import { menuActive } from "../style/global";
 

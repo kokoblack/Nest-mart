@@ -10,7 +10,7 @@ import {
   HeroIndicatorCont,
   HeroNavigation,
   HeroSmallText,
-} from "../../style/home/hero";
+} from "../../style/pages/home/hero";
 import { flex } from "../../style/recipe/flex";
 import { useEffect, useState, useRef } from "react";
 
@@ -86,7 +86,7 @@ const Hero = () => {
           right: [".5rem", ".5rem", ".5rem", ".5rem", "1rem"],
         })}
       >
-        <MdKeyboardArrowRight className="bounce" />
+        <MdKeyboardArrowRight />
       </span>
 
       <div className={css(HeroIndicatorCont, flex.raw({ columnGap: "xsm" }))}>

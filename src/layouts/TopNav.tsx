@@ -17,7 +17,7 @@ import {
   navMenuIcon,
   navImage,
   mobileMenuView,
-} from "../style/nav/topNav";
+} from "../style/layout/nav/topNav";
 import { flex } from "../style/recipe/flex";
 import { css } from "../../styled-system/css";
 import { marginLeft, hide, show } from "../style/global";

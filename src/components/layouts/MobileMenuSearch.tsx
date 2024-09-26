@@ -1,7 +1,7 @@
 import { CiSearch } from "react-icons/ci";
 import { flex } from "../../style/recipe/flex";
 import { css } from "../../../styled-system/css";
-import { container, input, searchIcon } from "../../style/mobile-menu/mobileMenuSearch";
+import { container, input, searchIcon } from "../../style/layout/mobile-menu/mobileMenuSearch";
 import { button } from "../../style/recipe/button";
 
 const MobileMenuSearch = () => {
