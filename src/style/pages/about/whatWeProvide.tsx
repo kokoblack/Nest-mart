@@ -11,7 +11,7 @@ export const whatWeProvideCont = css.raw({
     lineHeight: "2rem",
     fontWeight: "bold",
     color: "secondary.100",
-    mb: ["3rem"],
+    mb: [".3rem"],
   },
 });
 
