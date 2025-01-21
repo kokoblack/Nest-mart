@@ -8,7 +8,7 @@ import {
   dailyBestSellsCardImg,
   dailyBestSellsCardRange,
   dailyBestSellsCardSpecial,
-} from "../../style/component/home/dailyBestSellsCard";
+} from "../../style/pages/home/dailyBestSellCards";
 
 const DailyBestSellsCard = ({
   name,
