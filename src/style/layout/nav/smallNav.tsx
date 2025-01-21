@@ -5,7 +5,7 @@ export const container = css.raw({
     w: '100%',
     borderBottom: '1px solid #dedfe2',
     color: 'secondary.100',
-    fontSize: '.825rem',
+    fontSize: '.875rem',
     fontWeight: 'bold',
 
     '@media screen and (max-width: 1129px)': {

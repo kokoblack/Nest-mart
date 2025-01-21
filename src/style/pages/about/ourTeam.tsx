@@ -12,7 +12,7 @@ export const ourTeamCont = css.raw({
     fontWeight: "bold",
     color: "secondary.100",
     textAlign: "center",
-    mb: ["3rem"],
+    mb: [".3rem"],
     textDecoration: 'GrayText'
   },
 
@@ -23,6 +23,7 @@ export const ourTeamCont = css.raw({
 
 export const ourTeamContentCont = css.raw({
   w: "100%",
+  mt: "1rem",
 
   "@media screen and (max-width: 1119px)": {
     flexDirection: "column",

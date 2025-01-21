@@ -12,13 +12,12 @@ import { button } from "../../style/recipe/button";
 import { flex } from "../../style/recipe/flex";
 import img from "../../assets/Main.png";
 import img1 from "../../assets/Main2.png";
-import banner from "../../assets/section5.png";
-import Banner from "../../components/global/Banner";
 
 const OurTeam = () => {
   return (
     <section className={css(ourTeamCont)}>
       <h3>Our Team</h3>
+      <div className="wavy-line"></div>
 
       <section className={css(flex.raw({ gap: "xlg" }), ourTeamContentCont)}>
         <section className={css(ourTeamFirstSection)}>
@@ -44,7 +43,7 @@ const OurTeam = () => {
             </p>
           </article>
 
-          <button className={css(button.raw({}))}>View All Members</button>
+          <button className={css(button.raw({fontSize: 'md'}))}>View All Members</button>
         </section>
 
         <section
