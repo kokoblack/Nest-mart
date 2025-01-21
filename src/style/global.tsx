@@ -1,5 +1,4 @@
 import { css } from "../../styled-system/css";
-import { defineKeyframes } from "@pandacss/dev";
 
 export const marginRight = css.raw({
   mr: "auto",

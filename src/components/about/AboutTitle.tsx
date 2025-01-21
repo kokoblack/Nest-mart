@@ -1,5 +1,4 @@
 import { css } from "../../../styled-system/css";
-import { zigzagLiine } from "../../style/global";
 import { flex } from "../../style/recipe/flex";
 
 const AboutTitle = ({ title }: { title: string }) => {

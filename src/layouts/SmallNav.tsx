@@ -49,7 +49,7 @@ const SmallNav = () => {
                 { cursor: "pointer" },
                 option.index === active ? smallNavActive : null
               )}
-              onClick={() => setActive((prev) => (prev = option.index))}
+              onClick={() => setActive(() => (option.index))}
             >
               <p>{option.name}</p>
               <span>{option.icon}</span>

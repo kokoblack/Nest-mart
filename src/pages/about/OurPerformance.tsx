@@ -1,4 +1,3 @@
-import React from "react";
 import { css } from "../../../styled-system/css";
 import { flex } from "../../style/recipe/flex";
 import aboutImg from "../../assets/about-5.png";
