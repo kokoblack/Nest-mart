@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import TitleLink from "../../components/global/TitleLink";
 import DailyBestSellsCard from "../../components/home/DailyBestSellsCard";
 import { TiArrowRight } from "react-icons/ti";

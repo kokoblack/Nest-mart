@@ -35,7 +35,7 @@ const MobileMenu = () => {
                 optionContainer,
                 data.index === active ? menuActive : null
               )}
-              onClick={() => setActive((prev) => (prev = data.index))}
+              onClick={() => setActive(() => (data.index))}
             >
               <span className={icon}>{data.icon}</span>
               <p className={text}>{data.name}</p>

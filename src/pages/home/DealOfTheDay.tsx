@@ -1,4 +1,3 @@
-import React from "react";
 import DealOfThDayCard from "../../components/home/DealOfThDayCard";
 import { css } from "../../../styled-system/css";
 import { flex } from "../../style/recipe/flex";
