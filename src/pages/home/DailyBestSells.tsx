@@ -10,7 +10,7 @@ import {
   dailyBestSellsCardSection,
   dailyBestSellsCont,
   dailyBestSellsNature,
-} from "../../style/pages/home/dailyBestSells";
+} from "../../style/pages/home/dailyBestSells"; 
 
 const DailyBestSells = () => {
   const [productType, setProductType] = useState("Featured");
