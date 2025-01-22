@@ -17,6 +17,7 @@ export const flex = cva({
             spaceBetweenStart: {alignItems: 'start', justifyContent: 'space-between'},
             spaceEvenlyStart: {alignItems: 'start', justifyContent: 'space-evenly'},
             spaceAroundStart: {alignItems: 'start', justifyContent: 'space-around'},
+            topLeft: {alignItems: 'start', justifyContent: 'start'},
         },
         rowGap: {
             sm: {rowGap: '.5rem'},
@@ -53,4 +54,4 @@ export const flex = cva({
     }
 })
 
-export type FlexVariants = RecipeVariantProps<typeof flex>
+export type FlexVariants = RecipeVariantProps<typeof flex> 
