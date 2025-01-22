@@ -1,5 +1,5 @@
 import { css } from "../../../styled-system/css";
-import main3 from "../../assets/main3.png";
+import main3 from "../../assets/Main3.png";
 import {
   contactFormArticle,
   contactFormButon,
@@ -56,7 +56,7 @@ const ContactForm = () => {
 
         <section className={css(contactFormSecondSection)}>
           <figure>
-            <img src={main3} alt="" />
+            <img src={main3} alt="image" />
           </figure>
         </section>
       </div>
