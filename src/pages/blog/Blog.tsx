@@ -1,11 +1,11 @@
-import { blogdata } from "../../data/blogdata"
-
+import Banner2 from "../../components/global/Banner2";
 
 const Blog = () => {
-    const data = blogdata.length
   return (
-    <div>{data}</div>
-  )
-}
+    <main>
+      <Banner2 text="Blog" />
+    </main>
+  );
+};
 
-export default Blog
+export default Blog;
