@@ -21,3 +21,9 @@ export type DOTDProduct = {
   image?: string;
   id?: number
 };
+
+export type blogdatatype = {
+  img: string,
+  category: string,
+  title: string,
+}[]
