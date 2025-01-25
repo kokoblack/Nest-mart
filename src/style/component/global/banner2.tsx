@@ -42,7 +42,7 @@ export const banner2tag = css.raw({
   py: ".5rem",
   bgColor: "white",
   rounded: "3rem",
-  boxShadow: "1px 1px 8px #B6B6B6",
+  boxShadow: "2px 2px 8px #e0dcdc",
 
   "& > span": {
     color: "secondary.400",

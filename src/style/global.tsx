@@ -46,3 +46,20 @@ export const zigzagLiine = css.raw({
     backgroundRepeat: "repeat-x",
   },
 });
+
+export const SidebarCardCont = css.raw({
+    color: "secondary.100",
+    fontSize: "0.875rem",
+    w: "20rem",
+    fontWeight: "500",
+    px: "1.5rem",
+    py: ".5rem",
+    boxShadow: "2px 2px 6px #ECECEC",
+    rounded: "15px",
+    border: "1px solid #F2F3F4",
+
+    "& > section:first-child": {
+        mt: "1.2rem"
+    }
+    
+})

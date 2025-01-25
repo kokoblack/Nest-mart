@@ -22,6 +22,7 @@ export const flex = cva({
         rowGap: {
             sm: {rowGap: '.5rem'},
             md: {rowGap: '1rem'},
+            lg: {rowGap: '1.5rem'},
             xxl: {rowGap: '2rem'}
         },
         columnGap: {

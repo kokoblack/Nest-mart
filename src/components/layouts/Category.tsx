@@ -3,10 +3,10 @@ import { cat1, cat2, cat3, cat4, cat5 } from ".";
 import { css } from "../../../styled-system/css";
 import { flex } from "../../style/recipe/flex";
 import {
-  categoryCont,
   categoryNumCount,
   categorySection,
 } from "../../style/component/layouts/category";
+import { SidebarCardCont } from "../../style/global";
 
 const Category = () => {
   const catDetail = [
@@ -32,7 +32,7 @@ const Category = () => {
     },
   ];
   return (
-    <section className={css(categoryCont)}>
+    <section className={css(SidebarCardCont)}>
       <Headline title="Category" />
 
       {catDetail.map((detail, index) => (
