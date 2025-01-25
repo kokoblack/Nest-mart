@@ -49,7 +49,7 @@ const SmallNav = () => {
                 { cursor: "pointer" },
                 option.index === active ? smallNavActive : null
               )}
-              onClick={() => setActive(() => (option.index))}
+              onClick={() => setActive(() => option.index)}
             >
               <p>{option.name}</p>
               <span>{option.icon}</span>
@@ -60,7 +60,14 @@ const SmallNav = () => {
         </ul>
       </nav>
 
-      <div className={css(marginLeft)}><Support iconColor="secondary.100" phone="1900 - 888" time="24/7 Support Center" icon={<TfiHeadphoneAlt/>} /></div>
+      <div className={css(marginLeft)}>
+        <Support
+          iconColor="secondary.100"
+          phone="1900 - 888"
+          time="24/7 Support Center"
+          icon={<TfiHeadphoneAlt />}
+        />
+      </div>
     </header>
   );
 };
