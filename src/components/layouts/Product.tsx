@@ -1,34 +1,10 @@
 import Headline from "../global/Headline";
-import { FaStar } from "react-icons/fa";
 import { Article3, Article4, Article5, Article6 } from ".";
 import { css } from "../../../styled-system/css";
-import { flex } from "../../style/recipe/flex";
 import { productCont } from "../../style/component/layouts/product";
 import ProductsCard from "./ProductsCard";
 
 const Product = ({ text }: { text: string }) => {
-  const productDetails = [
-    {
-      name: "Chen Cardigan",
-      price: "$99.50",
-      img: Article3,
-    },
-    {
-      name: "Chen Sweater",
-      price: "$89.50",
-      img: Article4,
-    },
-    {
-      name: "Colorful Jacket",
-      price: "$25",
-      img: Article5,
-    },
-    {
-      name: "Lorem ipsum",
-      price: "$25",
-      img: Article6,
-    },
-  ];
   return (
     <section className={css(productCont)}>
       <Headline title={text} />
