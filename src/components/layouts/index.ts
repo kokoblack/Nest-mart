@@ -1,0 +1,5 @@
+export {default as cat1} from "../../assets/cat1.png"
+export {default as cat2} from "../../assets/cat2.png"
+export {default as cat3} from "../../assets/cat3.png"
+export {default as cat4} from "../../assets/cat4.png"
+export {default as cat5} from "../../assets/cat5.png"
