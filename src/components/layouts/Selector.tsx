@@ -1,5 +1,9 @@
 import { css } from "../../../styled-system/css";
-import "../../style/component/layouts/customeInput.css";
+import {
+  selectorBox,
+  selectorCont,
+  selectorInput,
+} from "../../style/component/layouts/selector";
 
 const Selector = ({
   value,
@@ -21,10 +25,15 @@ const Selector = ({
       </legend>
 
       {value.map((value, index) => (
-        <label htmlFor={value.id} className="container" key={index}>
+        <label htmlFor={value.id} className={css(selectorCont)} key={index}>
           {value.value}
-          <input className="" type="radio" name={title} id={value.id} />
-          <span className="checkmark"></span>
+          <input
+            className={[css(selectorInput), "peer"].join(" ")}
+            type="radio"
+            name={title}
+            id={value.id}
+          />
+          <span className={css(selectorBox)}></span>
         </label>
       ))}
     </fieldset>
