@@ -101,7 +101,7 @@ export const mobileMenuView = css.raw({
   // w: "50%",
   display: "block",
   position: "absolute",
-  right: "-1rem",
+  right: "0",
   top: 0,
   zIndex: "100",
   boxSizing: "border-box",

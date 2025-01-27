@@ -12,6 +12,8 @@ export const container = css.raw({
     bg: 'secondary.500',
     borderTopLeftRadius: '6px',
     borderBottomLeftRadius:'6px',
+    // overflow: "scroll",
+    // scrollbar: "hidden",
 
     '@media screen and (max-width: 319px)': {
         w: '100vw',
@@ -20,8 +22,8 @@ export const container = css.raw({
 })
 
 export const image = css({
-    w: 'auto',
-    h: '2.5rem',
+    w: '9rem',
+    h: 'auto',
     mx: 'auto',
     mb: '1rem',
 })

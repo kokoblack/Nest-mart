@@ -121,7 +121,7 @@ const TopNavBar = () => {
         </nav>
       </section>
 
-      <section className={css(mobileMenuView, view ? show : hide)}>
+      <section id="show" className={css(mobileMenuView, view ? show : hide)}>
         <MobileMenu />
       </section>
     </header>

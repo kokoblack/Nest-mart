@@ -7,6 +7,7 @@ export const homeCont = css.raw({
 
 export const style2 = css.raw({
   overflowX: "scroll",
-  // justifyContent: "flex-start",
+  scrollBehavior: "smooth",
   mb: "3rem",
+  scrollbar: "hidden"
 });
