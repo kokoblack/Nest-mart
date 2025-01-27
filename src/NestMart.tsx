@@ -6,14 +6,15 @@ import SmallNav from "./layouts/SmallNav";
 import Footer from "./layouts/Footer";
 import { css } from "../styled-system/css";
 import { paddingView } from "./style/global";
+import MobileMenuSearch from "./components/layouts/MobileMenuSearch";
 
 function NestMart() {
   const divRef = useRef<HTMLDivElement>(null);
-  const [sticky, setSticky] = useState(0)
+  const [sticky, setSticky] = useState(0);
 
   useEffect(() => {
-    setSticky(divRef.current?.offsetHeight!)
-    
+    setSticky(divRef.current?.offsetHeight!);
+
     const handleScroll = () => {
       if (window.scrollY >= sticky!) {
         divRef.current?.classList.add("sticky");
@@ -41,6 +42,9 @@ function NestMart() {
       >
         <TopNavBar />
         <SmallNav />
+        <section className={css({py: ".5rem", borderBottom: "1px solid #dedfe2", hideFrom: "769px",})}>
+          <MobileMenuSearch />
+        </section>
       </div>
       <RouterProvider router={router} />
       <Footer />

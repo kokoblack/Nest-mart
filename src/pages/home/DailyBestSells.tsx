@@ -33,7 +33,7 @@ const DailyBestSells = () => {
 
       <section
         ref={divRef}
-        className={css(flex.raw({ columnGap: "lg" }), {
+        className={css(flex.raw({columnGap: "xlg"}), {
           boxSizing: "border-box",
           w: "100%",
           justifyContent: "space-between",

@@ -9,7 +9,7 @@ export const dealOfTheDayCardCont = css.raw({
     position: 'relative',
     w: 'fit-content',
     rounded: '15px',
-
+    mb: "7rem",
     "@media screen and (max-width: 767px)": {
         px: "1rem",
         py: '4rem'
@@ -51,6 +51,7 @@ export const dealOfTheDayCardSecondSection = css.raw({
     py: "1.6rem",
     rounded: '10px',
     boxShadow: '2px 4px 6px #B6B6B6',
+
 
     "@media screen and (max-width: 767px)": {
         bottom: '-6rem',

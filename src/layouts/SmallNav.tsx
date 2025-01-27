@@ -55,8 +55,6 @@ const SmallNav = () => {
               <span>{option.icon}</span>
             </li>
           ))}
-
-          <li className={css({ cursor: "pointer" })}>Contact</li>
         </ul>
       </nav>
 

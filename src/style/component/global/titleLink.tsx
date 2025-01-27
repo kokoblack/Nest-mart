@@ -7,7 +7,7 @@ export const titleLinkContainer = css.raw({
   fontWeight: "bold",
   color: "secondary.100",
 
-  "@media screen and (max-width: 991px)": {
+  "@media screen and (max-width: 992px)": {
     flexDirection: "column",
     alignItems: "start",
     gap: "1rem",
@@ -18,12 +18,12 @@ export const titleLinkContainer = css.raw({
 
     "& > nav": {
       overflowX: "scroll",
-      width: "90%",
+      width: "100%",
       justifyContent: "flex-start",
       px: ".2rem",
 
       _scrollbar: {
-        w: "0px",
+        display: "none"
       },
     },
 

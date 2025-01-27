@@ -8,7 +8,7 @@ import {
   dailyBestSellsCardImg,
   dailyBestSellsCardRange,
   dailyBestSellsCardSpecial,
-} from "../../style/pages/home/dailyBestSellCards";
+} from "../../style/component/home/dailyBestSellCards";
 
 const DailyBestSellsCard = ({
   name,
@@ -47,7 +47,7 @@ const DailyBestSellsCard = ({
       </p>
       <p
         className={css({
-          fontSize: ".95rem",
+          fontSize: ".875rem",
           lineHeight: "1rem",
           color: "secondary.100",
           fontWeight: "bold",
@@ -80,7 +80,7 @@ const DailyBestSellsCard = ({
           lineHeight: 0
         })}
       >
-        <p className={css({ color: "primary.100", fontSize: "1.05rem" })}>
+        <p className={css({ color: "primary.100", fontSize: ".95rem" })}>
           {currentPrice}
         </p>
         <p
@@ -99,7 +99,7 @@ const DailyBestSellsCard = ({
         className={css({
           color: "secondary.100",
           fontFamily: "lato",
-          fontSize: ".8rem",
+          fontSize: ".9rem",
           fontWeight: '700',
         })}
       >

@@ -24,6 +24,7 @@ import { marginLeft, hide, show } from "../style/global";
 import TopNavIcon from "../components/layouts/TopNavIcon";
 import MobileMenu from "./MobileMenu";
 import { useState } from "react";
+import MobileMenuSearch from "../components/layouts/MobileMenuSearch";
 
 const TopNavBar = () => {
   const [view, setView] = useState(false);

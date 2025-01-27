@@ -3,6 +3,7 @@ import { css } from "../../../../styled-system/css";
 export const dailyBestSellsCont = css.raw({
   w: "100%",
   boxSizing: "border-box",
+  mb: "4rem",
 
   "@media screen and (max-width: 767px)": {
     mb: "3rem",
@@ -14,8 +15,7 @@ export const dailyBestSellsNature = css.raw({
   pl: "2rem",
   pr: "3.5rem",
   pt: "3rem",
-  pb: "9.5rem",
-  mb: "4rem",
+  pb: "7.8rem",
   w: "21rem",
   rounded: "15px",
   bgPosition: "center",
@@ -30,47 +30,21 @@ export const dailyBestSellsNature = css.raw({
     mb: ["2.5rem", "2.5rem", "2.5rem", "3.5rem", "4.55rem"],
   },
 
-  "@media screen and (max-width: 991px)": {
-    w: "11rem",
-    pr: "2rem",
-    pb: '7.2rem'
-  },
-
-  "@media screen and (max-width: 767px)": {
+  "@media screen and (max-width: 992px)": {
     display: 'none'
   },
 });
 
 export const dailyBestSellsCardSection = css.raw({
   w: "70%",
+  boxSizing: "border-box",
   overflowX: "scroll",
   scrollBehavior: "smooth",
-  flexShrink: "0",
   justifyContent: "flex-start",
   alignItems: "stretch",
   mr: ".3rem",
 
-  _scrollbar: {
-    display: "none",
-  },
-
-  "@media screen and (max-width: 1273px)": {
-    w: "65%",
-  },
-
-  "@media screen and (max-width: 1100px)": {
-    w: "60%",
-  },
-
-  "@media screen and (max-width: 991px)": {
-    w: "75%",
-  },
-
-  "@media screen and (max-width: 863px)": {
-    w: "70%",
-  },
-
-  "@media screen and (max-width: 767px)": {
+  "@media screen and (max-width: 992px)": {
     w: "100%",
   },
 });

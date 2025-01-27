@@ -7,7 +7,7 @@ import DealOfTheDay from "./DealOfTheDay";
 import Banner from "../../components/global/Banner";
 import FeaturedBigCard from "../../components/home/FeaturedBigCard";
 import { flex } from "../../style/recipe/flex";
-import { homeCont, style, style2, style3 } from "../../style/pages/home/home";
+import { homeCont, style2 } from "../../style/pages/home/home";
 
 const Home = () => {
   const title = [
@@ -19,14 +19,9 @@ const Home = () => {
   return (
     <main className={css(homeCont)}>
       <Hero />
+      <FeaturedCategories />
 
-      <section className={css(style)}>
-        <FeaturedCategories />
-      </section>
-
-      <section
-        className={css(flex.raw({ columnGap: "md" }), style2)}
-      >
+      <section className={css(flex.raw({ columnGap: "md", type: "spaceBetween" }), style2)}>
         <FeaturedBigCard title={title[0]} num={1} />
         <FeaturedBigCard title={title[1]} num={2} />
         <FeaturedBigCard title={title[2]} num={3} />
@@ -35,10 +30,6 @@ const Home = () => {
       <PopularProduct />
       <DailyBestSells />
       <DealOfTheDay />
-
-      <section className={css(style3)}>
-        <FeaturedCategories />
-      </section>
 
       <Banner id={1} />
     </main>
