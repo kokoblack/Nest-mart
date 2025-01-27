@@ -21,7 +21,7 @@ const DealOfTheDay = () => {
         </div>
       </section>
 
-      <section className={css(flex.raw({columnGap: 'md', wrap: 'yes'}), DealOfTheDaySecondCont)}>
+      <section className={css(flex.raw({columnGap: 'md',}), DealOfTheDaySecondCont)}>
         {DOTDProduct.map((data) => (<DealOfThDayCard key={data.id} {...data}/>))}
       </section>
 

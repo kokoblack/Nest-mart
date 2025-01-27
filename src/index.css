@@ -29,61 +29,7 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.input-radio {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-}
 
-/* Style the custom radio button */
-.custom-radio {
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  border: 2px solid #CED4DA;
-  border-radius: 2px; /* Use 0 if you want a perfect square */
-  cursor: pointer;
-  top: 0;
-  left: 0;
-}
-
-.custom-radio:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* When the radio button is checked */
-.input-radio:checked ~ .custom-radio:after {
-  display: block
-}
-
-.custom-radio:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-/* Add an inner checkmark or dot */
-/* .input-radio:checked + .custom-radio::after {
-  content: '';
-  display: block;
-  width: 12px;
-  height: 12px;
-  background-color: white;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-} */
 
 .wavy-line {
   --s: 6px; /* size of the wave */

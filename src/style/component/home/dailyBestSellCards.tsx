@@ -1,19 +1,18 @@
 import { css } from "../../../../styled-system/css";
 
 export const dailyBestSellsCardContainer = css.raw({
-  w: ["14rem"],
+  w: ["13rem"],
   p: [".8rem"],
   rounded: "15px",
   bg: "secondary.500",
   border: "1px solid #ECECEC",
-  fontSize: ".8rem",
+  fontSize: ".75rem",
   color: "secondary.700",
   position: "relative",
 });
 
 export const dailyBestSellsCardImg = css.raw({
-  w: ["9rem", "9rem", "12rem"],
-  h: 'auto',
+  w: "10rem",
   mx: "auto",
 });
 

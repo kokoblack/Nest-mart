@@ -70,7 +70,7 @@ export const featuredIcon = css.raw({
 export const featuredSecondSection = css.raw({
   mb: ["2rem"],
   overflowX: "scroll",
-  justifyContent: "flex-start",
+  // justifyContent: "flex-start",
   scrollbar: 'hidden'
 });
 

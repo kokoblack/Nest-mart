@@ -92,7 +92,7 @@ const FeaturedCategories = () => {
       <section
         ref={divref}
         className={css(
-          flex.raw({ columnGap: "md", wrap: "no" }),
+          flex.raw({ columnGap: "md", wrap: "no", type: "spaceBetween"}),
           featuredSecondSection
         )}
       >

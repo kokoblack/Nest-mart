@@ -23,66 +23,62 @@ export const DealOfTheDayFirstCont = css.raw({
   },
 
   "@media screen and (max-width: 359px)": {
-    alignItems: 'start',
-    flexDirection: 'column',
-    gap: '1rem',
+    alignItems: "start",
+    flexDirection: "column",
+    gap: "1rem",
 
     "& div": {
       ml: "0",
     },
-
   },
 });
 
 export const DealOfTheDaySecondCont = css.raw({
-  mb: "8rem",
+  mb: "3rem",
   justifyContent: "space-around",
   rowGap: "9rem",
+  
 
   "@media screen and (max-width: 1140px)": {
-    "& > div:first-child": {
-      display: "none",
-    },
+    overflowX: "scroll",
+    scrollBehavior: "smooth",
+    justifyContent: "flex-start",
   },
 
-  "@media screen and (max-width: 876px) and (min-width: 768px)": {
-    "& > div:last-child": {
-      display: "none",
-    },
-  },
 
-  "@media screen and (max-width: 716px)": {
-    "& > div:last-child": {
-      display: "none",
-    },
-  },
+  // "@media screen and (max-width: 876px) and (min-width: 768px)": {
+  //   "& > div:last-child": {
+  //     display: "none",
+  //   },
+  // },
 
-  "@media screen and (max-width: 767px)": {
-    mb: "8rem",
-    rowGap: "8rem",
-  },
+  // "@media screen and (max-width: 716px)": {
+  //   "& > div:last-child": {
+  //     display: "none",
+  //   },
+  // },
 });
 
 export const DealOfTheDayThirdCont = css.raw({
-  justifyContent: 'space-around',
+  justifyContent: "space-around",
 
   "@media screen and (max-width: 1295px)": {
-    '& > section:first-child': {
-      display: 'none'
-    }
+    "& > section:first-child": {
+      display: "none",
+    },
   },
 
   "@media screen and (max-width: 990px)": {
-    '& > section:last-child': {
-      display: 'none'
-    }
+    "& > section:last-child": {
+      display: "none",
+    },
   },
 
   "@media screen and (max-width: 623px)": {
-    justifyContent: 'start',
-    
-    '& > section:nth-child(3)': {
-      display: 'none'
-    }
-  }
-})
+    justifyContent: "start",
+
+    "& > section:nth-child(3)": {
+      display: "none",
+    },
+  },
+});

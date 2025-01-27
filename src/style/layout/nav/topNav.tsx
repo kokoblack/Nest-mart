@@ -13,9 +13,14 @@ export const navContainer = css.raw({
   py: ["1rem", "1rem", "1rem", "1.5rem"],
   columnGap: "2%",
   w: "100%",
-  position: 'relative',
-  borderBottom: '1px solid #dedfe2',
-  boxSizing: 'border-box'
+  position: "relative",
+  borderBottom: "1px solid #dedfe2",
+  boxSizing: "border-box",
+
+  "@media screen and (max-width: 768px)": {
+    pb: ".5rem",
+    border: "none"
+  }
 });
 
 export const hr = css({
@@ -28,10 +33,11 @@ export const hr = css({
 export const navMenuIcon = css.raw({
   fontSize: "1.5rem",
   alignSelf: "center",
-  position: 'relative',
-  zIndex:'200',
+  position: "relative",
+  color: "primary.100",
+  zIndex: "200",
 
-  hideFrom: "768px",
+  hideFrom: "993px",
 });
 
 export const navImage = css({
@@ -92,10 +98,11 @@ export const navUserText = css({
 });
 
 export const mobileMenuView = css.raw({
-    display: 'block',
-    position: 'absolute',
-    right: '-1rem',
-    top: 0,
-    zIndex: '100',
-    boxSizing: 'border-box'
-})
+  // w: "50%",
+  display: "block",
+  position: "absolute",
+  right: "-1rem",
+  top: 0,
+  zIndex: "100",
+  boxSizing: "border-box",
+});

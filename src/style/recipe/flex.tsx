@@ -16,6 +16,7 @@ export const flex = cva({
             spaceAround: {alignItems: 'center', justifyContent: 'space-around'},
             spaceBetweenStart: {alignItems: 'start', justifyContent: 'space-between'},
             spaceEvenlyStart: {alignItems: 'start', justifyContent: 'space-evenly'},
+            spaceEvenly: {alignItems: 'center', justifyContent: 'space-evenly'},
             spaceAroundStart: {alignItems: 'start', justifyContent: 'space-around'},
             topLeft: {alignItems: 'start', justifyContent: 'start'},
         },
