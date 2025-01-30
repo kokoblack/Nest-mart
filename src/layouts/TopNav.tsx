@@ -17,7 +17,6 @@ import {
   navMenuIcon,
   navImage,
   mobileMenuView,
-  MenuShow,
   marginL,
 } from "../style/layout/nav/topNav";
 import { flex } from "../style/recipe/flex";
@@ -33,17 +32,6 @@ const TopNavBar = () => {
   const handleMobileMenuView = () => {
     setView((prevState) => !prevState);
   };
-
-  const navIcon = [
-    {
-      icon: <FiMenu />,
-      type: !view,
-    },
-    {
-      icon: <IoMdClose />,
-      type: view,
-    },
-  ];
 
   return (
     <header className={css(navContainer)}>
