@@ -30,6 +30,21 @@ export const hr = css({
   height: "1.3rem",
 });
 
+export const MenuShow = css.raw({
+  display: "block",
+
+  // '@media screen and (max-width: 359px)': {
+  //   ml: "1rem"
+  // }
+})
+
+export const marginL = css.raw({
+
+  '@media screen and (max-width: 359px)': {
+    ml: "1rem"
+  }
+})
+
 export const navMenuIcon = css.raw({
   fontSize: "1.5rem",
   alignSelf: "center",
@@ -105,4 +120,8 @@ export const mobileMenuView = css.raw({
   top: 0,
   zIndex: "100",
   boxSizing: "border-box",
+
+  '@media screen and (max-width: 359px)': {
+    w: "100%"
+  }
 });

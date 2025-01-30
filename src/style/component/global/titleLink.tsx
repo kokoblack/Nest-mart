@@ -13,7 +13,7 @@ export const titleLinkContainer = css.raw({
     gap: "1rem",
   },
 
-  "@media screen and (max-width: 479px)": {
+  "@media screen and (max-width: 549px)": {
     mb: "1rem",
 
     "& > nav": {

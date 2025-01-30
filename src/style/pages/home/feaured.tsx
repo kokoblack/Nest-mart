@@ -23,7 +23,6 @@ export const featuredFirstSection = css.raw({
 
     "& > nav > ul": {
       overflowX: "scroll",
-      width: "65%",
       justifyContent: "flex-start",
       scrollbar: "hidden",
 

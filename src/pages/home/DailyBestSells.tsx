@@ -7,15 +7,26 @@ import { button } from "../../style/recipe/button";
 import { product } from "../../data/product";
 import { flex } from "../../style/recipe/flex";
 import {
+  dailyBestSellsCardNavigation,
   dailyBestSellsCardSection,
+  dailyBestSellsCardSectionCont,
   dailyBestSellsCont,
   dailyBestSellsNature,
 } from "../../style/pages/home/dailyBestSells";
+import { MdKeyboardArrowRight } from "react-icons/md";
+import useUpdateScrollPosition from "../../hooks/useUpdateScrollPosition";
+import { MdKeyboardArrowLeft } from "react-icons/md";
+import { hide, show } from "../../style/global";
 
 const DailyBestSells = () => {
   const [productType, setProductType] = useState("Featured");
+  const [mouseEnter, setMouseEnter] = useState(false);
 
-  const divRef = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
+
+  const [handleBackwardClick, handleForwardClick] = useUpdateScrollPosition({
+    ref,
+  });
 
   const filterdProduct = product.filter((data) => {
     return data.cat === productType;
@@ -32,8 +43,7 @@ const DailyBestSells = () => {
       />
 
       <section
-        ref={divRef}
-        className={css(flex.raw({columnGap: "xlg"}), {
+        className={css(flex.raw({ columnGap: "xlg" }), {
           boxSizing: "border-box",
           w: "100%",
           justifyContent: "space-between",
@@ -60,18 +70,50 @@ const DailyBestSells = () => {
         </section>
 
         <section
-          className={css(
-            flex.raw({ columnGap: "lg" }),
-            dailyBestSellsCardSection
-          )}
+          className={css(dailyBestSellsCardSectionCont)}
+          onMouseEnter={() => setMouseEnter(true)}
+          onMouseLeave={() => setMouseEnter(false)}
         >
-          {productType !== "Featured"
-            ? filterdProduct.map((data, index) => (
-                <DailyBestSellsCard key={index} {...data} />
-              ))
-            : product.map((data, index) => (
-                <DailyBestSellsCard key={index} {...data} />
-              ))}
+          <div
+            ref={ref}
+            className={css(
+              flex.raw({ columnGap: "lg", type: "startY" }),
+              dailyBestSellsCardSection
+            )}
+          >
+            {productType !== "Featured"
+              ? filterdProduct.map((data, index) => (
+                  <DailyBestSellsCard key={index} {...data} />
+                ))
+              : product.map((data, index) => (
+                  <DailyBestSellsCard key={index} {...data} />
+                ))}
+
+            <span
+              onClick={handleBackwardClick}
+              className={css(
+                dailyBestSellsCardNavigation,
+                mouseEnter ? show : hide,
+                {
+                  left: "1rem",
+                }
+              )}
+            >
+              <MdKeyboardArrowLeft />
+            </span>
+            <span
+              onClick={handleForwardClick}
+              className={css(
+                dailyBestSellsCardNavigation,
+                mouseEnter ? show : hide,
+                {
+                  right: "1rem",
+                }
+              )}
+            >
+              <MdKeyboardArrowRight />
+            </span>
+          </div>
         </section>
       </section>
     </section>
