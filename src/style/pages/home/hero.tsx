@@ -37,7 +37,7 @@ export const HeroSmallText = css.raw({
 
 export const HeroNavigation = css.raw({
   p: ".4rem",
-  fontSize: "1.2rem",
+  fontSize: "1.3rem",
   rounded: "100%",
   position: "absolute",
   bg: "secondary.900",
@@ -46,10 +46,8 @@ export const HeroNavigation = css.raw({
   top: "50%",
   translateY: "50%",
   cursor: "pointer",
-  transition: "all 2s ease-in ",
-  animation: "bounce 2s ease-in infinite alternate",
 
-  "@media screen and (max-width: 767px)": {
+  "@media screen and (max-width: 992px)": {
     display: "none",
   },
 });

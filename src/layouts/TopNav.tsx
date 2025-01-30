@@ -17,6 +17,8 @@ import {
   navMenuIcon,
   navImage,
   mobileMenuView,
+  MenuShow,
+  marginL,
 } from "../style/layout/nav/topNav";
 import { flex } from "../style/recipe/flex";
 import { css } from "../../styled-system/css";
@@ -31,7 +33,7 @@ const TopNavBar = () => {
   const handleMobileMenuView = () => {
     setView((prevState) => !prevState);
   };
- 
+
   const navIcon = [
     {
       icon: <FiMenu />,
@@ -45,15 +47,19 @@ const TopNavBar = () => {
 
   return (
     <header className={css(navContainer)}>
-      {navIcon.map((data, index) => (
-        <span
-          key={index}
-          className={css(flex.raw(), navMenuIcon, data.type ? show : hide)}
-          onClick={handleMobileMenuView}
-        >
-          {data.icon}
-        </span>
-      ))}
+      <span
+        className={css(navMenuIcon, !view ? show : hide)}
+        onClick={handleMobileMenuView}
+      >
+        <FiMenu />
+      </span>
+
+      <span
+        className={css(navMenuIcon, marginL, view ? show : hide)}
+        onClick={handleMobileMenuView}
+      >
+        <IoMdClose />
+      </span>
 
       <figure className={css({ mr: ["0", "0", "0", "0", "auto"] })}>
         <img src={logo} className={navImage} />

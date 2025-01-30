@@ -15,8 +15,9 @@ export const container = css.raw({
     // overflow: "scroll",
     // scrollbar: "hidden",
 
-    '@media screen and (max-width: 319px)': {
-        w: '100vw',
+    '@media screen and (max-width: 359px)': {
+        pt: '.9rem',
+        w: "100%"
     },
 
 })
@@ -26,6 +27,11 @@ export const image = css({
     h: 'auto',
     mx: 'auto',
     mb: '1rem',
+
+    '@media screen and (max-width: 359px)': {
+        w: '8rem',
+    },
+
 })
 
 export const optionContainer = css.raw({

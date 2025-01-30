@@ -21,6 +21,7 @@ export const dailyBestSellsNature = css.raw({
   bgPosition: "center",
   bgSize: "cover",
   flexShrink: "0",
+  
 
   "& > p": {
     fontSize: ["2rem", "2rem", "2rem", "2rem", "2.5rem"],
@@ -31,12 +32,22 @@ export const dailyBestSellsNature = css.raw({
   },
 
   "@media screen and (max-width: 992px)": {
-    display: 'none'
+    display: "none",
+  },
+});
+
+export const dailyBestSellsCardSectionCont = css.raw({
+  w: "85%",
+  translate: 0,
+  overflow: "hidden",
+
+  "@media screen and (max-width: 992px)": {
+    w: "100%",
   },
 });
 
 export const dailyBestSellsCardSection = css.raw({
-  w: "70%",
+  w: "100%",
   boxSizing: "border-box",
   overflowX: "scroll",
   scrollBehavior: "smooth",
@@ -44,8 +55,23 @@ export const dailyBestSellsCardSection = css.raw({
   justifyContent: "flex-start",
   alignItems: "stretch",
   mr: ".3rem",
+});
+
+export const dailyBestSellsCardNavigation = css.raw({
+  p: ".4rem",
+  fontSize: "1.3rem",
+  rounded: "100%",
+  position: "fixed",
+  bg: "secondary.900",
+  color: "secondary.400",
+  zIndex: "3",
+  top: "50%",
+  translateY: "50%",
+  cursor: "pointer",
+  // transition: "all 2s ease-in ",
+  // animation: "bounce 2s ease-in infinite alternate",
 
   "@media screen and (max-width: 992px)": {
-    w: "100%",
+    display: "none",
   },
 });
