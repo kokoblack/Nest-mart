@@ -79,7 +79,7 @@ const FeaturedCategories = () => {
             ))}
           </ul>
         </nav>
-        <div className={css(flex.raw({ columnGap: "sm" }), featuredIconCont)}>
+        <div className={css(flex.raw({ columnGap: "sm", }), featuredIconCont)}>
           <span className={css(featuredIcon)}>
             <TiArrowLeft onClick={handleBackwardClick} />
           </span>
