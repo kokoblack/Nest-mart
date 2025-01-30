@@ -42,6 +42,7 @@ export const DealOfTheDaySecondCont = css.raw({
   "@media screen and (max-width: 1140px)": {
     overflowX: "scroll",
     scrollBehavior: "smooth",
+    scrollbar: "hidden",
     justifyContent: "flex-start",
   },
 

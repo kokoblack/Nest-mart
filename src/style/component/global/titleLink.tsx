@@ -32,3 +32,9 @@ export const titleLinkContainer = css.raw({
     },
   },
 });
+
+export const titleHeaderCont = css.raw({
+  "@media screen and (max-width: 992px)": {
+    w: "100%"
+  }
+})

@@ -40,6 +40,7 @@ export const dailyBestSellsCardSection = css.raw({
   boxSizing: "border-box",
   overflowX: "scroll",
   scrollBehavior: "smooth",
+  scrollbar: "hidden",
   justifyContent: "flex-start",
   alignItems: "stretch",
   mr: ".3rem",

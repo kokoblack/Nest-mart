@@ -12,7 +12,7 @@ export const featuredFirstSection = css.raw({
   fontSize: ["1.7rem", "1.7rem", "1.7rem", "1.9rem"],
   color: "secondary.100",
 
-  "@media screen and (max-width: 991px)": {
+  "@media screen and (max-width: 992px)": {
     flexDirection: "column",
     alignItems: "start",
     gap: "1rem",
@@ -23,7 +23,7 @@ export const featuredFirstSection = css.raw({
 
     "& > nav > ul": {
       overflowX: "scroll",
-      width: "70%",
+      width: "65%",
       justifyContent: "flex-start",
       scrollbar: "hidden",
 
@@ -35,22 +35,23 @@ export const featuredFirstSection = css.raw({
 });
 
 export const featureUlCont = css.raw({
-  fontSize: [".8rem", ".8rem", ".8rem", ".9rem", ".9rem"],
+  fontSize: ".9rem",
   fontWeight: "500",
 
-  "@media screen and (max-width: 991px)": {
-    // columnGap: "0px",
+  "@media screen and (max-width: 992px)": {
+    
   },
 });
 
 export const featuredIconCont = css.raw({
   ml: "auto",
 
-  "@media screen and (max-width: 991px)": {
+  "@media screen and (max-width: 992px)": {
     position: "absolute",
     bottom: "0",
     right: "0",
     ml: "0",
+    display: "none"
   },
 });
 
@@ -64,6 +65,7 @@ export const featuredIcon = css.raw({
 
   "@media screen and (max-width: 479px)": {
     p: ".15rem",
+    fontSize: "1.3rem"
   },
 });
 
