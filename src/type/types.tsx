@@ -8,8 +8,9 @@ export type Product = {
   color: string;
   type: string;
   image: string;
-  fullCat?: string
-  cat?: string
+  fullCat?: string;
+  cat?: string;
+  discount?: number;
 };
 
 export type DOTDProduct = {
@@ -19,11 +20,14 @@ export type DOTDProduct = {
   currentPrice: string;
   initialPrice: string;
   image?: string;
-  id?: number
+  id?: number;
 };
 
 export type blogdatatype = {
-  img: string,
-  category: string,
-  title: string,
-}[]
+  img: string;
+  category: string;
+  title: string;
+  readTime?: number;
+  views?: number;
+  date?: Date
+}[];
