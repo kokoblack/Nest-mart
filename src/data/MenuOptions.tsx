@@ -42,23 +42,23 @@ export const option: Option = [
     index: 4,
   },
   {
-    icon: <PiNotepad />,
-    name: "Pages",
-    index: 5,
-  },
-  {
     icon: <IoLanguageOutline />,
     name: "Language",
-    index: 6,
+    index: 5,
   },
   {
     icon: <MdOutlineReviews />,
     name: "Reviews",
-    index: 7,
+    index: 6,
   },
   {
     icon: <MdOutlineNoFood />,
     name: "Brand",
+    index: 7,
+  },
+  {
+    icon: <PiNotepad />,
+    name: "Contact",
     index: 8,
   },
 ];

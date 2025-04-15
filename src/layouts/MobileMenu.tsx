@@ -1,5 +1,4 @@
 import { useState } from "react";
-import MobileMenuSearch from "../components/layouts/MobileMenuSearch";
 import { option } from "../data/MenuOptions";
 import logo from "../assets/Header.png";
 import { css } from "../../styled-system/css";
@@ -9,7 +8,7 @@ import {
   image,
   optionContainer,
   text,
-} from "../style/mobile-menu/mobileMenu";
+} from "../style/layout/mobile-menu/mobileMenu";
 import { flex } from "../style/recipe/flex";
 import { menuActive } from "../style/global";
 
@@ -19,12 +18,14 @@ const MobileMenu = () => {
   return (
     <aside
       className={css(
-        container,
-        flex.raw({ vertical: "vertical", rowGap: "sm", type: "startY" })
+        container
+        // flex.raw({ vertical: "vertical", rowGap: "sm", type: "startY" })
       )}
     >
-      <img src={logo} alt="logo" className={image} />
-      <MobileMenuSearch />
+      <figure className={css({borderBottom: "1px solid #dedfe2", mb: '.5rem',})}>
+        <img src={logo} alt="logo" className={image} />
+      </figure>
+
       <nav className={css({ w: "100%" })}>
         <ul>
           {option?.map((data, index) => (
@@ -35,7 +36,7 @@ const MobileMenu = () => {
                 optionContainer,
                 data.index === active ? menuActive : null
               )}
-              onClick={() => setActive((prev) => (prev = data.index))}
+              onClick={() => setActive(() => data.index)}
             >
               <span className={icon}>{data.icon}</span>
               <p className={text}>{data.name}</p>

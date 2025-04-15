@@ -8,7 +8,7 @@ import {
 } from "../../style/component/home/productCard";
 import { flex } from "../../style/recipe/flex";
 import { button } from "../../style/recipe/button";
-import { ProductCardProps } from "../../type/types";
+import { Product } from "../../type/types";
 
 const ProductCard = ({
   name,
@@ -20,7 +20,7 @@ const ProductCard = ({
   currentPrice,
   brand,
   image,
-}: ProductCardProps) => {
+}: Product) => {
   return (
     <div className={css(productCardContainer)}>
       {type && (
@@ -45,7 +45,7 @@ const ProductCard = ({
       </p>
       <p
         className={css({
-          fontSize: ".95rem",
+          fontSize: ".875rem",
           lineHeight: "1rem",
           color: "secondary.100",
           fontWeight: "bold",
@@ -79,10 +79,11 @@ const ProductCard = ({
       <div
         className={css(flex.raw({ columnGap: "md" }), {
           fontWeight: "bold",
-          mt: ".8rem",
+          mt: ".5rem",
+          lineHeight: 0
         })}
       >
-        <p className={css({ color: "primary.100", fontSize: "1.05rem" })}>
+        <p className={css({ color: "primary.100", fontSize: ".95rem" })}>
           {currentPrice}
         </p>
         <p
@@ -100,13 +101,12 @@ const ProductCard = ({
               color: "green",
               px: "lg",
               py: "sm",
-              fontSize: "md",
               font: "lato",
             }),
-            { ml: "auto", lineHeight: ".5rem" }
+            { ml: "auto", lineHeight: ".5rem", fontSize: ".8rem" }
           )}
         >
-          <span className={css({ fontSize: "1.2rem" })}>
+          <span className={css({ fontSize: "1rem" })}>
             <IoCartOutline />
           </span>
           <p>Add</p>

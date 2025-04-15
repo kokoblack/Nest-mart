@@ -1,5 +1,4 @@
 import { css } from "../../styled-system/css";
-import { defineKeyframes } from "@pandacss/dev";
 
 export const marginRight = css.raw({
   mr: "auto",
@@ -32,5 +31,35 @@ export const paddingView = css.raw({
 export const stickyNav = css.raw({
   position: "fixed",
   top: 0,
-
 });
+
+export const zigzagLiine = css.raw({
+  "&::before": {
+    height: "29px",
+    width: "55px",
+    background:
+      "linear-gradient(135deg, white 35%, transparent 25%) -25px 0, linear-gradient(225deg, white 35%, transparent 25%) -25px 0, linear-gradient(315deg, white 35%, transparent 25%), linear-gradient(45deg, white 35%, transparent 25%)",
+    backgroundColor: "#ffcc00",
+    display: "block",
+    content: "",
+    backgroundSize: "16px 31px",
+    backgroundRepeat: "repeat-x",
+  },
+});
+
+export const SidebarCardCont = css.raw({
+    color: "secondary.100",
+    fontSize: "0.875rem",
+    w: "20rem",
+    fontWeight: "500",
+    px: "1.5rem",
+    py: ".5rem",
+    boxShadow: "2px 2px 6px #ECECEC",
+    rounded: "15px",
+    border: "1px solid #F2F3F4",
+
+    "& > section:first-child": {
+        mt: "1.2rem"
+    }
+    
+})

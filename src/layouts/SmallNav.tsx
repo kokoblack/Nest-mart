@@ -5,7 +5,7 @@ import { TfiHeadphoneAlt } from "react-icons/tfi";
 import { smallNavOptions } from "../data/SmallNav";
 import { css } from "../../styled-system/css";
 import { flex } from "../style/recipe/flex";
-import { container } from "../style/nav/smallNav";
+import { container } from "../style/layout/nav/smallNav";
 import { button } from "../style/recipe/button";
 import { smallNavActive, marginLeft } from "../style/global";
 import { useState } from "react";
@@ -49,18 +49,23 @@ const SmallNav = () => {
                 { cursor: "pointer" },
                 option.index === active ? smallNavActive : null
               )}
-              onClick={() => setActive((prev) => (prev = option.index))}
+              onClick={() => setActive(() => option.index)}
             >
               <p>{option.name}</p>
               <span>{option.icon}</span>
             </li>
           ))}
-
-          <li className={css({ cursor: "pointer" })}>Contact</li>
         </ul>
       </nav>
 
-      <div className={css(marginLeft)}><Support iconColor="secondary.100" phone="1900 - 888" time="24/7 Support Center" icon={<TfiHeadphoneAlt/>} /></div>
+      <div className={css(marginLeft)}>
+        <Support
+          iconColor="secondary.100"
+          phone="1900 - 888"
+          time="24/7 Support Center"
+          icon={<TfiHeadphoneAlt />}
+        />
+      </div>
     </header>
   );
 };

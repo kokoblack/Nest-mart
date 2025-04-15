@@ -4,42 +4,50 @@ type SmallNavOption = {
   icon: React.ReactNode;
   name: string;
   index: number;
+  path: string
 }[];
 
 export const smallNavOptions: SmallNavOption = [
   {
     icon: <MdOutlineKeyboardArrowDown />,
     name: "Home",
-    index: 0
+    index: 0,
+    path: "/"
   },
   {
     icon: <MdOutlineKeyboardArrowDown />,
     name: "About",
-    index: 1
+    index: 1,
+    path: "about"
   },
   {
     icon: <MdOutlineKeyboardArrowDown />,
     name: "Shop",
-    index: 2
+    index: 2,
+    path: "/"
   },
   {
     icon: <MdOutlineKeyboardArrowDown />,
     name: "Vendor",
-    index: 3
+    index: 3,
+    path: "/"
   },
   {
     icon: <MdOutlineKeyboardArrowDown />,
     name: "Mega menu",
-    index: 4
+    index: 4,
+    path: "/"
   },
   {
     icon: <MdOutlineKeyboardArrowDown />,
     name: "Blog",
-    index: 5
+    index: 5,
+    path: "blog"
   },
   {
     icon: <MdOutlineKeyboardArrowDown />,
-    name: "Pages",
-    index: 6
+    name: "Contact",
+    index: 6,
+    path: "/"
   },
 ];
