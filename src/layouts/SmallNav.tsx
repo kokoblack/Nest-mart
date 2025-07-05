@@ -10,6 +10,8 @@ import { button } from "../style/recipe/button";
 import { smallNavActive, marginLeft } from "../style/global";
 import { useState } from "react";
 import Support from "../components/layouts/Support";
+import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 const SmallNav = () => {
   const [active, setActive] = useState(0);
@@ -42,17 +44,18 @@ const SmallNav = () => {
       <nav>
         <ul className={css(flex.raw({ columnGap: "lg" }))}>
           {smallNavOptions.map((option, index) => (
-            <li
-              key={index}
-              className={css(
-                flex.raw({ columnGap: "sm" }),
-                { cursor: "pointer" },
-                option.index === active ? smallNavActive : null
-              )}
-              onClick={() => setActive(() => option.index)}
-            >
-              <p>{option.name}</p>
-              <span>{option.icon}</span>
+            <li key={index} onClick={() => setActive(() => option.index)}>
+              <Link
+                to={option.path}
+                className={css(
+                  flex.raw({ columnGap: "sm" }),
+                  { cursor: "pointer" },
+                  option.index === active ? smallNavActive : null
+                )}
+              >
+                <p>{option.name}</p>
+                <span>{option.icon}</span>
+              </Link>
             </li>
           ))}
         </ul>

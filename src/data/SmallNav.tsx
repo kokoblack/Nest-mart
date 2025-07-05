@@ -48,6 +48,6 @@ export const smallNavOptions: SmallNavOption = [
     icon: <MdOutlineKeyboardArrowDown />,
     name: "Contact",
     index: 6,
-    path: "/"
+    path: "contact"
   },
 ];
