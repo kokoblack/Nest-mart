@@ -10,7 +10,6 @@ import { button } from "../style/recipe/button";
 import { smallNavActive, marginLeft } from "../style/global";
 import { useState } from "react";
 import Support from "../components/layouts/Support";
-import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 
 const SmallNav = () => {
