@@ -1,23 +1,45 @@
 import { css } from "../../../styled-system/css";
+import {
+  blogContentCat,
+  blogContentContainer,
+  blogContententTitle,
+  blogContentHide,
+  blogContentSortContainer,
+} from "../../style/component/blog/blogContent";
 import { flex } from "../../style/recipe/flex";
 import { blogdatatype1 } from "../../type/types";
 
-const BlogContent = ({img, date, views, readTime, title, category}: blogdatatype1) => {
+const BlogContent = ({
+  img,
+  date,
+  views,
+  readTime,
+  title,
+  category,
+}: blogdatatype1) => {
   return (
-    <section className={css({w: 'fit-content', fontWeight: "500"})}>
+    <section
+      className={css(blogContentContainer, flex.raw({ vertical: "vertical" }))}
+    >
       <figure>
-        <img src={img} alt="pic1" />
+        <img src={img} alt="pic" />
       </figure>
 
-      <div className={css({textAlign: 'center', mt: "1rem"})}>
-        <p className={css({fontSize: ".85rem", color: "secondary.700", fontWeight: "700"})}>{category}</p>
-        <h3 className={css({fontSize: "1.5rem", color: "secondary.100", fontWeight: "700"})}>{title}</h3>
-        <div className={css({fontSize: ".8rem", color: "secondary.400"}, flex.raw({gap: "md"}))}>
-          <p>{date?.toLocaleString('en-US', {day: 'numeric', month: 'long', year: 'numeric'})}</p>
-          <p className={css({color: "#D2D2D2"})}>•</p>
-          <p>{views}</p>
-          <p className={css({color: "#D2D2D2"})}>•</p>
-          <p>{readTime}</p>
+      <div className={css({ textAlign: "center", mt: "1.5rem" })}>
+        <p className={css(blogContentCat)}>{category}</p>
+        <h3 className={css(blogContententTitle)}>{title}</h3>
+        <div className={css(blogContentSortContainer, flex.raw({ gap: "md" }))}>
+          <p>
+            {date?.toLocaleString("en-US", {
+              day: "numeric",
+              month: "long",
+              year: "numeric",
+            })}
+          </p>
+          <p className={css({ color: "#D2D2D2" })}>•</p>
+          <p>{views}k Views</p>
+          <p className={css({ color: "#D2D2D2" }, blogContentHide)}>•</p>
+          <p className={css(blogContentHide)}>{readTime} mins read</p>
         </div>
       </div>
     </section>

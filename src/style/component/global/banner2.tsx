@@ -11,7 +11,11 @@ export const banner2Container = css.raw({
   px: ["1rem", "1rem", "2rem", "3rem", "5rem"],
   py: ["2rem", "2rem", "2rem", "4rem"],
   bgImage: "url(assets/blogBanner.png)",
-  columnGap: "2rem"
+  columnGap: "2rem",
+
+  "@media screen and (max-width: 436px)": {
+    mb: "2rem"
+  }
 });
 
 export const banner2firstSection = css.raw({

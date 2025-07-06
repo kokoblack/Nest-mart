@@ -10,21 +10,18 @@ export const sortContainer = css.raw({
   color: 'secondary.600',
   fontWeight: "500",
   w: "fit-content",
-  cursor: "pointer"
-});
+  cursor: "pointer",
 
-// export const searchInput = css.raw({
-//   color: "secondary.600",
-//   fontWeight: "500",
-//   fontSize: ".9rem",
-//   w: "90%",
-//   outline: 'none',
-  
-//   _placeholder: {
-//     color: "secondary.600"
-//   }
-// });
+  "@media screen and (max-width: 436px)": {
+    fontSize: ".7rem",
+    p: ".7rem"
+  }
+});
 
 export const sortIcon = css.raw({
   fontSize: "1.2rem",
+
+  "@media screen and (max-width: 436px)": {
+    fontSize: "1rem",
+  }
 });

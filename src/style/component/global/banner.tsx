@@ -34,7 +34,9 @@ export const bannerBigText = css.raw({
   "@media screen and (max-width: 991px)": {
     '& > br': {
         display: 'none'
-    }
+    },
+
+    w: "80%"
   },
 });
 
