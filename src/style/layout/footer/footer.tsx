@@ -20,6 +20,13 @@ export const sectionOne = css.raw({
     alignItems: "center",
     textAlign: "center",
   },
+
+  // display: "grid",
+  // gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+  // rowGap: "2rem",
+  // justifyContent: "space-between",
+  // w: "100%",
+  // gridColumnGap: "1rem"
 });
 
 export const contactContainer = css.raw({

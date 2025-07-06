@@ -1,49 +1,55 @@
 import Banner2 from "../../components/global/Banner2";
 import Category from "../../components/layouts/Category";
-import Filter from "../../components/layouts/Filter";
 import Gallary from "../../components/layouts/Gallary";
 import PopularTag from "../../components/layouts/PopularTag";
 import Product from "../../components/layouts/Product";
 import SortItems from "../../components/global/SortItems";
-// import { blogdata } from "../../data/blogdata";
-// import { randomDate } from "../../utils/Randomdate";
+import { blogdata } from "../../data/blogdata";
 import Search from "../../components/global/Search";
 import { css } from "../../../styled-system/css";
 import ShowItems from "../../components/global/ShowItems";
-// import { blogdata } from "../../data/blogdata";
-// import BlogContent from "../../components/blog/BlogContent";
+import BlogContent from "../../components/blog/BlogContent";
+import { flex } from "../../style/recipe/flex";
+import { blogContentCont, blogSideMenu } from "../../style/pages/blog/blog";
+import Banner from "../../components/global/Banner";
 
 const Blog = () => {
-  // const date = randomDate(new Date("01 january 2022"), new Date()).toLocaleString('en-US', {day: 'numeric', month: 'long', year: 'numeric'});
-
-  // console.log(test.sort());
-  // console.log(test.sort((a, b) => a.getTime() - b.getTime()));
-
   return (
     <main>
       <Banner2 text="Blog" />
 
-      <section>
-        <section>
-          <section>
+      <section  className={css(flex.raw({type: "startY"}), {columnGap: "3rem", w: "100%"})}>
+        <section className={css({w: "100%"})}>
+          <section className={css(flex.raw({type: 'endX', columnGap: "md"}), {mb: "2.5rem"})}>
             <ShowItems />
             <SortItems />
           </section>
 
-          <section>
-            {/* <BlogContent/> */}
+          <section  className={(css(blogContentCont))}>
+            {blogdata.slice(0, 20).map((data, index) => (
+              <BlogContent
+                key={index}
+                img={data.img}
+                category={data.category}
+                readTime={data.readTime}
+                date={data.date}
+                title={data.title}
+                views={data.views}
+              />
+            ))}
           </section>
         </section>
 
-        <section className={css({ ml: "auto", w: "fit-content" })}>
+        <section className={css(blogSideMenu, flex.raw({vertical: "vertical"}))}>
           <Search />
           <Category />
           <Product text="Trending Now" />
           <Gallary />
           <PopularTag />
-          <Filter />
         </section>
       </section>
+
+      <Banner id={0}/>
     </main>
   );
 };

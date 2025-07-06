@@ -6,6 +6,7 @@ export const searchContainer = css.raw({
   py: "1.2rem",
   border: "1px solid #ECECEC",
   rounded: "10px",
+  w: "100%",
 });
 
 export const searchInput = css.raw({
@@ -13,11 +14,11 @@ export const searchInput = css.raw({
   fontWeight: "500",
   fontSize: ".9rem",
   w: "90%",
-  outline: 'none',
-  
+  outline: "none",
+
   _placeholder: {
-    color: "secondary.600"
-  }
+    color: "secondary.600",
+  },
 });
 
 export const searchIcon = css.raw({
