@@ -31,3 +31,12 @@ export type blogdatatype = {
   views?: number;
   date?: Date
 }[];
+
+export type blogdatatype1 = {
+  img: string;
+  category: string;
+  title: string;
+  readTime?: number;
+  views?: number;
+  date?: Date
+}
