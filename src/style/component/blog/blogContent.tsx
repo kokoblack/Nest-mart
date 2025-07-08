@@ -38,6 +38,14 @@ export const blogContentSortContainer = css.raw({
   fontSize: ".8rem",
   color: "secondary.400",
   font: "lato",
+  // w: "fit-content",
+  
+  "& p": {
+    w: "fit-content",
+    p: 0,
+    m: 0,
+    flexGrow: 0
+  },
 
   "@media screen and (max-width: 769px)": {
     fontSize: ".7rem",
@@ -46,6 +54,6 @@ export const blogContentSortContainer = css.raw({
 
 export const blogContentHide = css.raw({
   "@media screen and (max-width: 563px)": {
-    display: "none",
+    // display: "none",
   },
 });
