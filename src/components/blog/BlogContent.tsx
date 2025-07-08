@@ -21,14 +21,14 @@ const BlogContent = ({
     <section
       className={css(blogContentContainer, flex.raw({ vertical: "vertical" }))}
     >
-      <figure>
+      <figure >
         <img src={img} alt="pic" />
       </figure>
 
       <div className={css({ textAlign: "center", mt: "1.5rem" })}>
         <p className={css(blogContentCat)}>{category}</p>
         <h3 className={css(blogContententTitle)}>{title}</h3>
-        <div className={css(blogContentSortContainer, flex.raw({ gap: "md" }))}>
+        <div className={css(blogContentSortContainer, flex.raw({ gap: "sm", }))}>
           <p>
             {date?.toLocaleString("en-US", {
               day: "numeric",

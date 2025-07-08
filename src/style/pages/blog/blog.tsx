@@ -3,7 +3,7 @@ export const blogCont = css.raw({});
 
 export const blogContentCont = css.raw({
   display: "grid",
-  gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+  gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
   rowGap: "3rem",
   justifyContent: "space-between",
   w: "100%",
@@ -14,7 +14,7 @@ export const blogContentCont = css.raw({
   },
 
   "@media screen and (max-width: 563px)": {
-    gridTemplateColumns: "repeat(auto-fit, minmax(185px, 1fr))",
+    gridTemplateColumns: "repeat(auto-fit, minmax(170px, 1fr))",
   }
 });
 
@@ -23,7 +23,7 @@ export const blogSideMenu = css.raw({
   ml: "auto",
   rowGap: "3rem",
 
-  "@media screen and (max-width: 1049px)" : {
+  "@media screen and (max-width: 1087px)" : {
     display: "none"
   }
 });
