@@ -1,5 +1,4 @@
 import { css } from "../../../../styled-system/css";
-export const blogCont = css.raw({});
 
 export const blogContentCont = css.raw({
   display: "grid",
