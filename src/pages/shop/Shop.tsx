@@ -8,7 +8,6 @@ import Category from "../../components/layouts/Category";
 import Filter from "../../components/layouts/Filter";
 import Product from "../../components/layouts/Product";
 import { product } from "../../data/product";
-import { blogContentCont, blogSideMenu } from "../../style/pages/blog/blog";
 import { shopContentCont, shopSideMenu } from "../../style/pages/shop/shop";
 import { flex } from "../../style/recipe/flex";
 
