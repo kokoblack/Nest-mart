@@ -15,9 +15,11 @@ import Banner from "../../components/global/Banner";
 import Pagination from "../../components/global/Pagination";
 
 const Blog = () => {
+  const cat = ["Shopping", "Recips", "Kitchen", "News", "Food"];
+
   return (
     <main>
-      <Banner2 text="Blog" />
+      <Banner2 text="Blog" items={cat} />
 
       <section
         className={css(flex.raw({ type: "startY" }), {
@@ -37,15 +39,7 @@ const Blog = () => {
 
           <section className={css(blogContentCont)}>
             {blogdata.slice(0, 20).map((data, index) => (
-              <BlogContent
-                key={index}
-                img={data.img}
-                category={data.category}
-                readTime={data.readTime}
-                date={data.date}
-                title={data.title}
-                views={data.views}
-              />
+              <BlogContent key={index} {...data} />
             ))}
           </section>
 

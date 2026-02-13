@@ -15,7 +15,7 @@ export const dailyBestSellsNature = css.raw({
   pl: "2rem",
   pr: "3.5rem",
   pt: "3rem",
-  pb: "7.8rem",
+  pb: "6.7rem",
   w: "21rem",
   rounded: "15px",
   bgPosition: "center",
