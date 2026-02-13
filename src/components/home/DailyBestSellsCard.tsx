@@ -6,6 +6,7 @@ import { Product } from "../../type/types";
 import {
   dailyBestSellsCardContainer,
   dailyBestSellsCardImg,
+  dailyBestSellsCardName,
   dailyBestSellsCardRange,
   dailyBestSellsCardSpecial,
 } from "../../style/component/home/dailyBestSellCards";
@@ -46,12 +47,7 @@ const DailyBestSellsCard = ({
         {category}
       </p>
       <p
-        className={css({
-          fontSize: ".875rem",
-          lineHeight: "1rem",
-          color: "secondary.100",
-          fontWeight: "bold",
-        })}
+        className={css(dailyBestSellsCardName)}
       >
         {name}
       </p>

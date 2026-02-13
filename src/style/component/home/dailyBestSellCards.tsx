@@ -16,6 +16,19 @@ export const dailyBestSellsCardImg = css.raw({
   mx: "auto",
 });
 
+export const dailyBestSellsCardName = css.raw({
+  fontSize: ".875rem",
+  lineHeight: "1rem",
+  color: "secondary.100",
+  fontWeight: "bold",
+  whiteSpace: "normal",
+  overflow: "hidden",
+  textOverflow: "ellipsis",
+  lineClamp: "2",
+  display: "-webkit-box",
+  boxOrient: "vertical",
+});
+
 export const dailyBestSellsCardSpecial = css.raw({
   position: "absolute",
   top: "0",
@@ -36,8 +49,8 @@ export const dailyBestSellsCardRange = css.raw({
   cursor: "pointer",
   width: "100%",
   color: "primary.100",
-  mb: '.5rem',
-  mt: '1rem',
+  mb: ".5rem",
+  mt: "1rem",
 
   "&::-webkit-slider-runnable-track": {
     h: ".4rem",

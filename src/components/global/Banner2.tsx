@@ -13,10 +13,10 @@ import {
 import { flex } from "../../style/recipe/flex";
 
 
-const Banner2 = ({text}: {text: string}) => {
+const Banner2 = ({text,items}: {text: string, items: string[]}) => {
   const location = useLocation();
   console.log(location.pathname, "location");
-  const cat = ["Shopping", "Recips", "Kitchen", "News", "Food"];
+  
   return (
     <section className={css(banner2Container, flex.raw({type: "spaceBetween",}))}>
       <section className={css(banner2firstSection)}>
@@ -36,7 +36,7 @@ const Banner2 = ({text}: {text: string}) => {
       </section>
 
       <section className={css(flex.raw({columnGap: "md", wrap: "yes", type: "startX"}), banner2SecondSection)}>
-        {cat.map((text, index) => (
+        {items.map((text, index) => (
           <div key={index} className={css(banner2tag, flex.raw({columnGap: "sm"}))}>
             <span >
               <IoCloseOutline />

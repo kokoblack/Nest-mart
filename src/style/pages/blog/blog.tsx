@@ -22,7 +22,7 @@ export const blogSideMenu = css.raw({
   ml: "auto",
   rowGap: "3rem",
 
-  "@media screen and (max-width: 1087px)" : {
+  "@media screen and (max-width: 1103px)" : {
     display: "none"
   }
 });

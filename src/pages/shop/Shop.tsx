@@ -1,0 +1,61 @@
+import { css } from "../../../styled-system/css";
+import Banner2 from "../../components/global/Banner2";
+import Pagination from "../../components/global/Pagination";
+import ShowItems from "../../components/global/ShowItems";
+import SortItems from "../../components/global/SortItems";
+import ProductCard from "../../components/home/ProductCard";
+import Category from "../../components/layouts/Category";
+import Filter from "../../components/layouts/Filter";
+import Product from "../../components/layouts/Product";
+import { product } from "../../data/product";
+import { blogContentCont, blogSideMenu } from "../../style/pages/blog/blog";
+import { shopContentCont, shopSideMenu } from "../../style/pages/shop/shop";
+import { flex } from "../../style/recipe/flex";
+
+const Shop = () => {
+  const cat = ["Cabbage", "Broccoli", "Artichoke", "celery", "spinach"];
+
+  return (
+    <main>
+      <Banner2 text="Shop" items={cat} />
+
+      <section
+        className={css(flex.raw({ type: "startY" }), {
+          columnGap: "3rem",
+          w: "100%",
+        })}
+      >
+        <section className={css({ w: "100%" })}>
+          <section
+            className={css(flex.raw({ type: "endX", columnGap: "md" }), {
+              mb: "2.5rem",
+            })}
+          >
+            <ShowItems />
+            <SortItems />
+          </section>
+
+          <section className={css(shopContentCont)}>
+            {product.slice(0, 20).map((data, index) => (
+              <ProductCard key={index} {...data} />
+            ))}
+          </section>
+
+          <section>
+            <Pagination />
+          </section>
+        </section>
+
+        <section
+          className={css(shopSideMenu, flex.raw({ vertical: "vertical" }))}
+        >
+          <Category />
+          <Product text="New products" />
+          <Filter />
+        </section>
+      </section>
+    </main>
+  );
+};
+
+export default Shop;

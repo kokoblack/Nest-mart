@@ -24,7 +24,7 @@ export const smallNavOptions: SmallNavOption = [
     icon: <MdOutlineKeyboardArrowDown />,
     name: "Shop",
     index: 2,
-    path: "/"
+    path: "/shop"
   },
   {
     icon: <MdOutlineKeyboardArrowDown />,
