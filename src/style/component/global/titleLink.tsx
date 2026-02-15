@@ -3,7 +3,7 @@ import { css } from "../../../../styled-system/css";
 export const titleLinkContainer = css.raw({
   w: "100%",
   mb: "2rem",
-  fontSize: ["1.7rem", "1.7rem", "1.7rem", "1.9rem", "1.9rem"],
+  fontSize: ["1.55rem", "1.55rem", "1.55rem", "1.9rem", "1.9rem"],
   fontWeight: "bold",
   color: "secondary.100",
 

@@ -2,10 +2,10 @@ import { css } from "../../../../styled-system/css";
 
 export const DealOfTheDayFirstCont = css.raw({
   w: "100%",
-  mb: "2rem",
+  // flexWrap: "wrap",
 
   "& > h3": {
-    fontSize: ["1.7rem", "1.7rem", "1.7rem", "1.9rem", "1.9rem"],
+    fontSize: ["1.55rem", "1.55rem", "1.55rem", "1.9rem", "1.9rem"],
     fontWeight: "bold",
     color: "secondary.100",
     lineHeight: "2rem",
@@ -22,10 +22,7 @@ export const DealOfTheDayFirstCont = css.raw({
     fontSize: [".9rem", ".9rem", ".9rem", "1.1rem", "1.1rem"],
   },
 
-  "@media screen and (max-width: 359px)": {
-    alignItems: "start",
-    flexDirection: "column",
-    gap: "1rem",
+  "@media screen and (max-width: 360px)": {
 
     "& div": {
       ml: "0",
@@ -35,9 +32,9 @@ export const DealOfTheDayFirstCont = css.raw({
 
 export const DealOfTheDaySecondCont = css.raw({
   mb: "3rem",
+  mt: "2rem",
   justifyContent: "space-around",
   rowGap: "9rem",
-  
 
   "@media screen and (max-width: 1140px)": {
     overflowX: "scroll",
@@ -45,7 +42,6 @@ export const DealOfTheDaySecondCont = css.raw({
     scrollbar: "hidden",
     justifyContent: "flex-start",
   },
-
 
   // "@media screen and (max-width: 876px) and (min-width: 768px)": {
   //   "& > div:last-child": {

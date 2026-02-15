@@ -33,7 +33,7 @@ const TitleLink = ({ title, link, setProductType }: TitleLinkProps) => {
         <p
           className={css({
             cursor: "pointer",
-            fontSize: ".9rem",
+            fontSize: ".8rem",
             fontWeight: "500",
             color: "secondary.700",
             ml: "auto",
@@ -52,7 +52,7 @@ const TitleLink = ({ title, link, setProductType }: TitleLinkProps) => {
       >
         <ul
           className={css(flex.raw({ columnGap: "md" }), {
-            fontSize: ".9rem",
+            fontSize: ".8rem",
             fontWeight: "500",
           })}
         >
@@ -77,7 +77,7 @@ const TitleLink = ({ title, link, setProductType }: TitleLinkProps) => {
       <p
         className={css({
           cursor: "pointer",
-          fontSize: ".9rem",
+          fontSize: ".8rem",
           fontWeight: "500",
           color: "secondary.700",
           hideBelow: "992px",
