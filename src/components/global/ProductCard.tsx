@@ -10,7 +10,7 @@ import {
   productCardName,
   productCardPriceCont,
   productCardSpecial,
-} from "../../style/component/home/productCard";
+} from "../../style/component/global/productCard";
 import { flex } from "../../style/recipe/flex";
 import { button } from "../../style/recipe/button";
 import { Product } from "../../type/types";
