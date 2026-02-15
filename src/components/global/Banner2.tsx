@@ -14,8 +14,6 @@ import { flex } from "../../style/recipe/flex";
 
 
 const Banner2 = ({text,items}: {text: string, items: string[]}) => {
-  const location = useLocation();
-  console.log(location.pathname, "location");
   
   return (
     <section className={css(banner2Container, flex.raw({type: "spaceBetween",}))}>

@@ -1,6 +1,6 @@
 import { css } from "../../../styled-system/css";
 import {
-  sortContainer,
+  displayTypeCont,
   sortIcon,
   sortText,
 } from "../../style/component/global/sortItems";
@@ -9,11 +9,19 @@ import { CiGrid42 } from "react-icons/ci";
 import { useState } from "react";
 import { TbLayoutList } from "react-icons/tb";
 
-const DisplayType = () => {
-  const [state, setState] = useState(false);
+type DisplayType = {
+  setView: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const DisplayType = ({setView}: DisplayType) => {
+  const [state, setState] = useState(true);
+  const handleClick = () => {
+    setState((prevState) => !prevState)
+    setView(state)
+  }
   return (
-    <div onClick={() => setState((prevState) => !prevState)}>
-      <section className={css(sortContainer, flex.raw({ gap: "sm" }))}>
+    <div onClick={handleClick}>
+      <section className={css(displayTypeCont, flex.raw({ gap: "sm" }))}>
         <i className={css(sortIcon)}>{state ? <TbLayoutList /> : <CiGrid42 />}</i>
         <p className={css(sortText)}>{state ? "List" : "Grid"}</p>
       </section>

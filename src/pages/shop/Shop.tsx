@@ -9,17 +9,24 @@ import Filter from "../../components/layouts/Filter";
 import Product from "../../components/layouts/Product";
 import { product } from "../../data/product";
 import {
-  shopContentCont,
   shopFilterSec,
+  shopHide,
+  shopProdCard,
+  shopProdCardListView,
   shopSearchResultText,
+  shopShow,
   shopSideMenu,
   shopSortSec,
 } from "../../style/pages/shop/shop";
 import { flex } from "../../style/recipe/flex";
 import DisplayType from "../../components/global/DisplayType";
+import ProductCardListView from "../../components/global/ProductCardListView";
+import { useState } from "react";
+import DealOfTheDay from "../home/DealOfTheDay";
 // import MoveRightOrLeft from "../../components/global/MoveRightOrLeft";
 
 const Shop = () => {
+  const [view, setView] = useState(false);
   const cat = ["Cabbage", "Broccoli", "Artichoke", "celery", "spinach"];
 
   return (
@@ -48,17 +55,37 @@ const Shop = () => {
                 shopSortSec,
               )}
             >
-              <DisplayType />
+              <DisplayType setView={setView} />
               <ShowItems />
               <SortItems />
               {/* <MoveRightOrLeft/> */}
             </div>
           </section>
 
-          <section className={css(shopContentCont)}>
-            {product.slice(0, 20).map((data, index) => (
-              <ProductCard key={index} {...data} />
-            ))}
+          <section className={css(shopHide)}>
+            {!view && (
+              <section className={css(shopProdCard)}>
+                {product.slice(0, 20).map((data, index) => (
+                  <ProductCard key={index} {...data} />
+                ))}
+              </section>
+            )}
+
+            {view && (
+              <section className={css(shopProdCardListView)}>
+                {product.slice(0, 20).map((data, index) => (
+                  <ProductCardListView key={index} {...data} />
+                ))}
+              </section>
+            )}
+          </section>
+
+          <section className={css(shopShow)}>
+            <section className={css(shopProdCardListView)}>
+              {product.slice(0, 20).map((data, index) => (
+                <ProductCardListView key={index} {...data} />
+              ))}
+            </section>
           </section>
 
           <section>
@@ -74,6 +101,8 @@ const Shop = () => {
           <Product text="New products" />
         </section>
       </section>
+
+      <DealOfTheDay/>
     </main>
   );
 };
