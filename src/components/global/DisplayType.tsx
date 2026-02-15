@@ -1,4 +1,3 @@
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { css } from "../../../styled-system/css";
 import {
   sortContainer,
