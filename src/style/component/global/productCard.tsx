@@ -9,6 +9,7 @@ export const productCardContainer = css.raw({
   fontSize: ".75rem",
   color: "secondary.700",
   position: "relative",
+  cursor: "pointer",
 
   "@media screen and (max-width: 680px)": {
     w: "10rem ",

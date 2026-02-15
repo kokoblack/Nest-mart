@@ -7,10 +7,8 @@ import {
 } from "../../style/pages/home/product";
 import { product } from "../../data/product";
 import TitleLink from "../../components/global/TitleLink";
-import useScreenWidth from "../../hooks/useScreenWidth";
 
 const PopularProduct = () => {
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [productType, setProductType] = useState("All");
 
   const filterdProduct = product.filter((data) => {
@@ -27,10 +25,6 @@ const PopularProduct = () => {
     "Milks & Dairies",
   ];
 
-  const howMany = screenWidth <= 524 ? 3 : product.length;
-
-  useScreenWidth(setScreenWidth)
-
   return (
     <section className={css(productContainer)}>
       <TitleLink
@@ -42,10 +36,10 @@ const PopularProduct = () => {
       <section className={css(productSecondSection)}>
         {productType !== "All"
           ? filterdProduct
-              .slice(0, howMany)
+              .slice(0, 20)
               .map((data, index) => <ProductCard key={index} {...data} />)
           : product
-              .slice(0, howMany)
+              .slice(0, 20)
               .map((data, index) => <ProductCard key={index} {...data} />)}
       </section>
     </section>
