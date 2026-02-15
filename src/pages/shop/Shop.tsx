@@ -36,7 +36,7 @@ const Shop = () => {
       <section
         className={css(flex.raw({ type: "startY" }), {
           columnGap: "3rem",
-          w: "100%",
+          w: "100%", mb: "2rem"
         })}
       >
         <section className={css({ w: "100%" })}>
@@ -102,7 +102,7 @@ const Shop = () => {
         </section>
       </section>
 
-      <DealOfTheDay/>
+      <DealOfTheDay />
     </main>
   );
 };

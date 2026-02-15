@@ -19,10 +19,10 @@ const DealOfTheDay = () => {
   return (
     <section className={css({ mb: "3rem" })}>
       <section
-        className={css(flex.raw({ type: "endY" }), DealOfTheDayFirstCont)}
+        className={css(flex.raw({ type: "endY", columnGap: "md" }), DealOfTheDayFirstCont)}
       >
         <h3>Deal Of The Day</h3>
-        <p className={css({ cursor: "pointer", ml: "auto", color: "secondary.700", fontSize: ".9rem" })}>All Deals</p>
+        <p className={css({ cursor: "pointer", ml: "auto", color: "secondary.700", fontSize: ".8rem" })}>All Deals</p>
       </section>
 
       <section

@@ -9,7 +9,7 @@ export const featuredContainer = css.raw({
 export const featuredFirstSection = css.raw({
   mb: "2rem",
   position: "relative",
-  fontSize: ["1.7rem", "1.7rem", "1.7rem", "1.9rem"],
+  fontSize: ["1.55rem", "1.55rem", "1.55rem", "1.9rem"],
   color: "secondary.100",
 
   "@media screen and (max-width: 992px)": {
@@ -34,7 +34,7 @@ export const featuredFirstSection = css.raw({
 });
 
 export const featureUlCont = css.raw({
-  fontSize: ".9rem",
+  fontSize: ".8rem",
   fontWeight: "500",
 
   "@media screen and (max-width: 992px)": {
