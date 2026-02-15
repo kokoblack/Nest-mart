@@ -3,13 +3,21 @@ import Banner2 from "../../components/global/Banner2";
 import Pagination from "../../components/global/Pagination";
 import ShowItems from "../../components/global/ShowItems";
 import SortItems from "../../components/global/SortItems";
-import ProductCard from "../../components/home/ProductCard";
+import ProductCard from "../../components/global/ProductCard";
 import Category from "../../components/layouts/Category";
 import Filter from "../../components/layouts/Filter";
 import Product from "../../components/layouts/Product";
 import { product } from "../../data/product";
-import { shopContentCont, shopSideMenu } from "../../style/pages/shop/shop";
+import {
+  shopContentCont,
+  shopFilterSec,
+  shopSearchResultText,
+  shopSideMenu,
+  shopSortSec,
+} from "../../style/pages/shop/shop";
 import { flex } from "../../style/recipe/flex";
+import DisplayType from "../../components/global/DisplayType";
+// import MoveRightOrLeft from "../../components/global/MoveRightOrLeft";
 
 const Shop = () => {
   const cat = ["Cabbage", "Broccoli", "Artichoke", "celery", "spinach"];
@@ -26,12 +34,25 @@ const Shop = () => {
       >
         <section className={css({ w: "100%" })}>
           <section
-            className={css(flex.raw({ type: "endX", columnGap: "md" }), {
-              mb: "2.5rem",
-            })}
+            className={css(
+              flex.raw({ type: "endX", columnGap: "md" }),
+              shopFilterSec,
+            )}
           >
-            <ShowItems />
-            <SortItems />
+            <p className={css(shopSearchResultText)}>
+              We found <span>29</span> items for you!
+            </p>
+            <div
+              className={css(
+                flex.raw({ type: "endX", columnGap: "md" }),
+                shopSortSec,
+              )}
+            >
+              <DisplayType />
+              <ShowItems />
+              <SortItems />
+              {/* <MoveRightOrLeft/> */}
+            </div>
           </section>
 
           <section className={css(shopContentCont)}>
@@ -48,9 +69,9 @@ const Shop = () => {
         <section
           className={css(shopSideMenu, flex.raw({ vertical: "vertical" }))}
         >
+          <Filter />
           <Category />
           <Product text="New products" />
-          <Filter />
         </section>
       </section>
     </main>

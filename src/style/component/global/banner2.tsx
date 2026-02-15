@@ -3,7 +3,7 @@ import { css } from "../../../../styled-system/css";
 export const banner2Container = css.raw({
   w: "100%",
   mt: ["1rem", "1rem", "1rem", "2rem"],
-  mb: "3rem",
+  mb: "2.5rem",
   rounded: "1.2rem",
   boxSizing: "border-box",
   bgPosition: "center",
@@ -13,8 +13,8 @@ export const banner2Container = css.raw({
   bgImage: "url(assets/blogBanner.png)",
   columnGap: "2rem",
 
-  "@media screen and (max-width: 436px)": {
-    mb: "2rem"
+  "@media screen and (max-width: 480px)": {
+    mb: "1.8rem"
   }
 });
 

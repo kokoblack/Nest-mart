@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ProductCard from "../../components/home/ProductCard";
+import ProductCard from "../../components/global/ProductCard";
 import { css } from "../../../styled-system/css";
 import {
   productContainer,
