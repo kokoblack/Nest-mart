@@ -17,7 +17,7 @@ import {
 } from "../../style/pages/shop/shop";
 import { flex } from "../../style/recipe/flex";
 import DisplayType from "../../components/global/DisplayType";
-import MoveRightOrLeft from "../../components/global/MoveRightOrLeft";
+// import MoveRightOrLeft from "../../components/global/MoveRightOrLeft";
 
 const Shop = () => {
   const cat = ["Cabbage", "Broccoli", "Artichoke", "celery", "spinach"];
