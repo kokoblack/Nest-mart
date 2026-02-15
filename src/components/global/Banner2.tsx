@@ -2,7 +2,6 @@ import { IoCloseOutline } from "react-icons/io5";
 import { BiHomeAlt } from "react-icons/bi";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 import { css } from "../../../styled-system/css";
 import {
   banner2Container,
