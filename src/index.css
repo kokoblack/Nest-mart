@@ -29,22 +29,56 @@ body {
   transform: translate(-50%, -50%);
 }
 
+#nav-link a.active {
+  color: #3bb77e;
+}
 
+#nav-link a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: .5rem;
+}
+
+#menu-link a {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  column-gap: .5rem;
+  color: #253D4E;
+  padding-inline: .5rem;
+  padding-block: .8rem;
+  width: 100%;
+  border-radius: .5rem;
+  margin-bottom: .5rem;
+}
+
+#menu-link a.active {
+  color: #e9ecef;
+  background-color: #def9ec;
+}
 
 .wavy-line {
   --s: 6px; /* size of the wave */
   --b: 3px; /* thickness of the line */
   --m: 1; /* curvature of the wave [0 2] */
-  
+
   background: #3bb77e;
-  --R: calc(var(--s)*sqrt(var(--m)*var(--m) + 1) + var(--b)/2);
-  height: calc(2*var(--R));
+  --R: calc(var(--s) * sqrt(var(--m) * var(--m) + 1) + var(--b) / 2);
+  height: calc(2 * var(--R));
   width: 5rem;
   margin: 0 auto;
   --_g: #0000 calc(99% - var(--b)), #000 calc(101% - var(--b)) 99%, #0000 101%;
-  mask:
-    radial-gradient(var(--R) at left 50% bottom calc(-1*var(--m)*var(--s)), var(--_g)) 
-     calc(50% - 2*var(--s)) calc(50% - var(--s)/2 - var(--b)/2)/calc(4*var(--s)) calc(var(--s) + var(--b)) repeat-x,
-    radial-gradient(var(--R) at left 50% top calc(-1*var(--m)*var(--s)),var(--_g)) 
-     50% calc(50% + var(--s)/2 + var(--b)/2)/calc(4*var(--s)) calc(var(--s) + var(--b)) repeat-x;
+  mask: radial-gradient(
+        var(--R) at left 50% bottom calc(-1 * var(--m) * var(--s)),
+        var(--_g)
+      )
+      calc(50% - 2 * var(--s)) calc(50% - var(--s) / 2 - var(--b) / 2) /
+      calc(4 * var(--s)) calc(var(--s) + var(--b)) repeat-x,
+    radial-gradient(
+        var(--R) at left 50% top calc(-1 * var(--m) * var(--s)),
+        var(--_g)
+      )
+      50% calc(50% + var(--s) / 2 + var(--b) / 2) / calc(4 * var(--s))
+      calc(var(--s) + var(--b)) repeat-x;
 }
