@@ -9,14 +9,17 @@ import {
 } from "../style/layout/mobile-menu/mobileMenu";
 import { NavLink } from "react-router-dom";
 
-const MobileMenu = () => {
+type MobileMenu = {
+  setView: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const MobileMenu = ({ setView }: MobileMenu) => {
+  const handleClick = () => {
+    setView(false);
+  };
 
   return (
-    <aside
-      className={css(
-        container,
-      )}
-    >
+    <aside className={css(container)}>
       <figure
         className={css({ borderBottom: "1px solid #dedfe2", mb: ".5rem" })}
       >
@@ -26,7 +29,7 @@ const MobileMenu = () => {
       <nav className={css({ w: "100%" })}>
         <ul>
           {option?.map((data, index) => (
-            <li key={index} id="menu-link">
+            <li onClick={handleClick} key={index} id="menu-link">
               <NavLink
                 to={data.path}
                 className={({ isActive, isPending }) =>

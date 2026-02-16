@@ -1,36 +1,32 @@
 import { Link } from "react-router-dom";
-import img from "../../assets/cookie.jpg";
 import { IoReturnDownBack } from "react-icons/io5";
+import { css } from "../../../styled-system/css";
+import {
+  errorLink,
+  errorMainCont,
+} from "../../style/pages/errorpage/errorPage";
 
 const ErrorPage = () => {
   return (
     <main>
-      <section>
-        <p>4</p>
+      <div className={css(errorMainCont)}>
+        <h5>404</h5>
 
-        <figure>
-          <img src={img} alt="image" />
-        </figure>
-
-        <p>4</p>
-      </section>
-
-      <section>
-        <h3>Oops! Pag not found</h3>
+        <h3>Oops! Page not found</h3>
 
         <p>
           It's looking like you may have taken a wrong turn. Don't worry...it
-          happens to the bes of us. Here's a little tip that might help you get
-          back on track.
+          happens to the best of us. Here's a little tip that might help you 
+          get back on track.
         </p>
 
-        <Link to="/">
+        <Link to="/" className={css(errorLink)}>
           <i>
             <IoReturnDownBack />
           </i>
           <p>Back to main</p>
         </Link>
-      </section>
+      </div>
     </main>
   );
 };
