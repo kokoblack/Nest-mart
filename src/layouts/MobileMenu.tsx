@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { option } from "../data/MenuOptions";
 import logo from "../assets/Header.png";
 import { css } from "../../styled-system/css";

@@ -11,6 +11,7 @@ import About from "./pages/about/About";
 import Contact from "./pages/contact/Contact";
 import Blog from "./pages/blog/Blog";
 import Shop from "./pages/shop/Shop";
+import ErrorPage from "./pages/error/ErrorPage";
 
 function NestMart() {
   const divRef = useRef<HTMLDivElement>(null);
@@ -57,6 +58,8 @@ function NestMart() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/errorV" element={<ErrorPage />} />
+          <Route path="/errorM" element={<ErrorPage />} />
         </Routes>
         <Footer />
       </div>

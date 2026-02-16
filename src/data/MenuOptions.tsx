@@ -4,8 +4,6 @@ import { HiOutlineHomeModern } from "react-icons/hi2";
 import { BiFoodMenu } from "react-icons/bi";
 import { GrBlog } from "react-icons/gr";
 import { PiNotepad } from "react-icons/pi";
-import { IoLanguageOutline } from "react-icons/io5";
-import { MdOutlineReviews } from "react-icons/md";
 import { MdOutlineNoFood } from "react-icons/md";
 import React from "react";
 
@@ -33,13 +31,13 @@ export const option: Option = [
     icon: <HiOutlineHomeModern />,
     name: "Vendor",
     index: 2,
-    path: "vendor"
+    path: "errorV"
   },
   {
     icon: <BiFoodMenu />,
     name: "Mega Menu",
     index: 3,
-    path: "menu"
+    path: "errorM"
   },
   {
     icon: <GrBlog />,

@@ -7,14 +7,12 @@ import { css } from "../../styled-system/css";
 import { flex } from "../style/recipe/flex";
 import { container } from "../style/layout/nav/smallNav";
 import { button } from "../style/recipe/button";
-import { smallNavActive, marginLeft } from "../style/global";
-import { useState } from "react";
+import { marginLeft } from "../style/global";
 import Support from "../components/layouts/Support";
 import { NavLink } from "react-router-dom";
 import "../index.css"
 
 const SmallNav = () => {
-  const [active, setActive] = useState(0);
 
   return (
     <header className={css(flex.raw({ columnGap: "xlg" }), container)}>
