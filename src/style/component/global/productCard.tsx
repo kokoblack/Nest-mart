@@ -19,6 +19,10 @@ export const productCardContainer = css.raw({
   "@media screen and (max-width: 540px)": {
     w: "45vw",
   },
+
+  "@media screen and (max-width: 340px)": {
+    w: "10rem",
+  },
 });
 
 export const productCardImg = css.raw({

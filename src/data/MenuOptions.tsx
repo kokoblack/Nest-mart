@@ -13,6 +13,7 @@ type Option = {
   icon: React.ReactNode;
   name: string;
   index: number;
+  path: string
 }[];
 
 export const option: Option = [
@@ -20,45 +21,42 @@ export const option: Option = [
     icon: <RiHome2Line />,
     name: "Home",
     index: 0,
+    path: "/"
   },
   {
     icon: <PiShoppingBagLight />,
     name: "Shop",
     index: 1,
+    path: "shop"
   },
   {
     icon: <HiOutlineHomeModern />,
     name: "Vendor",
     index: 2,
+    path: "vendor"
   },
   {
     icon: <BiFoodMenu />,
     name: "Mega Menu",
     index: 3,
+    path: "menu"
   },
   {
     icon: <GrBlog />,
     name: "Blog",
     index: 4,
-  },
-  {
-    icon: <IoLanguageOutline />,
-    name: "Language",
-    index: 5,
-  },
-  {
-    icon: <MdOutlineReviews />,
-    name: "Reviews",
-    index: 6,
+    path: "blog"
   },
   {
     icon: <MdOutlineNoFood />,
-    name: "Brand",
+    name: "About",
     index: 7,
+    path: "about"
   },
   {
     icon: <PiNotepad />,
     name: "Contact",
     index: 8,
+    path: "contact"
   },
 ];

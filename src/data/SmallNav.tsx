@@ -24,19 +24,19 @@ export const smallNavOptions: SmallNavOption = [
     icon: <MdOutlineKeyboardArrowDown />,
     name: "Shop",
     index: 2,
-    path: "/shop"
+    path: "shop"
   },
   {
     icon: <MdOutlineKeyboardArrowDown />,
     name: "Vendor",
     index: 3,
-    path: "/"
+    path: "vendor"
   },
   {
     icon: <MdOutlineKeyboardArrowDown />,
     name: "Mega menu",
     index: 4,
-    path: "/"
+    path: "menu"
   },
   {
     icon: <MdOutlineKeyboardArrowDown />,
