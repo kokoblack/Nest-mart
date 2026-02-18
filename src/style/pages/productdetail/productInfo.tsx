@@ -1,15 +1,9 @@
 import { css } from "../../../../styled-system/css";
 
 export const prodInfoCont = css.raw({
-  my: "2rem",
+  mb: "2rem",
   w: "100%",
   boxSizing: "border-box",
-  columnGap: "2rem",
-  position: "relative",
-
-  "@media screen and (max-width: 480px)": {
-    my: "1rem"
-  },
 });
 
 export const prodInfoFirstSec = css.raw({
@@ -21,7 +15,7 @@ export const prodInfoFirstSec = css.raw({
   },
 
   "& figure": {
-    w: "440px",
+    w: "445px",
     objectFit: "contain",
     flexShrink: "0",
 
