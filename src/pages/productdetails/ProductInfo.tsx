@@ -21,20 +21,14 @@ import {
   prodInfoSalesOff,
   prodInfoSecondCont,
   prodInfoSecondContImg,
-  prodInfoSideMenu,
   prodInfoSizeCont,
 } from "../../style/pages/productdetail/productInfo";
-import { shopSideMenu } from "../../style/pages/shop/shop";
-import Category from "../../components/layouts/Category";
-import Product from "../../components/layouts/Product";
-import Gallary from "../../components/layouts/Gallary";
 import ProductInfoType from "../../components/productdetail/ProductInfoType";
 import CartButton from "../../components/productdetail/CartButton";
 
 const ProductInfo = () => {
   return (
-    <section className={css(prodInfoCont, flex.raw({ type: "startY" }))}>
-      <section className={css({ boxSizing: "border-box" })}>
+    <section className={css(prodInfoCont)}>
         <section
           className={css(
             flex.raw({ columnGap: "xlg", type: "startY" }),
@@ -149,19 +143,6 @@ const ProductInfo = () => {
 
           <ProductInfoType />
         </section>
-      </section>
-
-      <section
-        className={css(
-          shopSideMenu,
-          prodInfoSideMenu,
-          flex.raw({ vertical: "vertical" }),
-        )}
-      >
-        <Gallary />
-        <Category />
-        <Product text="New products" />
-      </section>
     </section>
   );
 };

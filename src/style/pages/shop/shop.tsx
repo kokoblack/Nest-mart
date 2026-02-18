@@ -10,7 +10,7 @@ export const shopProdCard = css.raw({
   gridRowGap: "2rem",
   mt: "2rem",
 
-  "@media screen and (max-width: 680px)": {
+  "@media screen and (max-width: 680px)": { 
     gridTemplateColumns: "repeat(auto-fit, minmax(160px, 160px))",
   },
 

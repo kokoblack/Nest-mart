@@ -6,6 +6,15 @@ export const prodDetailCont = css.raw({
   boxSizing: "border-box",
 });
 
+export const prodDetailContent = css.raw({
+  mt: "2rem",
+  columnGap: "2rem",
+
+  "@media screen and (max-width: 480px)": {
+    mt: "1rem"
+  }
+})
+
 export const prodDetailMenuButton = css.raw({
   display: "none",
   position: "fixed",
