@@ -4,6 +4,8 @@ import {
   prodDetailCont,
   prodDetailContent,
   prodDetailMenuButton,
+  prodDetailRelatedProCard,
+  prodDetailRelatedProCont,
 } from "../../style/pages/productdetail/productDetail";
 import CartButton from "../../components/productdetail/CartButton";
 import ProductDescription from "./ProductDescription";
@@ -13,14 +15,29 @@ import { flex } from "../../style/recipe/flex";
 import Gallary from "../../components/layouts/Gallary";
 import Category from "../../components/layouts/Category";
 import Product from "../../components/layouts/Product";
+import RelProductCard from "../../components/global/RelProductCard";
+import { product } from "../../data/product";
 
 const ProductDetail = () => {
   return (
-    <main className={css(prodDetailCont,)}>
+    <main className={css(prodDetailCont)}>
       <div className={css(flex.raw({ type: "startY" }), prodDetailContent)}>
         <section>
           <ProductInfo />
           <ProductDescription />
+
+          <section className={css(prodDetailRelatedProCont)}>
+            <section className={css({border: "1px solid", borderBottomColor: "#ECECEC", mb: "2rem", borderXColor: "white", borderTopColor: "white"})}>
+              <h3>Related Products</h3>
+              <hr />
+            </section>
+
+            <section className={css(prodDetailRelatedProCard)}>
+              {product.slice(0, 10).map((data, index) => (
+                <RelProductCard key={index} {...data} />
+              ))}
+            </section>
+          </section>
         </section>
 
         <section

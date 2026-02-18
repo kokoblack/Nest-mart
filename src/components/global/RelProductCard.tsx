@@ -1,7 +1,6 @@
 import { FaStar } from "react-icons/fa";
 import { css } from "../../../styled-system/css";
 import {
-  productCardContainer,
   productCardCureentPrice,
   productCardImg,
   productCardName,
@@ -9,8 +8,9 @@ import {
 } from "../../style/component/global/productCard";
 import { flex } from "../../style/recipe/flex";
 import { Product } from "../../type/types";
+import { relProductCardContainer } from "../../style/component/global/relProductCard";
 
-const ProductCard = ({
+const RelProductCard = ({
   name,
   color,
   type,
@@ -19,7 +19,7 @@ const ProductCard = ({
   image,
 }: Product) => {
   return (
-    <div className={css(productCardContainer)}>
+    <div className={css(relProductCardContainer)}>
       {type && (
         <div
           style={{ backgroundColor: color }}
@@ -35,7 +35,7 @@ const ProductCard = ({
 
       <p className={css(productCardName)}>{name}</p>
 
-      <span className={css({ color: "yellow" }, flex.raw({ columnGap: "sm" }))}>
+      <span className={css({ color: "yellow", my: ".6rem" }, flex.raw({ columnGap: "sm", type: "startX" }))}>
         <FaStar />
         <FaStar />
         <FaStar />
@@ -43,7 +43,7 @@ const ProductCard = ({
         <FaStar />
       </span>
 
-      <div className={css(flex.raw({ columnGap: "sm", type: "startX" }))}>
+      <div className={css(flex.raw({ columnGap: "sm", type: "startX" }), {fontWeight: "bold"})}>
         <p className={css(productCardCureentPrice)}>{currentPrice}</p>
         <p
           className={css({
@@ -58,4 +58,4 @@ const ProductCard = ({
   );
 };
 
-export default ProductCard;
+export default RelProductCard;
