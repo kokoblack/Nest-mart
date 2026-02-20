@@ -3,7 +3,7 @@ import { css } from "../../../../styled-system/css";
 export const bannerContainer = css.raw({
   w: "100%",
   mt: ["1rem", "1rem", "1rem", "2rem"],
-  mb: "3rem",
+  mb: "2rem",
   rounded: "1.2rem",
   boxSizing: "border-box",
   position: "relative",

@@ -1,9 +1,10 @@
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import { css } from "../../../styled-system/css";
-import { prodInfoSelectButton, prodInfoSelectCont, prodInfoSelectIcon } from "../../style/pages/productdetail/productInfo";
+import { prodInfoSelectButton, prodInfoSelectCont, prodInfoSelectIcon, prodInfoSelectWishList } from "../../style/pages/productdetail/productInfo";
 import { flex } from "../../style/recipe/flex";
 import { button } from "../../style/recipe/button";
 import { GrCart } from "react-icons/gr";
+import { PiHeartStraight } from "react-icons/pi";
 
 
 const CartButton = () => {
@@ -32,6 +33,8 @@ const CartButton = () => {
         </i>
         <p>Add to cart</p>
       </button>
+
+      <button className={css(prodInfoSelectWishList)}><PiHeartStraight/></button>
     </>
   );
 };

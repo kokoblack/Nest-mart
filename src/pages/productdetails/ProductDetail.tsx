@@ -17,6 +17,7 @@ import Category from "../../components/layouts/Category";
 import Product from "../../components/layouts/Product";
 import RelProductCard from "../../components/global/RelProductCard";
 import { product } from "../../data/product";
+import Banner from "../../components/global/Banner";
 
 const ProductDetail = () => {
   return (
@@ -25,19 +26,6 @@ const ProductDetail = () => {
         <section>
           <ProductInfo />
           <ProductDescription />
-
-          <section className={css(prodDetailRelatedProCont)}>
-            <section className={css({border: "1px solid", borderBottomColor: "#ECECEC", mb: "2rem", borderXColor: "white", borderTopColor: "white"})}>
-              <h3>Related Products</h3>
-              <hr />
-            </section>
-
-            <section className={css(prodDetailRelatedProCard)}>
-              {product.slice(0, 10).map((data, index) => (
-                <RelProductCard key={index} {...data} />
-              ))}
-            </section>
-          </section>
         </section>
 
         <section
@@ -56,6 +44,29 @@ const ProductDetail = () => {
       <section className={css(prodDetailMenuButton)}>
         <CartButton />
       </section>
+
+      <section className={css(prodDetailRelatedProCont)}>
+        <section
+          className={css({
+            border: "1px solid",
+            borderBottomColor: "#ECECEC",
+            mb: "2rem",
+            borderXColor: "white",
+            borderTopColor: "white",
+          })}
+        >
+          <h3>Related Products</h3>
+          <hr />
+        </section>
+
+        <section className={css(prodDetailRelatedProCard)}>
+          {product.slice(0, 10).map((data, index) => (
+            <RelProductCard key={index} {...data} />
+          ))}
+        </section>
+      </section>
+
+      <Banner id={1} />
     </main>
   );
 };
