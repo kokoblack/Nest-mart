@@ -29,7 +29,8 @@ export const prodDetailMenuButton = css.raw({
   borderRightColor: "white",
   py: ".5rem",
   bg: "white",
-
+  zIndex: 10
+,
   "@media screen and (max-width: 480px)": {
     display: "flex",
     justifyContent: "center",
@@ -60,7 +61,6 @@ export const prodDetailRelatedProCont = css.raw({
 });
 
 export const prodDetailRelatedProCard = css.raw({
-  w: "67vw",
   display: "flex",
   overflowX: "scroll",
   scrollBehavior: "smooth",
@@ -69,32 +69,4 @@ export const prodDetailRelatedProCard = css.raw({
   columnGap: "1rem",
   scrollbar: "hidden",
   boxSizing: "border-box",
-
-  "@media screen and (max-width: 1350px)": {
-    w: "90vw",
-  },
-
-  "@media screen and (max-width: 960px)": {
-    w: "88vw",
-  },
-
-  "@media screen and (max-width: 768px)": {
-    w: "95vw",
-  },
-
-  "@media screen and (max-width: 635px)": {
-    w: "93vw",
-  },
-
-  "@media screen and (max-width: 450px)": {
-    w: "90vw",
-  },
-
-  "@media screen and (max-width: 320px)": {
-    w: "88vw",
-  },
-
-  "@media screen and (max-width: 280px)": {
-    w: "85vw",
-  },
 });

@@ -23,6 +23,7 @@ import DisplayType from "../../components/global/DisplayType";
 import ProductCardListView from "../../components/global/ProductCardListView";
 import { useState } from "react";
 import DealOfTheDay from "../home/DealOfTheDay";
+import Banner from "../../components/global/Banner";
 // import MoveRightOrLeft from "../../components/global/MoveRightOrLeft";
 
 const Shop = () => {
@@ -104,6 +105,8 @@ const Shop = () => {
       </section>
 
       <DealOfTheDay />
+
+      <Banner id={1} />
     </main>
   );
 };
