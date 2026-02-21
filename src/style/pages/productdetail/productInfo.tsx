@@ -88,7 +88,6 @@ export const prodInfoSalesOff = css.raw({
   "@media screen and (max-width: 720px)": {
     display: "none",
   },
-  
 });
 
 export const prodInfoRating = css.raw({
@@ -190,13 +189,13 @@ export const prodInfoSizeCont = css.raw({
   },
 
   "@media screen and (max-width: 480px)": {
-    m: "0"
+    m: "0",
   },
 
   "@media screen and (max-width: 320px)": {
     fontSize: ".65rem",
     columnGap: ".5rem",
-    flexWrap: "wrap"
+    flexWrap: "wrap",
   },
 
   "& p:last-child": {
@@ -209,39 +208,9 @@ export const prodInfoSizeCont = css.raw({
 });
 
 export const prodInfoSelectCont = css.raw({
-  border: "2px solid #3BB77E",
-  rounded: "5px",
-  pr: ".4rem",
-  pl: "1.2rem",
-  py: ".1rem",
-  bg: "white",
-
-  "@media screen and (max-width: 990px)": {
-    fontSize: ".8rem",
-    py: ".15rem",
-  },
-
-  "@media screen and (max-width: 480px)": {
-    fontSize: "1rem",
-    pr: ".5rem",
-    pl: "1rem",
-    // flex: 1
-    // w: "65px"
-  },
-
-  "@media screen and (max-width: 320px)": {
-    fontSize: ".8rem",
-    pl: ".8rem",
-  },
-
   "@media screen and (max-width: 280px)": {
-    display: "none"
+    display: "none",
   },
-});
-
-export const prodInfoSelectIcon = css.raw({
-  color: "primary.100",
-  cursor: "pointer"
 });
 
 export const prodInfoSelectButton = css.raw({
@@ -255,7 +224,7 @@ export const prodInfoSelectButton = css.raw({
     // w: "70%",
     justifyContent: "center",
     fontSize: "1rem",
-    flex: 2
+    flex: 2,
   },
 
   "@media screen and (max-width: 320px)": {
@@ -268,23 +237,23 @@ export const prodInfoSelectWishList = css.raw({
   color: "secondary.400",
   py: ".6rem",
   px: ".7rem",
-  fontSize: "1.1rem",
+  fontSize: "1.2rem",
   rounded: "5px",
   cursor: "pointer",
 
   "@media screen and (max-width: 990px)": {
-    fontSize: ".8rem",
+    fontSize: ".9rem",
   },
 
   "@media screen and (max-width: 480px)": {
-    fontSize: "1.1rem",
+    fontSize: "1.2rem",
     // flex: 1
   },
 
   "@media screen and (max-width: 320px)": {
-    fontSize: ".8rem",
+    fontSize: ".9rem",
   },
-})
+});
 
 export const prodInfoSecondCont = css.raw({
   //   w: "50%",
@@ -332,7 +301,7 @@ export const prodInfoType = css.raw({
   },
 
   "@media screen and (max-width: 480px)": {
-    fontSize: ".7rem"
+    fontSize: ".7rem",
   },
 
   "@media screen and (max-width: 320px)": {
