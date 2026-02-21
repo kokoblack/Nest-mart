@@ -7,7 +7,7 @@ import Support from "../components/layouts/Support";
 import DownloadCard from "../components/layouts/DownloadCard";
 import { css } from "../../styled-system/css";
 import { flex } from "../style/recipe/flex";
-import { contactContainer, copyRight, footerContainer, sectionOne, sectionTwo, socials, socialsIcons } from "../style/footer/footer";
+import { contactContainer, copyRight, footerContainer, sectionOne, sectionTwo, socials, socialsIcons } from "../style/layout/footer/footer";
 import FooterInfo from "../components/layouts/FooterInfo";
 
 const Footer = () => {
@@ -35,7 +35,7 @@ const Footer = () => {
         <section>
           <h3 className={css({fontFamily: 'quicksand', fontSize: '1.5rem', fontWeight: 'bold', mb: '1rem'})}>Install App</h3>
           <p>From App Store or Google Play</p>
-          <div className={css(flex.raw({columnGap: 'md'}), {mb: '2rem', mt: '.8rem'})}>
+          <div className={css(flex.raw({columnGap: 'md', type: "startX"}), {mb: '2rem', mt: '.8rem'})}>
             <DownloadCard text="App Store" icon={<BsApple/>}/>
             <DownloadCard text="Google Play" icon={<BsGooglePlay/>}/>
           </div>

@@ -1,23 +1,21 @@
-import { useState, useEffect } from "react";
-import ProductCard from "../../components/home/ProductCard";
+import { useState } from "react";
+import ProductCard from "../../components/global/ProductCard";
 import { css } from "../../../styled-system/css";
 import {
   productContainer,
   productSecondSection,
-} from "../../style/home/product";
-import { productCardData } from "../../data/productCard";
+} from "../../style/pages/home/product";
+import { product } from "../../data/product";
 import TitleLink from "../../components/global/TitleLink";
 
 const PopularProduct = () => {
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [productType, setProductType] = useState("All");
-  console.log(screenWidth)
 
-  const filterdProduct = productCardData.filter((card) => {
-    return card.fullCat === productType;
+  const filterdProduct = product.filter((data) => {
+    return data.fullCat === productType;
   });
 
-  const product = [
+  const productLink = [
     "All",
     "Fruits",
     "Vegetables",
@@ -27,31 +25,21 @@ const PopularProduct = () => {
     "Milks & Dairies",
   ];
 
-  const howMany = screenWidth <= 525 ? 5 : productCardData.length;
-
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   return (
     <section className={css(productContainer)}>
-      <TitleLink title="Popular Product" link={product} setProductType={setProductType}/>
+      <TitleLink
+        title="Popular Product"
+        link={productLink}
+        setProductType={setProductType}
+      />
 
       <section className={css(productSecondSection)}>
         {productType !== "All"
           ? filterdProduct
-              .slice(0, howMany)
+              .slice(0, 20)
               .map((data, index) => <ProductCard key={index} {...data} />)
-          : productCardData
-              .slice(0, howMany)
+          : product
+              .slice(0, 20)
               .map((data, index) => <ProductCard key={index} {...data} />)}
       </section>
     </section>

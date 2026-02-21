@@ -10,11 +10,13 @@ export const button = cva({
     bg: {
       green: { bg: "primary.100" },
       lightGreen: { bg: "primary.400" },
-      black: {bg: 'card_bg.1200'}
+      black: {bg: 'card_bg.1200'},
+      darkBlue: { bg: "secondary.100" },
     },
     color: {
       white: { color: "secondary.500" },
       green: { color: "primary.100" },
+      
     },
     radius: {
       sm: { rounded: "4px" },
@@ -38,9 +40,10 @@ export const button = cva({
       lg: { px: "1rem" },
       xl: { px: "2rem" },
     },
-    move: {
+    move: { 
       left: { justifyContent: "start" },
       right: { justifyContent: "end" },
+      center: {justifyContent: 'center'}
     },
     font: {
         quicksand: {fontFamily: 'quicksand'},
@@ -65,4 +68,4 @@ export const button = cva({
   },
 });
 
-export type ButtonVariants = RecipeVariantProps<typeof button>;
+export type ButtonVariants = RecipeVariantProps<typeof button>; 

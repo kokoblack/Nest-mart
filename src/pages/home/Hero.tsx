@@ -10,13 +10,16 @@ import {
   HeroIndicatorCont,
   HeroNavigation,
   HeroSmallText,
-} from "../../style/home/hero";
+} from "../../style/pages/home/hero";
 import { flex } from "../../style/recipe/flex";
 import { useEffect, useState, useRef } from "react";
+import { show } from "../../style/global";
+import { hide } from "../../style/global";
 
 const Hero = () => {
   const [active, setActive] = useState(0);
   const [focused, setFocused] = useState(false);
+  const [mouseEnter, setMouseEnter] = useState(false);
 
   const animate = useRef<HTMLDivElement>(null!);
   const inputRef = useRef<HTMLInputElement>(null!);
@@ -56,11 +59,20 @@ const Hero = () => {
   }, [active, focused]);
 
   return (
-    <section className={css(HeroContainer)}>
+    <section
+      onMouseEnter={() => setMouseEnter(true)}
+      onMouseLeave={() => setMouseEnter(false)}
+      className={css(HeroContainer)}
+    >
       <div
         ref={animate}
         onAnimationEnd={() => (animate.current.style.animation = "none")}
-        className={css(HeroDiscountContainer, {bgImage: active === 0? "url(assets/section0.png)" : "url(assets/section1.png)" })}
+        className={css(HeroDiscountContainer, {
+          bgImage:
+            active === 0
+              ? "url(assets/section0.png)"
+              : "url(assets/section1.png)",
+        })}
       >
         <h3 className={css(HeroBigText)}>
           {text[active]?.text} <br /> Big discount
@@ -74,19 +86,19 @@ const Hero = () => {
 
       <span
         onClick={handleBackWardClick}
-        className={css(HeroNavigation, {
-          left: [".5rem", ".5rem", ".5rem", ".5rem", "1rem"],
+        className={css(HeroNavigation, mouseEnter ? show : hide, {
+          left: "1rem",
         })}
       >
         <MdKeyboardArrowLeft />
       </span>
       <span
         onClick={handleForwardClick}
-        className={css(HeroNavigation, {
-          right: [".5rem", ".5rem", ".5rem", ".5rem", "1rem"],
+        className={css(HeroNavigation, mouseEnter ? show : hide, {
+          right: "1rem",
         })}
       >
-        <MdKeyboardArrowRight className="bounce" />
+        <MdKeyboardArrowRight />
       </span>
 
       <div className={css(HeroIndicatorCont, flex.raw({ columnGap: "xsm" }))}>

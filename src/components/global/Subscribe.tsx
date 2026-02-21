@@ -11,7 +11,7 @@ import { button } from "../../style/recipe/button";
 import { forwardRef } from "react";
 
 type Ref = HTMLInputElement;
-
+ 
 type SubscribeProps = {
   setFocused: React.Dispatch<React.SetStateAction<boolean>>
 };

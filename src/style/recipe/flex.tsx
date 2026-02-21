@@ -13,13 +13,18 @@ export const flex = cva({
             endX: {alignItems: 'center', justifyContent: 'end'},
             startX: {alignItems: 'center', justifyContent: 'start'},
             spaceBetween: {alignItems: 'center', justifyContent: 'space-between'},
+            spaceAround: {alignItems: 'center', justifyContent: 'space-around'},
             spaceBetweenStart: {alignItems: 'start', justifyContent: 'space-between'},
             spaceEvenlyStart: {alignItems: 'start', justifyContent: 'space-evenly'},
+            spaceEvenly: {alignItems: 'center', justifyContent: 'space-evenly'},
             spaceAroundStart: {alignItems: 'start', justifyContent: 'space-around'},
+            topLeft: {alignItems: 'start', justifyContent: 'start'},
         },
         rowGap: {
             sm: {rowGap: '.5rem'},
-            md: {rowGap: '1rem'}
+            md: {rowGap: '1rem'},
+            lg: {rowGap: '1.5rem'},
+            xxl: {rowGap: '2rem'}
         },
         columnGap: {
             xsm: {columnGap: '.3rem'},
@@ -51,4 +56,4 @@ export const flex = cva({
     }
 })
 
-export type FlexVariants = RecipeVariantProps<typeof flex>
+export type FlexVariants = RecipeVariantProps<typeof flex> 

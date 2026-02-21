@@ -5,14 +5,14 @@ import { TfiHeadphoneAlt } from "react-icons/tfi";
 import { smallNavOptions } from "../data/SmallNav";
 import { css } from "../../styled-system/css";
 import { flex } from "../style/recipe/flex";
-import { container } from "../style/nav/smallNav";
+import { container } from "../style/layout/nav/smallNav";
 import { button } from "../style/recipe/button";
-import { smallNavActive, marginLeft } from "../style/global";
-import { useState } from "react";
+import { marginLeft } from "../style/global";
 import Support from "../components/layouts/Support";
+import { NavLink } from "react-router-dom";
+import "../index.css"
 
 const SmallNav = () => {
-  const [active, setActive] = useState(0);
 
   return (
     <header className={css(flex.raw({ columnGap: "xlg" }), container)}>
@@ -42,25 +42,29 @@ const SmallNav = () => {
       <nav>
         <ul className={css(flex.raw({ columnGap: "lg" }))}>
           {smallNavOptions.map((option, index) => (
-            <li
-              key={index}
-              className={css(
-                flex.raw({ columnGap: "sm" }),
-                { cursor: "pointer" },
-                option.index === active ? smallNavActive : null
-              )}
-              onClick={() => setActive((prev) => (prev = option.index))}
-            >
-              <p>{option.name}</p>
-              <span>{option.icon}</span>
+            <li key={index} id="nav-link">
+              <NavLink
+                to={option.path}
+                className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "active" : ""
+                }
+              >
+                <p>{option.name}</p>
+                <span>{option.icon}</span>
+              </NavLink>
             </li>
           ))}
-
-          <li className={css({ cursor: "pointer" })}>Contact</li>
         </ul>
       </nav>
 
-      <div className={css(marginLeft)}><Support iconColor="secondary.100" phone="1900 - 888" time="24/7 Support Center" icon={<TfiHeadphoneAlt/>} /></div>
+      <div className={css(marginLeft)}>
+        <Support
+          iconColor="secondary.100"
+          phone="1900 - 888"
+          time="24/7 Support Center"
+          icon={<TfiHeadphoneAlt />}
+        />
+      </div>
     </header>
   );
 };

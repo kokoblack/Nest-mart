@@ -1,6 +1,5 @@
 import { TiArrowLeft, TiArrowRight } from "react-icons/ti";
 import FeaturedSmallCards from "../../components/home/FeaturedSmallCards";
-import FeaturedBigCard from "../../components/home/FeaturedBigCard";
 import { data } from "../../data/featuredSmallCard";
 import { flex } from "../../style/recipe/flex";
 import { css } from "../../../styled-system/css";
@@ -11,52 +10,17 @@ import {
   featuredIcon,
   featuredIconCont,
   featuredSecondSection,
-  featuredThirdSection,
-} from "../../style/home/feaured";
-import { useEffect, useState, useRef } from "react";
+} from "../../style/pages/home/feaured";
+import { useState, useRef } from "react";
+import useUpdateScrollPosition from "../../hooks/useUpdateScrollPosition";
 
 const FeaturedCategories = () => {
-  const [active, setActive] = useState(0);
-  const [divWidth, setDivWidth] = useState(0);
-  const [divider, setDivider] = useState(0);
-  const [currentPosition, setCurrentPosition] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
 
-  const divref = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(0);
+  const [handleBackwardClick, handleForwardClick ] =useUpdateScrollPosition({ref})
 
   const link = ["Cake & Milk", "Coffes & Teas", "Pet Foods", "Vegetables"];
-  const title = [
-    "Everyday Fresh & Clean with Our Products",
-    "Make your Breakfast Healthy and Easy",
-    "The best Organic Products Online",
-  ];
-
-  const updateScrollPosition = () => {
-    setCurrentPosition((prev) => prev = divref.current?.scrollLeft!);
-  };
-
-  const handleForwardClick = () => {
-    if (divWidth !== currentPosition) {
-      divref.current!.scrollLeft = currentPosition + divider;
-    }
-  };
-
-  const handleBackwardClick = () => {
-    if (currentPosition !== 0) {
-      divref.current!.scrollLeft = currentPosition - divider;
-    }
-  };
-
-  useEffect(() => {
-    const divWidth = divref.current?.scrollWidth!;
-    setDivider(divWidth / 10);
-    setDivWidth(divWidth);
-
-    divref.current?.addEventListener("scroll", updateScrollPosition);
-
-    return () => {
-      divref.current?.removeEventListener("scroll", updateScrollPosition);
-    };
-  }, []);
 
   return (
     <section className={css(featuredContainer)}>
@@ -86,9 +50,9 @@ const FeaturedCategories = () => {
             ))}
           </ul>
         </nav>
-        <div className={css(flex.raw({ columnGap: "sm" }), featuredIconCont)}>
+        <div className={css(flex.raw({ columnGap: "sm", }), featuredIconCont)}>
           <span className={css(featuredIcon)}>
-            <TiArrowLeft onClick={handleBackwardClick}/>
+            <TiArrowLeft onClick={handleBackwardClick} />
           </span>
           <span className={css(featuredIcon)}>
             <TiArrowRight onClick={handleForwardClick} />
@@ -97,23 +61,15 @@ const FeaturedCategories = () => {
       </section>
 
       <section
-        ref={divref}
+        ref={ref}
         className={css(
-          flex.raw({ columnGap: "md", wrap: "no" }),
+          flex.raw({ columnGap: "md", wrap: "no", type: "spaceBetween"}),
           featuredSecondSection
         )}
       >
         {data.map((item, index) => (
           <FeaturedSmallCards key={index} {...item} />
         ))}
-      </section>
-
-      <section
-        className={css(flex.raw({ columnGap: "md" }), featuredThirdSection)}
-      >
-        <FeaturedBigCard title={title[0]} num={1} />
-        <FeaturedBigCard title={title[1]} num={2} />
-        <FeaturedBigCard title={title[2]} num={3} />
       </section>
     </section>
   );

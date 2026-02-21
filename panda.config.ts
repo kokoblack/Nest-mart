@@ -34,8 +34,9 @@ export default defineConfig({
           1100: { value: "#e8e8e8" },
           1200: { value: "#292F46" },
           1300: { value: "#ADADAD" },
+          1400: { value: "#f4f6fa" },
         },
-        card_bg: {
+        card_bg: { 
           100: { value: "#F2FCE4" },
           200: { value: "#FFFCEB" },
           300: { value: "#ECFFEC" },
@@ -72,19 +73,24 @@ export default defineConfig({
         slideOut: {
           '0%': {translate: '10%', opacity: 1 },
           '100%': {translate: '0%', opacity: 1 }
+        },
+        sideway: {
+          '0%': {left: '5px',},
+          '100%': {right: '0',}
         }
       },
     },
     breakpoints: {
-      base: "0px",
+      base: "319px",
       sm: "480px",
-      md: "768px",
-      lg: "992px",
-      xl: "1280px",
-      "2xl": "1536px",
+      md: "769px",
+      lg: "993px",
+      xl: "1281px",
+      "2xl": "1535px",
     },
   },
 
   // The output directory for your css system
   outdir: "styled-system",
 });
+ 
