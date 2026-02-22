@@ -1,11 +1,10 @@
 import { css } from "../../../styled-system/css";
 import { cartlistCont } from "../../style/component/global/cartList";
-
 type CartList = {
-    heading: string
-    total: number
-}
-const CartHeader = ({heading, total}: CartList) => {
+  heading: string;
+  total: number;
+};
+const CartHeader = ({ heading, total }: CartList) => {
   return (
     <section className={css(cartlistCont)}>
       <h3>{heading}</h3>
