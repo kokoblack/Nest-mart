@@ -8,12 +8,17 @@ import Banner from "../../components/global/Banner";
 import MobileCartList from "../../components/global/MobileCartList";
 import CartHeader from "../../components/global/CartHeader";
 import DesktopCartList from "../../components/global/DesktopCartList";
+import DelProduct from "../../components/global/DelProduct";
+import { flex } from "../../style/recipe/flex";
 
 const Wishlist = () => {
   return (
     <main>
       <div className={css(wishlistCont)}>
-        <CartHeader heading="Your Whishlist" total={5} />
+        <section className={css(flex.raw({ type: "endY", columnGap: "md" }))}>
+          <CartHeader heading="Your Whishlist" total={5} />
+          <DelProduct />
+        </section>
 
         <section className={css(wishlistTableWrapper)}>
           <DesktopCartList
@@ -24,12 +29,14 @@ const Wishlist = () => {
           />
         </section>
 
-        <MobileCartList
-          img={img}
-          type="cart"
-          name="Seeds of ChangeOrganic Quinoa, Brown"
-          price="$50"
-        />
+        <section>
+          <MobileCartList
+            img={img}
+            type="wishlist"
+            name="Seeds of ChangeOrganic Quinoa, Brown"
+            price="$50"
+          />
+        </section>
       </div>
 
       <Banner id={1} />

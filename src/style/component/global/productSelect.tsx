@@ -50,6 +50,10 @@ export const productSelectInput = css.raw({
 
   _focus: {
     outline: "none",
+
+    _placeholder : {
+      color: "transparent"
+    }
   },
 });
 
@@ -63,6 +67,10 @@ export const productSelectInputCart = css.raw({
 
   _focus: {
     outline: "none",
+
+    _placeholder: {
+      color: "transparent"
+    }
   },
 });
 

@@ -206,4 +206,5 @@ export const wishlistMobileViewAPrice = css.raw({
 
 export const wishlistMobileViewName = css.raw({
   fontSize: ".8rem",
+  color: "secondary.100"
 });
