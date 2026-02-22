@@ -3,6 +3,14 @@ import { MdOutlineNoteAlt } from "react-icons/md";
 import { FaArrowRightFromBracket } from "react-icons/fa6";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import { css } from "../../../styled-system/css";
+import { flex } from "../../style/recipe/flex";
+import { button } from "../../style/recipe/button";
+import CartHeader from "../../components/global/CartHeader";
+import DelProduct from "../../components/global/DelProduct";
+import DesktopCartList from "../../components/global/DesktopCartList";
+import img from "../../assets/Link → product-10-1.jpg.jpg";
+import Banner from "../../components/global/Banner";
+import MobileCartList from "../../components/global/MobileCartList";
 import {
   cartCalShipInput,
   cartCalShipSec,
@@ -17,15 +25,7 @@ import {
   cartCouponInputCont,
   cartFirstCont,
   cartSecondCont,
-} from "../../style/pages/cart/Cart";
-import { flex } from "../../style/recipe/flex";
-import { button } from "../../style/recipe/button";
-import CartHeader from "../../components/global/CartHeader";
-import DelProduct from "../../components/global/DelProduct";
-import DesktopCartList from "../../components/global/DesktopCartList";
-import img from "../../assets/Link → product-10-1.jpg.jpg";
-import Banner from "../../components/global/Banner";
-import MobileCartList from "../../components/global/MobileCartList";
+} from "../../style/pages/cart/cart";
 
 const Cart = () => {
   return (
@@ -127,7 +127,12 @@ const Cart = () => {
                   )}
                 >
                   <input placeholder="Enter Your Coupon" />
-                  <button className={css(button.raw({ px: "lg", py: "sm" }), flex.raw({ columnGap: "sm"}))}>
+                  <button
+                    className={css(
+                      button.raw({ px: "lg", py: "sm" }),
+                      flex.raw({ columnGap: "sm" }),
+                    )}
+                  >
                     <i>
                       <MdOutlineNoteAlt />
                     </i>
