@@ -15,6 +15,7 @@ import ErrorPage from "./pages/error/ErrorPage";
 import ProductDetail from "./pages/productdetails/ProductDetail";
 import Wishlist from "./pages/wishlist/Wishlist";
 import Cart from "./pages/cart/Cart";
+import Checkout from "./pages/checkout/Checkout";
 
 function NestMart() {
   const divRef = useRef<HTMLDivElement>(null);
@@ -64,6 +65,7 @@ function NestMart() {
           <Route path="/productDetail" element={<ProductDetail />} />
           <Route path="/wishlist" element={<Wishlist/>} />
           <Route path="/cart" element={<Cart/>} />
+          <Route path="/checkout" element={<Checkout/>} />
           <Route path="/errorV" element={<ErrorPage />} />
           <Route path="/errorM" element={<ErrorPage />} />
         </Routes>

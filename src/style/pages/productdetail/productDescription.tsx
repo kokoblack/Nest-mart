@@ -162,21 +162,3 @@ export const productDescriptionHeading = css.raw({
     },
   },
 });
-
-// export const productDescriptionCont = css.raw({})
-
-// export const productDescriptionCont = css.raw({})
-
-// export const productDescriptionCont = css.raw({})
-
-// export const productDescriptionCont = css.raw({})
-
-// export const productDescriptionCont = css.raw({})
-
-// export const productDescriptionCont = css.raw({})
-
-// export const productDescriptionCont = css.raw({})
-
-// export const productDescriptionCont = css.raw({})
-
-// export const productDescriptionCont = css.raw({})
