@@ -23,20 +23,34 @@ export type DOTDProduct = {
   id?: number;
 };
 
-export type blogdatatype = {
+export type Blogdatatype = {
   img: string;
   category: string;
   title: string;
   readTime?: number;
   views?: number;
-  date?: Date
+  date?: Date;
 }[];
 
-export type blogdatatype1 = {
+export type Blogdatatype1 = {
   img: string;
   category: string;
   title: string;
   readTime?: number;
   views?: number;
-  date?: Date
-}
+  date?: Date;
+};
+
+export type CartReducerType = {
+  state: {
+    items: [];
+    totalAmount: 0;
+    totalQuantity: 0;
+  };
+
+  action: {
+    items: [];
+    totalAmount: 0;
+    totalQuantity: 0;
+  };
+};

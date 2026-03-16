@@ -17,10 +17,12 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import useUpdateScrollPosition from "../../hooks/useUpdateScrollPosition";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { hide, show } from "../../style/global";
+import { useNavigate } from "react-router";
 
 const DailyBestSells = () => {
   const [productType, setProductType] = useState("Featured");
   const [mouseEnter, setMouseEnter] = useState(false);
+  const navigate = useNavigate();
 
   const ref = useRef<HTMLDivElement>(null);
 
@@ -62,7 +64,7 @@ const DailyBestSells = () => {
               })
             )}
           >
-            <p>Shop Now</p>
+            <p  onClick={() => navigate("shop")}>Shop Now</p>
             <span>
               <TiArrowRight />
             </span>
