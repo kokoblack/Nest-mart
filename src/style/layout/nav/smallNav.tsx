@@ -12,7 +12,15 @@ export const container = css.raw({
         justifyContent: 'start'
     },
 
-    '@media screen and (max-width: 992px)': {
+    '@media screen and (max-width: 768px)': {
         display: 'none'
+    },
+
+    '& > button': {
+        hideBelow: "lg"
+    },
+
+    '& > div': {
+        hideBelow: "lg"
     }
 })

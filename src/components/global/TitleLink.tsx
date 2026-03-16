@@ -5,6 +5,7 @@ import {
   titleHeaderCont,
   titleLinkContainer,
 } from "../../style/component/global/titleLink";
+import { useNavigate } from "react-router";
 
 type TitleLinkProps = {
   title: string;
@@ -14,18 +15,19 @@ type TitleLinkProps = {
 
 const TitleLink = ({ title, link, setProductType }: TitleLinkProps) => {
   const [active, setActive] = useState(0);
+  const navigate = useNavigate();
 
   return (
     <section
       className={css(
         flex.raw({ type: "endY", columnGap: "xlg" }),
-        titleLinkContainer
+        titleLinkContainer,
       )}
     >
       <div
         className={css(
           flex.raw({ columnGap: "md", type: "endY" }),
-          titleHeaderCont
+          titleHeaderCont,
         )}
       >
         <h3 className={css({ lineHeight: "2rem" })}>{title}</h3>
@@ -47,7 +49,7 @@ const TitleLink = ({ title, link, setProductType }: TitleLinkProps) => {
       <nav
         className={css(
           { ml: [undefined, undefined, undefined, undefined, "auto"] },
-          flex.raw()
+          flex.raw(),
         )}
       >
         <ul
@@ -75,6 +77,7 @@ const TitleLink = ({ title, link, setProductType }: TitleLinkProps) => {
       </nav>
 
       <p
+        onClick={() => navigate("shop")}
         className={css({
           cursor: "pointer",
           fontSize: ".8rem",

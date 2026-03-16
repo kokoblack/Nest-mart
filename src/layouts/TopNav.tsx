@@ -25,6 +25,7 @@ import { marginLeft, hide, show } from "../style/global";
 import TopNavIcon from "../components/layouts/TopNavIcon";
 import MobileMenu from "./MobileMenu";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const TopNavBar = () => {
   const [view, setView] = useState(false);
@@ -99,18 +100,19 @@ const TopNavBar = () => {
         className={css({ h: "fit-content", alignSelf: "center" }, flex.raw())}
       >
         <nav className={css(flex.raw({ columnGap: "md" }), navUserCont)}>
-          <TopNavIcon icon={<FaRegHeart />} count="5" name="Wishlist" />
-          <TopNavIcon icon={<GrCart />} count="5" name="Cart" />
+          <TopNavIcon icon={<FaRegHeart />} count="5" name="Wishlist" link="Wishlist" />
+          <TopNavIcon icon={<GrCart />} count="5" name="Cart" link="cart" />
 
           <div
             className={css(flex.raw({ columnGap: "xsm" }), {
               cursor: "pointer",
             })}
           >
-            <span className={css({ fontSize: "1.2rem", hideBelow: "md" })}>
+            <span className={css({ fontSize: "1.2rem", hideBelow: "480px" })}>
               <LuUser />
             </span>
-            <p className={navUserText}>Account</p>
+            <Link to=""><p className={navUserText}>Account</p></Link>
+            
           </div>
         </nav>
       </section>
