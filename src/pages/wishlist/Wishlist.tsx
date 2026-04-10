@@ -1,7 +1,7 @@
 import { css } from "../../../styled-system/css";
-import img from "../../assets/Link → product-10-1.jpg.jpg";
 import {
   wishlistCont,
+  wishlistTableCont,
   wishlistTableWrapper,
 } from "../../style/pages/wishlist/wishlist";
 import Banner from "../../components/global/Banner";
@@ -10,32 +10,51 @@ import CartHeader from "../../components/global/CartHeader";
 import DesktopCartList from "../../components/global/DesktopCartList";
 import DelProduct from "../../components/global/DelProduct";
 import { flex } from "../../style/recipe/flex";
+import { useCartStore } from "../../redux/CartReducer";
 
 const Wishlist = () => {
+  const { items } = useCartStore();
+
   return (
     <main>
       <div className={css(wishlistCont)}>
         <section className={css(flex.raw({ type: "endY", columnGap: "md" }))}>
           <CartHeader heading="Your Whishlist" total={5} />
-          <DelProduct />
+          <DelProduct type="wishlist" />
         </section>
 
         <section className={css(wishlistTableWrapper)}>
-          <DesktopCartList
-            img={img}
-            type="wishlist"
-            name="Seeds of Change Organic Quinoa, Brown"
-            price="$40"
-          />
+          <table className={css(wishlistTableCont)}>
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Stock Status</th>
+              <th>Action</th>
+              <th>Remove</th>
+            </tr>
+
+            {items.map((items, index) => (
+              <DesktopCartList
+                key={index}
+                img={items.img}
+                type="wishlist"
+                name={items.name}
+                price={items.price}
+              />
+            ))}
+          </table>
         </section>
 
         <section>
-          <MobileCartList
-            img={img}
-            type="wishlist"
-            name="Seeds of ChangeOrganic Quinoa, Brown"
-            price="$50"
-          />
+          {items.map((items, index) => (
+            <MobileCartList
+              key={index}
+              img={items.img}
+              type="wishlist"
+              name={items.name}
+              price={items.price}
+            />
+          ))}
         </section>
       </div>
 

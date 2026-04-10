@@ -1,12 +1,14 @@
 import { css } from "../../../styled-system/css";
 import { featuredBigCardCont, featuredButton, featuredTitle } from "../../style/component/home/featuredBigCard";
 import { button } from "../../style/recipe/button";
+import { useNavigate } from "react-router";
 
 type FeaturedBigCardProps = {
   title: string;
   num: number;
 };
 const FeaturedBigCard = ({ title, num }: FeaturedBigCardProps) => {
+  const navigate = useNavigate();
   return (
     <div
       className={css(featuredBigCardCont, {
@@ -19,7 +21,9 @@ const FeaturedBigCard = ({ title, num }: FeaturedBigCardProps) => {
       })}
     >
       <h3 className={css(featuredTitle)}>{title}</h3>
-      <button className={css(button.raw({ py: "sm" }), featuredButton)}>Shop Now</button>
+      <button 
+       onClick={() => navigate("shop")}
+      className={css(button.raw({ py: "sm" }), featuredButton)}>Shop Now</button>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import { css } from "../../../../styled-system/css";
 
 export const cartlistCont = css.raw({
+  mr: "auto",
   "& > h3": {
     fontSize: ["1.5rem", "1.5rem", "1.5rem", "1.9rem", "1.9rem"],
     color: "secondary.100",

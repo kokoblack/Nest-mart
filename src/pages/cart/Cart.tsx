@@ -8,7 +8,6 @@ import { button } from "../../style/recipe/button";
 import CartHeader from "../../components/global/CartHeader";
 import DelProduct from "../../components/global/DelProduct";
 import DesktopCartList from "../../components/global/DesktopCartList";
-import img from "../../assets/Link → product-10-1.jpg.jpg";
 import Banner from "../../components/global/Banner";
 import MobileCartList from "../../components/global/MobileCartList";
 import {
@@ -24,10 +23,16 @@ import {
   cartCouponCont,
   cartCouponInputCont,
   cartFirstCont,
+  cartNoItems,
   cartSecondCont,
 } from "../../style/pages/cart/cart";
+import { useCartStore } from "../../redux/CartReducer";
+import { Link } from "react-router-dom";
+import { desktopCartListTableCont } from "../../style/component/global/desktopCartList";
 
 const Cart = () => {
+  const { items, totalAmount } = useCartStore();
+
   return (
     <main className={css(cartCont)}>
       <section
@@ -38,26 +43,51 @@ const Cart = () => {
       >
         <section className={css({ w: "fit-content" })}>
           <section className={css(flex.raw({ type: "endY", columnGap: "md" }))}>
-            <CartHeader heading="Your Cart" total={5} />
-            <DelProduct />
+            <CartHeader heading="Your Cart" total={items.length} />
+            {items.length !== 0 && <DelProduct type="cart" />}
+          </section>
+
+          <section className={css(cartNoItems)}>
+            {items.length === 0 && <p>Your cart is empty</p>}
           </section>
 
           <section className={css({ hideBelow: "660px" })}>
-            <DesktopCartList
-              img={img}
-              type="cart"
-              name="Seeds of Change Organic Quinoa, Brown"
-              price="$40"
-            />
+            {items.length !== 0 && (
+              <table className={css(desktopCartListTableCont)}>
+                <tr>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Subtotal</th>
+                  <th>Remove</th>
+                </tr>
+
+                {items.map((items, index) => (
+                  <DesktopCartList
+                    key={index}
+                    img={items.img}
+                    type="cart"
+                    name={items.name}
+                    price={items.price}
+                    subtotal={items.subTotal!}
+                    quantity={items.quantity!}
+                  />
+                ))}
+              </table>
+            )}
           </section>
 
           <section className={css({ hideFrom: "661px" })}>
-            <MobileCartList
-              img={img}
-              type="cart"
-              name="Seeds of ChangeOrganic Quinoa, Brown"
-              price="$50"
-            />
+            {items.map((items, index) => (
+              <MobileCartList
+                key={index}
+                img={items.img}
+                type="cart"
+                name={items.name}
+                price={items.price}
+                quantity={items.quantity!}
+              />
+            ))}
           </section>
 
           <section className={css(cartSecondCont)}>
@@ -71,7 +101,7 @@ const Cart = () => {
                 <i>
                   <FaLongArrowAltLeft />
                 </i>
-                <p>Continue Shopping</p>
+                <Link to="/shop">Continue Shopping</Link>
               </button>
               <button
                 className={css(
@@ -144,51 +174,53 @@ const Cart = () => {
           </section>
         </section>
 
-        <section className={css(cartCheckoutMain)}>
-          <div className={css(cartCheckoutCont)}>
-            <div className={css(cartCheckoutTotal)}>
-              <p>Subtotal</p>
-              <p>$12.31</p>
+        {items.length !== 0 && (
+          <section className={css(cartCheckoutMain)}>
+            <div className={css(cartCheckoutCont)}>
+              <div className={css(cartCheckoutTotal)}>
+                <p>Subtotal</p>
+                <p>${totalAmount.toFixed(2)}</p>
+              </div>
+
+              <hr />
+              <hr className={css(cartCheckoutHR)} />
+              <hr />
+
+              <div className={css(cartCheckoutShip)}>
+                <p>shipping</p>
+                <p>Free</p>
+              </div>
+
+              <hr />
+
+              <div className={css(cartCheckoutShip)}>
+                <p>Estimate for</p>
+                <p>United Kingdom</p>
+              </div>
+
+              <hr />
+              <hr className={css(cartCheckoutHR)} />
+              <hr />
+
+              <div className={css(cartCheckoutTotal)}>
+                <p>Total</p>
+                <p>${totalAmount.toFixed(2)}</p>
+              </div>
             </div>
 
-            <hr />
-            <hr className={css(cartCheckoutHR)} />
-            <hr />
-
-            <div className={css(cartCheckoutShip)}>
-              <p>shipping</p>
-              <p>Free</p>
-            </div>
-
-            <hr />
-
-            <div className={css(cartCheckoutShip)}>
-              <p>Estimate for</p>
-              <p>United Kingdom</p>
-            </div>
-
-            <hr />
-            <hr className={css(cartCheckoutHR)} />
-            <hr />
-
-            <div className={css(cartCheckoutTotal)}>
-              <p>Total</p>
-              <p>$50</p>
-            </div>
-          </div>
-
-          <button
-            className={css(button.raw({ px: "lg", py: "sm" }), flex.raw(), {
-              w: "100%",
-              mt: ".5rem",
-            })}
-          >
-            <p>Proceed To Checkout</p>
-            <i>
-              <FaArrowRightFromBracket />
-            </i>
-          </button>
-        </section>
+            <button
+              className={css(button.raw({ px: "lg", py: "sm" }), flex.raw(), {
+                w: "100%",
+                mt: ".5rem",
+              })}
+            >
+              <Link to="/checkout">Proceed To Checkout</Link>
+              <i>
+                <FaArrowRightFromBracket />
+              </i>
+            </button>
+          </section>
+        )}
       </section>
 
       <Banner id={1} />

@@ -52,7 +52,7 @@ export const navMenuIcon = css.raw({
   color: "primary.100",
   zIndex: "200",
 
-  hideFrom: "993px",
+  hideFrom: "769px",
 });
 
 export const navImage = css({
@@ -100,6 +100,10 @@ export const navLocationCont = css.raw({
 
 export const navUserCont = css.raw({
   alignSelf: "center",
+
+  '@media screen and (max-width: 993px)': {
+    columnGap: "1rem"
+  }
 });
 
 export const navUserText = css({
@@ -109,7 +113,7 @@ export const navUserText = css({
   position: "relative",
   top: ".2rem",
 
-  hideBelow: "lg",
+  hideBelow: "lg"
 });
 
 export const mobileMenuView = css.raw({

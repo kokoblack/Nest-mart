@@ -10,7 +10,6 @@ export const delProductCont = css.raw({
   py: ".3rem",
   px: ".6rem",
   rounded: "5px",
-  ml: "auto",
   cursor: "pointer",
 
   "& > i": {

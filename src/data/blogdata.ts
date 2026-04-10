@@ -13,11 +13,11 @@ import blog12 from "../assets/blog16.png"
 import blog13 from "../assets/blog18.png"
 import blog14 from "../assets/blog19.png"
 import blog15 from "../assets/blog20.png"
-import { blogdatatype } from "../type/types"
+import { Blogdatatype } from "../type/types"
 import { randomDate } from "../utils/Randomdate"
 
 
- export const blogdata: blogdatatype = [
+ export const blogdata: Blogdatatype = [
     {
         img: blog1,
         category: 'Side Dish',

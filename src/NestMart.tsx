@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import React, { createContext, useEffect, useReducer, useRef, useState } from "react";
 import TopNavBar from "./layouts/TopNav";
 import SmallNav from "./layouts/SmallNav";
 import Footer from "./layouts/Footer";
@@ -16,9 +16,18 @@ import ProductDetail from "./pages/productdetails/ProductDetail";
 import Wishlist from "./pages/wishlist/Wishlist";
 import Cart from "./pages/cart/Cart";
 import Checkout from "./pages/checkout/Checkout";
+// import { cartReducer, cartInitState, CartReducerState } from "../src/redux/CartReducer";
+
+// type NestMartContextType = {
+//   state: CartReducerState
+//   dispatch: React.DispatchWithoutAction
+// }
 
 function NestMart() {
+  const NestMartContext = createContext<string | null>(null);
   const divRef = useRef<HTMLDivElement>(null);
+
+  // const [state, dispatch] = useReducer(cartReducer, cartInitState)
   const [sticky, setSticky] = useState(0);
 
   useEffect(() => {
@@ -40,39 +49,46 @@ function NestMart() {
   }, [divRef.current?.offsetHeight]);
 
   return (
-    <BrowserRouter>
-      <div className={css(paddingView, { position: "relative" })}>
-        <div
-          ref={divRef}
-          className={css({
-            top: 0,
-            bg: "secondary.500",
-            zIndex: "50",
-          })}
-        >
-          <TopNavBar />
-          <SmallNav />
-          <section className={css({ py: ".5rem", borderBottom: "1px solid #dedfe2", hideFrom: "769px", })}>
-            <MobileMenuSearch />
-          </section>
+    <NestMartContext.Provider value="y">
+      <BrowserRouter>
+        <div className={css(paddingView, { position: "relative" })}>
+          <div
+            ref={divRef}
+            className={css({
+              top: 0,
+              bg: "secondary.500",
+              zIndex: "50",
+            })}
+          >
+            <TopNavBar />
+            <SmallNav />
+            <section
+              className={css({
+                py: ".5rem",
+                borderBottom: "1px solid #dedfe2",
+                hideFrom: "769px",
+              })}
+            >
+              <MobileMenuSearch />
+            </section>
+          </div>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/productDetail" element={<ProductDetail />} />
+            <Route path="/wishlist" element={<Wishlist />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/errorV" element={<ErrorPage />} />
+            <Route path="/errorM" element={<ErrorPage />} />
+          </Routes>
+          <Footer />
         </div>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/productDetail" element={<ProductDetail />} />
-          <Route path="/wishlist" element={<Wishlist/>} />
-          <Route path="/cart" element={<Cart/>} />
-          <Route path="/checkout" element={<Checkout/>} />
-          <Route path="/errorV" element={<ErrorPage />} />
-          <Route path="/errorM" element={<ErrorPage />} />
-        </Routes>
-        <Footer /> 
-      </div>
-    </BrowserRouter>
-
+      </BrowserRouter>
+    </NestMartContext.Provider>
   );
 }
 

@@ -7,7 +7,7 @@ import {
   blogContentSortContainer,
 } from "../../style/component/blog/blogContent";
 import { flex } from "../../style/recipe/flex";
-import { blogdatatype1 } from "../../type/types";
+import { Blogdatatype1 } from "../../type/types";
 
 const BlogContent = ({
   img,
@@ -16,7 +16,7 @@ const BlogContent = ({
   readTime,
   title,
   category,
-}: blogdatatype1) => {
+}: Blogdatatype1) => {
   return (
     <section
       className={css(blogContentContainer, flex.raw({ vertical: "vertical" }))}

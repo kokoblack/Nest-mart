@@ -14,6 +14,7 @@ import {
 import { flex } from "../../style/recipe/flex";
 import { button } from "../../style/recipe/button";
 import { Product } from "../../type/types";
+import { useCartStore } from "../../redux/CartReducer";
 
 const ProductCard = ({
   name,
@@ -26,6 +27,13 @@ const ProductCard = ({
   brand,
   image,
 }: Product) => {
+  const addItem = useCartStore((state) => state.addItem);
+  const item = {
+    name,
+    img: image,
+    price: parseFloat(currentPrice),
+  };
+
   return (
     <div className={css(productCardContainer)}>
       {type && (
@@ -67,7 +75,7 @@ const ProductCard = ({
       </p>
 
       <div className={css(flex.raw({ columnGap: "md" }), productCardPriceCont)}>
-        <div className={css(flex.raw({columnGap: "sm", type: "startX"}),)}>
+        <div className={css(flex.raw({ columnGap: "sm", type: "startX" }))}>
           <p className={css(productCardCureentPrice)}>{currentPrice}</p>
           <p
             className={css({
@@ -80,6 +88,7 @@ const ProductCard = ({
         </div>
 
         <button
+          onClick={() => addItem({ ...item })}
           className={css(
             button.raw({
               bg: "lightGreen",

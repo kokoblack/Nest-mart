@@ -27,10 +27,20 @@ export const productSelectCont = css.raw({
 
 export const productSelectInput = css.raw({
   w: "25px",
+  appearance: "textfield",
 
-   "@media screen and (max-width: 480px)": {
-      w: "20px"
-    },
+  "&::-webkit-outer-spin-button": {
+    appearance: "none",
+    margin: 0,
+  },
+  "&::-webkit-inner-spin-button": {
+    appearance: "none",
+    margin: 0,
+  },
+
+  "@media screen and (max-width: 480px)": {
+    w: "20px",
+  },
 
   _placeholder: {
     color: "black",
@@ -51,26 +61,37 @@ export const productSelectInput = css.raw({
   _focus: {
     outline: "none",
 
-    _placeholder : {
-      color: "transparent"
-    }
+    _placeholder: {
+      color: "transparent",
+    },
   },
 });
 
 export const productSelectInputCart = css.raw({
   w: "20px",
+  fontSize: ".8rem",
+  appearance: "textfield",
+
+  "&::-webkit-outer-spin-button": {
+    appearance: "none",
+    margin: 0,
+  },
+  "&::-webkit-inner-spin-button": {
+    appearance: "none",
+    margin: 0,
+  },
 
   _placeholder: {
     color: "black",
-    fontSize: ".8rem"
+    fontSize: ".8rem",
   },
 
   _focus: {
     outline: "none",
 
     _placeholder: {
-      color: "transparent"
-    }
+      color: "transparent",
+    },
   },
 });
 
@@ -82,5 +103,5 @@ export const productSelectIcon = css.raw({
 export const productSelectIconCart = css.raw({
   color: "primary.100",
   cursor: "pointer",
-  fontSize: ".8rem"
+  fontSize: ".8rem",
 });
