@@ -14,15 +14,24 @@ import { flex } from "../../style/recipe/flex";
 import { BiTrash } from "react-icons/bi";
 import { button } from "../../style/recipe/button";
 import ProductSelect from "./ProductSelect";
+import { useCartStore } from "../../redux/CartReducer";
 
 type MobileCartList = {
   img: string;
   name: string;
-  price: string;
+  price: number;
   type: string;
+  quantity?: number;
 };
 
-const MobileCartList = ({ img, name, price, type }: MobileCartList) => {
+const MobileCartList = ({
+  img,
+  name,
+  price,
+  type,
+  quantity,
+}: MobileCartList) => {
+  const { clearItem } = useCartStore();
   return (
     <section className={css(wishlistMobileViewCont)}>
       <section
@@ -76,10 +85,14 @@ const MobileCartList = ({ img, name, price, type }: MobileCartList) => {
           wishlistMobileViewAction,
         )}
       >
-        <i>
+        <i onClick={() => clearItem(name)}>
           <BiTrash />
         </i>
-        {type === "cart" && <div className={css(wishlistMobileViewActionSelect)}><ProductSelect type=""/></div>}
+        {type === "cart" && (
+          <div className={css(wishlistMobileViewActionSelect)}>
+            <ProductSelect type="cart" quantity={quantity!} name={name} />
+          </div>
+        )}
         {type === "wishlist" && (
           <button className={css(button.raw(), wishlistMobileViewActionBut)}>
             Add to cart

@@ -5,6 +5,21 @@ export const cartCont = css.raw({
   w: "100%",
 });
 
+export const cartNoItems = css.raw({
+  color: 'secondary.100',
+  fontSize: "3rem",
+
+  "@media screen and (max-width: 660px)": {
+    fontSize: "2.5rem",
+
+  },
+
+  "@media screen and (max-width: 480px)": {
+    fontSize: "2rem",
+
+  }
+})
+
 export const cartFirstCont = css.raw({
   mb: "3rem",
   mt: "2rem",
