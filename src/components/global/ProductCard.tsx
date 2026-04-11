@@ -15,6 +15,8 @@ import { flex } from "../../style/recipe/flex";
 import { button } from "../../style/recipe/button";
 import { Product } from "../../type/types";
 import { useCartStore } from "../../redux/CartReducer";
+import { useProductDetailStore } from "../../redux/ProductDetailsReducer";
+import { useNavigate } from "react-router";
 
 const ProductCard = ({
   name,
@@ -28,10 +30,23 @@ const ProductCard = ({
   image,
 }: Product) => {
   const addItem = useCartStore((state) => state.addItem);
+  const updateProductDetail = useProductDetailStore(
+    (state) => state.updateProductDetail,
+  );
+
+  let navigate = useNavigate();
+
   const item = {
     name,
     img: image,
     price: parseFloat(currentPrice),
+  };
+
+  const productDetail = {
+    name,
+    img: image,
+    initPrice: parseFloat(initialPrice),
+    curtPrice: parseFloat(currentPrice),
   };
 
   return (
@@ -45,34 +60,41 @@ const ProductCard = ({
         </div>
       )}
 
-      <figure className={css(productCardImg)}>
-        <img src={image} alt="product" />
-      </figure>
-
-      <p className={css(productCardCat)}>{category}</p>
-      <p className={css(productCardName)}>{name}</p>
       <div
-        className={css(flex.raw({ type: "startX", columnGap: "sm" }), {
-          my: ".2rem",
-        })}
+        onClick={() => {
+          updateProductDetail({ ...productDetail });
+          navigate("/productDetail");
+        }}
       >
-        <span
-          className={css({ color: "yellow" }, flex.raw({ columnGap: "sm" }))}
+        <figure className={css(productCardImg)}>
+          <img src={image} alt="product" />
+        </figure>
+
+        <p className={css(productCardCat)}>{category}</p>
+        <p className={css(productCardName)}>{name}</p>
+        <div
+          className={css(flex.raw({ type: "startX", columnGap: "sm" }), {
+            my: ".2rem",
+          })}
         >
-          <FaStar />
-          <FaStar />
-          <FaStar />
-          <FaStar />
-          <FaStar />
-        </span>
-        <p>{rating}</p>
+          <span
+            className={css({ color: "yellow" }, flex.raw({ columnGap: "sm" }))}
+          >
+            <FaStar />
+            <FaStar />
+            <FaStar />
+            <FaStar />
+            <FaStar />
+          </span>
+          <p>{rating}</p>
+        </div>
+        <p className={css({ fontFamily: "lato" })}>
+          By{" "}
+          <span className={css({ color: "primary.100", fontWeight: "bold" })}>
+            {brand}
+          </span>{" "}
+        </p>
       </div>
-      <p className={css({ fontFamily: "lato" })}>
-        By{" "}
-        <span className={css({ color: "primary.100", fontWeight: "bold" })}>
-          {brand}
-        </span>{" "}
-      </p>
 
       <div className={css(flex.raw({ columnGap: "md" }), productCardPriceCont)}>
         <div className={css(flex.raw({ columnGap: "sm", type: "startX" }))}>
