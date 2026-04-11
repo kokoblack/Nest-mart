@@ -9,6 +9,7 @@ import {
   productSelectInputCart,
 } from "../../style/component/global/productSelect";
 import { useCartStore } from "../../redux/CartReducer";
+import { useState } from "react";
 
 const ProductSelect = ({
   type,
@@ -16,11 +17,29 @@ const ProductSelect = ({
   name,
 }: {
   type: string;
-  quantity: number;
-  name: string;
+  quantity?: number;
+  name?: string;
 }) => {
   const { increaseItem, decreaseItem, updateQuantity } = useCartStore();
-  const quant = String(quantity);
+  const [quanty, setQuanty] = useState(1);
+  const quant = type === "cart" ? quantity!.toString() : quanty.toString()
+
+  const handleIncreseQuanty = () => {
+    if (quanty === 10) {
+      setQuanty(10);
+    } else {
+      setQuanty((prevState) => prevState + 1);
+    }
+  };
+
+  const handleDecreseQuanty = () => {
+    if (quanty === 1) {
+      setQuanty(1);
+    } else {
+      setQuanty((prevState) => prevState - 1);
+    }
+  };
+
   return (
     <div
       className={css(
@@ -33,20 +52,25 @@ const ProductSelect = ({
           let value = Number(e.target.value);
 
           if (Number(value) > 10) {
-            value = 10
+            value = 10;
             e.target.value = "10";
-          } 
+            setQuanty(10);
+          }
 
           if (Number(value) < 1) {
-            value = 1
+            value = 1;
             e.target.value = "";
-          } 
+            setQuanty(1);
+          }
 
-          updateQuantity(name, value);
+          if (type === "cart") {
+            updateQuantity(name!, value);
+          } else {
+            setQuanty(Number(e.target.value));
+          }
         }}
         onBlur={() => {
-
-          updateQuantity(name, quantity);
+          updateQuantity(name!, quantity!);
         }}
         className={css(
           type === "cart" ? productSelectInputCart : productSelectInput,
@@ -63,10 +87,26 @@ const ProductSelect = ({
           type === "cart" ? productSelectIconCart : productSelectIcon,
         )}
       >
-        <i onClick={() => increaseItem(name)}>
+        <i
+          onClick={() => {
+            if (type === "cart") {
+              increaseItem(name!);
+            } else {
+              handleIncreseQuanty();
+            }
+          }}
+        >
           <MdKeyboardArrowUp />
         </i>
-        <i onClick={() => decreaseItem(name)}>
+        <i
+          onClick={() => {
+            if (type === "cart") {
+              decreaseItem(name!);
+            } else {
+              handleDecreseQuanty();
+            }
+          }}
+        >
           <MdKeyboardArrowDown />
         </i>
       </div>

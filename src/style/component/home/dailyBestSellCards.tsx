@@ -9,6 +9,7 @@ export const dailyBestSellsCardContainer = css.raw({
   fontSize: ".75rem",
   color: "secondary.700",
   position: "relative",
+  cursor: "pointer"
 });
 
 export const dailyBestSellsCardImg = css.raw({

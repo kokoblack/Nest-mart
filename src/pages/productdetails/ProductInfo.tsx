@@ -1,5 +1,4 @@
 import { FaStar } from "react-icons/fa";
-import img1 from "../../assets/Link → product-1-1.jpg.jpg";
 import img2 from "../../assets/Article3.jpg";
 import img3 from "../../assets/Article4.jpg";
 import img4 from "../../assets/Article5.jpg";
@@ -25,8 +24,10 @@ import {
 } from "../../style/pages/productdetail/productInfo";
 import ProductInfoType from "../../components/productdetail/ProductInfoType";
 import CartButton from "../../components/productdetail/CartButton";
+import { useProductDetailStore } from "../../redux/ProductDetailsReducer";
 
 const ProductInfo = () => {
+  const {name, img, initPrice, curtPrice} = useProductDetailStore()
   return (
     <section className={css(prodInfoCont)}>
         <section
@@ -36,13 +37,13 @@ const ProductInfo = () => {
           )}
         >
           <figure>
-            <img className={css(prodInfoMainImg)} src={img1} alt="img" />
+            <img className={css(prodInfoMainImg)} src={img} alt="img" />
           </figure>
 
           <div className={css(prodInfoDetailSec)}>
             <p className={css(prodInfoSalesOff)}>Sales Off</p>
             <h3 className={css(prodInfoName)}>
-              Seeds of Change Organic Quinoa, Brown
+              {name}
             </h3>
             <section
               className={css(flex.raw({ columnGap: "md", type: "startX" }))}
@@ -75,10 +76,10 @@ const ProductInfo = () => {
             <section
               className={css(flex.raw({ columnGap: "md", type: "startX" }))}
             >
-              <p className={css(prodInfoCurPrice)}>$38</p>
+              <p className={css(prodInfoCurPrice)}>${curtPrice}</p>
               <div>
                 <p className={css(prodInfoOffPrice)}>26% off</p>
-                <p className={css(prodInfoInitprice)}>$52</p>
+                <p className={css(prodInfoInitprice)}>${initPrice}</p>
               </div>
             </section>
 
