@@ -233,7 +233,7 @@ export const prodInfoSelectButton = css.raw({
 });
 
 export const prodInfoSelectWishList = css.raw({
-  border: "1px solid #ECECEC",
+  border: "1px solid",
   color: "secondary.400",
   py: ".6rem",
   px: ".7rem",

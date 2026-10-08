@@ -16,7 +16,7 @@ export const prodDetailContent = css.raw({
   },
 });
 
-export const prodDetailMenuButton = css.raw({
+export const prodDetailMobileButton = css.raw({
   display: "none",
   position: "fixed",
   bottom: "0",

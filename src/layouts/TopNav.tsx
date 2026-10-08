@@ -27,11 +27,13 @@ import MobileMenu from "./MobileMenu";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCartStore } from "../redux/CartReducer";
+import { useWishlistStore } from "../redux/WishlistReducer";
 
 const TopNavBar = () => {
   const [view, setView] = useState(false);
 
   const cartItemTotal = useCartStore(state => state.items)
+  const wishlistItemTotal = useWishlistStore(state => state.wishlists)
 
   const handleMobileMenuView = () => {
     setView((prevState) => !prevState);
@@ -103,7 +105,7 @@ const TopNavBar = () => {
         className={css({ h: "fit-content", alignSelf: "center" }, flex.raw())}
       >
         <nav className={css(flex.raw({ columnGap: "md" }), navUserCont)}>
-          <TopNavIcon icon={<FaRegHeart />} count={5} name="Wishlist" link="Wishlist" />
+          <TopNavIcon icon={<FaRegHeart />} count={wishlistItemTotal.length} name="Wishlist" link="Wishlist" />
           <TopNavIcon icon={<GrCart />} count={cartItemTotal.length} name="Cart" link="cart" />
 
           <div

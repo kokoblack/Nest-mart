@@ -29,6 +29,7 @@ export const desktopCartListTableCont = css.raw({
 export const desktopCartListProductCont = css.raw({
   columnGap: "2rem",
   textAlign: "left",
+  cursor: "pointer",
 
   "& p": {
     fontSize: ".75rem",

@@ -108,16 +108,16 @@ export const checkoutCouponCont = css.raw({
       rounded: "10px",
       w: "100%",
       justifyContent: "start",
-      px: ".5rem"
+      px: ".5rem",
     },
 
     "& > button": {
-      rounded: "5px"
+      rounded: "5px",
     },
 
     "& input": {
-      w: "80%"
-    }
+      w: "80%",
+    },
   },
 });
 
@@ -141,8 +141,8 @@ export const checkoutLogintag = css.raw({
   },
 
   "@media screen and (max-width: 380px)": {
-    px:".5rem",
-    w: "100%"
+    px: ".5rem",
+    w: "100%",
   },
 });
 
@@ -262,17 +262,17 @@ export const checkoutOrderImg = css.raw({
   },
 
   "@media screen and (max-width: 480px)": {
-    w: "75px",
-  },
-
-  "@media screen and (max-width: 380px)": {
+    w: "6.5rem",
     mx: "auto",
-    mb: ".5rem",
-    w: "5.5rem",
 
     "& img": {
       border: "none",
     },
+  },
+
+  "@media screen and (max-width: 380px)": {
+    mb: ".5rem",
+    w: "5.5rem",
   },
 });
 
@@ -280,7 +280,7 @@ export const checkoutOrderDetailCont = css.raw({
   fontSize: ".75rem",
   color: "secondary.400",
   border: "1px solid #ECECEC",
-  w: "fit-content",
+  w: "25rem",
   p: ".7rem",
 
   "@media screen and (max-width: 1280px)": {
@@ -294,11 +294,11 @@ export const checkoutOrderDetailCont = css.raw({
 
   "@media screen and (max-width: 480px)": {
     fontSize: ".65rem",
+    flexDirection: "column",
+    alignItems: "start",
   },
 
   "@media screen and (max-width: 380px)": {
-    flexDirection: "column",
-    alignItems: "start",
     fontSize: ".7rem",
   },
 });

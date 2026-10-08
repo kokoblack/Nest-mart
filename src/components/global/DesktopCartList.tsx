@@ -19,6 +19,8 @@ import {
   desktopCartListSubTotal,
 } from "../../style/component/global/desktopCartList";
 import { useCartStore } from "../../redux/CartReducer";
+import { useWishlistStore } from "../../redux/WishlistReducer";
+import { useNavigate } from "react-router-dom";
 
 type DesktopCartList = {
   img: string;
@@ -37,12 +39,26 @@ const DesktopCartList = ({
   subtotal,
   quantity,
 }: DesktopCartList) => {
-  const { clearItem } = useCartStore();
+  const { clearItem, addItem } = useCartStore();
+  const { removeWishlist } = useWishlistStore();
+
+  let navigate = useNavigate();
+
+  const item = {
+    name,
+    img,
+    price,
+  };
+
+  const handleClick = () => {
+    type === "wishlist" ? removeWishlist(name) : clearItem(name);
+  };
   return (
     <>
       <tr>
         <td data-cell="name">
           <div
+            onClick={() => navigate("/productDetail")}
             className={css(
               flex.raw({ type: "startX" }),
               type !== "cart"
@@ -114,7 +130,7 @@ const DesktopCartList = ({
             </p>
           ) : (
             <button
-              // onClick={() => addItem()}
+              onClick={() => type === "wishlist" && addItem(item)}
               className={css(
                 button.raw({ px: "lg", py: "sm" }),
                 {
@@ -129,7 +145,7 @@ const DesktopCartList = ({
         </td>
         <td data-cell="remove">
           <i
-            onClick={() => clearItem(name)}
+            onClick={handleClick}
             className={css(flex.raw({ columnGap: "sm" }), {
               color: "secondary.400",
               cursor: "pointer",

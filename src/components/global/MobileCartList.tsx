@@ -15,6 +15,8 @@ import { BiTrash } from "react-icons/bi";
 import { button } from "../../style/recipe/button";
 import ProductSelect from "./ProductSelect";
 import { useCartStore } from "../../redux/CartReducer";
+import { useWishlistStore } from "../../redux/WishlistReducer";
+import { useNavigate } from "react-router-dom";
 
 type MobileCartList = {
   img: string;
@@ -31,10 +33,24 @@ const MobileCartList = ({
   type,
   quantity,
 }: MobileCartList) => {
-  const { clearItem } = useCartStore();
+  const { clearItem, addItem } = useCartStore();
+  const {removeWishlist} = useWishlistStore()
+
+  let navigate = useNavigate();
+
+  const handleClick = () => {
+    type === "wishlist" ? removeWishlist(name) : clearItem(name);
+  };
+
+  const item = {
+    name,
+    img,
+    price,
+  };
   return (
     <section className={css(wishlistMobileViewCont)}>
       <section
+      onClick={() => navigate("/productDetail")}
         className={css(
           flex.raw({ columnGap: "xlg" }),
           wishlistMobileViewImgSec,
@@ -85,7 +101,7 @@ const MobileCartList = ({
           wishlistMobileViewAction,
         )}
       >
-        <i onClick={() => clearItem(name)}>
+        <i onClick={handleClick}>
           <BiTrash />
         </i>
         {type === "cart" && (
@@ -94,7 +110,10 @@ const MobileCartList = ({
           </div>
         )}
         {type === "wishlist" && (
-          <button className={css(button.raw(), wishlistMobileViewActionBut)}>
+          <button
+            onClick={() => type === "wishlist" && addItem(item)}
+            className={css(button.raw(), wishlistMobileViewActionBut)}
+          >
             Add to cart
           </button>
         )}

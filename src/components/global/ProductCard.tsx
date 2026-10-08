@@ -28,6 +28,7 @@ const ProductCard = ({
   currentPrice,
   brand,
   image,
+  wishlist
 }: Product) => {
   const addItem = useCartStore((state) => state.addItem);
   const updateProductDetail = useProductDetailStore(
@@ -47,6 +48,7 @@ const ProductCard = ({
     img: image,
     initPrice: parseFloat(initialPrice),
     curtPrice: parseFloat(currentPrice),
+    wishlist: !wishlist
   };
 
   return (

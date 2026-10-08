@@ -23,6 +23,7 @@ const DailyBestSellsCard = ({
   initialPrice,
   currentPrice,
   image,
+  wishlist
 }: Product) => {
   const addItem = useCartStore((state) => state.addItem);
   const updateProductDetail = useProductDetailStore(
@@ -36,6 +37,7 @@ const DailyBestSellsCard = ({
     img: image,
     initPrice: parseFloat(initialPrice),
     curtPrice: parseFloat(currentPrice),
+    wishlist: !wishlist
   };
 
   const item = {

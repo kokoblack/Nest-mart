@@ -10,43 +10,54 @@ import CartHeader from "../../components/global/CartHeader";
 import DesktopCartList from "../../components/global/DesktopCartList";
 import DelProduct from "../../components/global/DelProduct";
 import { flex } from "../../style/recipe/flex";
-import { useCartStore } from "../../redux/CartReducer";
+import { useWishlistStore } from "../../redux/WishlistReducer";
+import { cartNoItems } from "../../style/pages/cart/cart";
 
 const Wishlist = () => {
-  const { items } = useCartStore();
+  const { wishlists } = useWishlistStore();
 
   return (
     <main>
       <div className={css(wishlistCont)}>
         <section className={css(flex.raw({ type: "endY", columnGap: "md" }))}>
-          <CartHeader heading="Your Whishlist" total={5} />
-          <DelProduct type="wishlist" />
+          <CartHeader heading="Your Whishlist" total={wishlists.length} />
+          {wishlists.length !== 0 && <DelProduct type="wishlist" />}
+        </section>
+
+        <section className={css(cartNoItems)}>
+          {wishlists.length === 0 && <p>Your wishlist is empty.</p>}
         </section>
 
         <section className={css(wishlistTableWrapper)}>
-          <table className={css(wishlistTableCont)}>
-            <tr>
-              <th>Product</th>
-              <th>Price</th>
-              <th>Stock Status</th>
-              <th>Action</th>
-              <th>Remove</th>
-            </tr>
+          {wishlists.length !== 0 && (
+            <table className={css(wishlistTableCont)}>
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Stock Status</th>
+                  <th>Action</th>
+                  <th>Remove</th>
+                </tr>
+              </thead>
 
-            {items.map((items, index) => (
-              <DesktopCartList
-                key={index}
-                img={items.img}
-                type="wishlist"
-                name={items.name}
-                price={items.price}
-              />
-            ))}
-          </table>
+              <tbody>
+                {wishlists.map((items, index) => (
+                  <DesktopCartList
+                    key={index}
+                    img={items.img}
+                    type="wishlist"
+                    name={items.name}
+                    price={items.price}
+                  />
+                ))}
+              </tbody>
+            </table>
+          )}
         </section>
 
         <section>
-          {items.map((items, index) => (
+          {wishlists.map((items, index) => (
             <MobileCartList
               key={index}
               img={items.img}
