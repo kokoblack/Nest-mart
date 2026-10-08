@@ -40,7 +40,7 @@ export const useCartStore = create<CartState>((set, get) => ({
       {
         ...item,
         quantity: quantity? quantity : 1,
-        subTotal: item.price * (quantity! < 1? 1 : quantity!),
+        subTotal: item.price * (quantity! < 1? 1 : item.quantity!),
       },
     ];
 
