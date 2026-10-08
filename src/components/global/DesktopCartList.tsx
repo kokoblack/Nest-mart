@@ -20,7 +20,6 @@ import {
 } from "../../style/component/global/desktopCartList";
 import { useCartStore } from "../../redux/CartReducer";
 import { useWishlistStore } from "../../redux/WishlistReducer";
-import { useNavigate } from "react-router-dom";
 
 type DesktopCartList = {
   img: string;
@@ -42,12 +41,11 @@ const DesktopCartList = ({
   const { clearItem, addItem } = useCartStore();
   const { removeWishlist } = useWishlistStore();
 
-  let navigate = useNavigate();
-
   const item = {
     name,
     img,
     price,
+    quantity: 1,
   };
 
   const handleClick = () => {
@@ -58,7 +56,6 @@ const DesktopCartList = ({
       <tr>
         <td data-cell="name">
           <div
-            onClick={() => navigate("/productDetail")}
             className={css(
               flex.raw({ type: "startX" }),
               type !== "cart"

@@ -16,7 +16,6 @@ import { button } from "../../style/recipe/button";
 import ProductSelect from "./ProductSelect";
 import { useCartStore } from "../../redux/CartReducer";
 import { useWishlistStore } from "../../redux/WishlistReducer";
-import { useNavigate } from "react-router-dom";
 
 type MobileCartList = {
   img: string;
@@ -34,9 +33,7 @@ const MobileCartList = ({
   quantity,
 }: MobileCartList) => {
   const { clearItem, addItem } = useCartStore();
-  const {removeWishlist} = useWishlistStore()
-
-  let navigate = useNavigate();
+  const { removeWishlist } = useWishlistStore();
 
   const handleClick = () => {
     type === "wishlist" ? removeWishlist(name) : clearItem(name);
@@ -46,11 +43,11 @@ const MobileCartList = ({
     name,
     img,
     price,
+    quantity: 1,
   };
   return (
     <section className={css(wishlistMobileViewCont)}>
       <section
-      onClick={() => navigate("/productDetail")}
         className={css(
           flex.raw({ columnGap: "xlg" }),
           wishlistMobileViewImgSec,
@@ -111,7 +108,7 @@ const MobileCartList = ({
         )}
         {type === "wishlist" && (
           <button
-            onClick={() => type === "wishlist" && addItem(item)}
+            onClick={() => type === "wishlist" && addItem(item, 1)}
             className={css(button.raw(), wishlistMobileViewActionBut)}
           >
             Add to cart
