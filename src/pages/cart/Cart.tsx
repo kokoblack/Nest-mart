@@ -54,25 +54,29 @@ const Cart = () => {
           <section className={css({ hideBelow: "660px" })}>
             {items.length !== 0 && (
               <table className={css(desktopCartListTableCont)}>
-                <tr>
-                  <th>Product</th>
-                  <th>Price</th>
-                  <th>Quantity</th>
-                  <th>Subtotal</th>
-                  <th>Remove</th>
-                </tr>
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                    <th>Remove</th>
+                  </tr>
+                </thead>
 
-                {items.map((items, index) => (
-                  <DesktopCartList
-                    key={index}
-                    img={items.img}
-                    type="cart"
-                    name={items.name}
-                    price={items.price}
-                    subtotal={items.subTotal!}
-                    quantity={items.quantity!}
-                  />
-                ))}
+                <tbody>
+                  {items.map((items, index) => (
+                    <DesktopCartList
+                      key={index}
+                      img={items.img}
+                      type="cart"
+                      name={items.name}
+                      price={items.price}
+                      subtotal={items.subTotal!}
+                      quantity={items.quantity!}
+                    />
+                  ))}
+                </tbody>
               </table>
             )}
           </section>

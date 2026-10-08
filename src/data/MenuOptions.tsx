@@ -31,13 +31,13 @@ export const option: Option = [
     icon: <HiOutlineHomeModern />,
     name: "Vendor",
     index: 2,
-    path: "errorV"
+    path: "vendor"
   },
   {
     icon: <BiFoodMenu />,
     name: "Mega Menu",
     index: 3,
-    path: "errorM"
+    path: "megamenu"
   },
   {
     icon: <GrBlog />,

@@ -5,6 +5,7 @@ type ProductDetailItem = {
   initPrice: number;
   curtPrice: number;
   img: string;
+  wishlist: boolean
 };
 
 type ProductDetailState = {
@@ -12,6 +13,7 @@ type ProductDetailState = {
   initPrice: number;
   curtPrice: number;
   img: string;
+  wishlist: boolean
 
   updateProductDetail: (item: ProductDetailItem) => void;
 };
@@ -21,6 +23,7 @@ export const useProductDetailStore = create<ProductDetailState>((set) => ({
   img: "",
   initPrice: 0,
   curtPrice: 0,
+  wishlist: false,
 
   updateProductDetail: (item) => {
     set({
@@ -28,6 +31,7 @@ export const useProductDetailStore = create<ProductDetailState>((set) => ({
       initPrice: item.initPrice,
       curtPrice: item.curtPrice,
       img: item.img,
+      wishlist: item.wishlist
     });
   },
 }));

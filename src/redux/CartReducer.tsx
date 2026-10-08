@@ -13,10 +13,10 @@ type CartState = {
   totalAmount: number;
   totalQuantity: number;
 
-  addItem: (item: CartItem) => void;
+  addItem: (item: CartItem, quantity?: number) => void;
   increaseItem: (name: string) => void;
   decreaseItem: (name: string) => void;
-  updateQuantity: (name: string, quantity: number) => void
+  updateQuantity: (name: string, quantity: number, item?: CartItem) => void;
   clearItem: (name: String) => void;
   clearCart: () => void;
 };
@@ -26,32 +26,23 @@ export const useCartStore = create<CartState>((set, get) => ({
   totalAmount: 0,
   totalQuantity: 0,
 
-  addItem: (item) => {
+  addItem: (item, quantity?) => {
     const { items } = get();
 
     const itemIndex = items.findIndex((i) => i.name === item.name);
 
-    let updatedItem: CartItem[];
+    let updatedItem = [...items];
 
-    if (itemIndex !== -1) {
-      updatedItem = [...items];
+    if (itemIndex !== -1) return;
 
-      updatedItem[itemIndex] = {
-        ...updatedItem[itemIndex],
-        quantity: updatedItem[itemIndex].quantity! + 1,
-        subTotal:
-          (updatedItem[itemIndex].quantity! + 1) * updatedItem[itemIndex].price,
-      };
-    } else {
-      updatedItem = [
-        ...items,
-        {
-          ...item,
-          quantity: 1,
-          subTotal: item.price,
-        },
-      ];
-    }
+    updatedItem = [
+      ...items,
+      {
+        ...item,
+        quantity: quantity? quantity : 1,
+        subTotal: item.price * (quantity! < 1? 1 : quantity!),
+      },
+    ];
 
     const totalAmount = updatedItem.reduce(
       (total, item) => total + item.subTotal!,
@@ -148,36 +139,43 @@ export const useCartStore = create<CartState>((set, get) => ({
     });
   },
 
-  updateQuantity: (name, quantity) => {
-  const { items } = get();
+  updateQuantity: (name, quantity, item) => {
+    const { items, addItem } = get();
 
-  let updatedItems = items.map((item) => {
-    if (item.name === name) {
-      return {
-        ...item,
-        quantity: quantity < 1 ? 1 : quantity, // prevent 0 or negative
-        subTotal: quantity! * item.price
-      };
+    const itemIndex = items.findIndex((i) => i.name === name);
+    let updatedItems = [...items];
+
+    if (itemIndex === -1) {
+      addItem(item!, quantity);
+    } else {
+      updatedItems = items.map((item) => {
+        if (item.name === name) {
+          return {
+            ...item,
+            quantity: quantity < 1 ? 1 : quantity, // prevent 0 or negative
+            subTotal: quantity! * item.price,
+          };
+        }
+        return item;
+      });
+
+      const totalAmount = updatedItems.reduce(
+        (total, item) => total + item.price * item.quantity!,
+        0,
+      );
+
+      const totalQuantity = updatedItems.reduce(
+        (total, item) => total + item.quantity!,
+        0,
+      );
+
+      set({
+        items: updatedItems,
+        totalAmount,
+        totalQuantity,
+      });
     }
-    return item;
-  });
-
-  const totalAmount = updatedItems.reduce(
-    (total, item) => total + item.price * item.quantity!,
-    0
-  );
-
-  const totalQuantity = updatedItems.reduce(
-    (total, item) => total + item.quantity!,
-    0
-  );
-
-  set({
-    items: updatedItems,
-    totalAmount,
-    totalQuantity,
-  });
-},
+  },
 
   clearCart: () => {
     set({

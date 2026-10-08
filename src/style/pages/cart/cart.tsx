@@ -9,7 +9,7 @@ export const cartNoItems = css.raw({
   color: 'secondary.100',
   fontSize: "3rem",
 
-  "@media screen and (max-width: 660px)": {
+  "@media screen and (max-width: 768px)": {
     fontSize: "2.5rem",
 
   },

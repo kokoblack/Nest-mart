@@ -11,6 +11,7 @@ export type Product = {
   fullCat?: string;
   cat?: string;
   discount?: number;
+  wishlist?: boolean
 };
 
 export type DOTDProduct = {

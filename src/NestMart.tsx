@@ -16,18 +16,9 @@ import ProductDetail from "./pages/productdetails/ProductDetail";
 import Wishlist from "./pages/wishlist/Wishlist";
 import Cart from "./pages/cart/Cart";
 import Checkout from "./pages/checkout/Checkout";
-// import { cartReducer, cartInitState, CartReducerState } from "../src/redux/CartReducer";
-
-// type NestMartContextType = {
-//   state: CartReducerState
-//   dispatch: React.DispatchWithoutAction
-// }
 
 function NestMart() {
-  const NestMartContext = createContext<string | null>(null);
   const divRef = useRef<HTMLDivElement>(null);
-
-  // const [state, dispatch] = useReducer(cartReducer, cartInitState)
   const [sticky, setSticky] = useState(0);
 
   useEffect(() => {
@@ -49,7 +40,6 @@ function NestMart() {
   }, [divRef.current?.offsetHeight]);
 
   return (
-    <NestMartContext.Provider value="y">
       <BrowserRouter>
         <div className={css(paddingView, { position: "relative" })}>
           <div
@@ -82,13 +72,11 @@ function NestMart() {
             <Route path="/wishlist" element={<Wishlist />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
-            <Route path="/errorV" element={<ErrorPage />} />
-            <Route path="/errorM" element={<ErrorPage />} />
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
           <Footer />
         </div>
       </BrowserRouter>
-    </NestMartContext.Provider>
   );
 }
 

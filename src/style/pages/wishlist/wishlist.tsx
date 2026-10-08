@@ -43,6 +43,10 @@ export const wishlistTableCont = css.raw({
     textAlign: "left",
   },
 
+  "& tr > th:first-child": {
+    width: "48%"
+  },
+
   "& tr > td": {
     px: "1rem",
     py: "1rem",
@@ -50,7 +54,7 @@ export const wishlistTableCont = css.raw({
   },
 
   "@media screen and (max-width: 1080px)": {
-    "& > tr> th": {
+    "& tr > th": {
       fontSize: ".8rem",
     },
   },
@@ -59,6 +63,7 @@ export const wishlistTableCont = css.raw({
 export const wishlistProductCont = css.raw({
   columnGap: "2rem",
   textAlign: "left",
+  cursor: "pointer",
 
   "@media screen and (max-width: 1080px)": {
     "& p": {
@@ -142,6 +147,7 @@ export const wishlistMobileViewCont = css.raw({
   "@media screen and (max-width: 880px)": {
     display: "flex",
     alignItems: "center",
+    columnGap: ".5rem"
   },
 
   "@media screen and (max-width: 620px)": {
@@ -151,6 +157,7 @@ export const wishlistMobileViewCont = css.raw({
 });
 
 export const wishlistMobileViewImgSec = css.raw({
+  cursor: "pointer",
   "@media screen and (max-width: 320px)": {
     flexDirection: "column",
   },
@@ -160,6 +167,7 @@ export const wishlistMobileViewAction = css.raw({
   ml: "auto",
   color: "secondary.400",
   cursor: "pointer",
+  w: "30%",
 
   "& > i": {
     border: "1px solid #ECECEC",
