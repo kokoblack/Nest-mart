@@ -20,7 +20,7 @@ export const icon = css({
   ml: "1rem",
   fontSize: "1.5rem",
 
-  "@media screen and (max-width: 767px)": {
+  "@media screen and (max-width: 768px)": {
     fontSize: "1.1rem",
   },
 
@@ -51,7 +51,7 @@ export const input = css({
 });
 
 export const subscribeButton = css.raw({
-  "@media screen and (max-width: 767px)": {
+  "@media screen and (max-width: 768px)": {
     px: "1.2rem",
     py: ".6rem",
     fontSize: ".8rem",

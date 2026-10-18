@@ -8,6 +8,7 @@ export const container = css.raw({
     borderBottom: "1px solid #dedfe2",
     py: ".8rem",
     px: "1rem",
+    position: "relative"
 })
 
 export const searchIcon = css({
