@@ -19,8 +19,8 @@ export const navContainer = css.raw({
 
   "@media screen and (max-width: 768px)": {
     pb: ".5rem",
-    border: "none"
-  }
+    border: "none",
+  },
 });
 
 export const hr = css({
@@ -32,18 +32,54 @@ export const hr = css({
 
 export const MenuShow = css.raw({
   display: "block",
-
-  // '@media screen and (max-width: 359px)': {
-  //   ml: "1rem"
-  // }
-})
+});
 
 export const marginL = css.raw({
+  "@media screen and (max-width: 359px)": {
+    ml: "1rem",
+  },
+});
 
-  '@media screen and (max-width: 359px)': {
-    ml: "1rem"
-  }
-})
+export const SearchSugContainer = css.raw({
+  bg: "white",
+  borderRadius: "4px",
+  border: "2px solid #BCE3C9",
+  position: "absolute",
+  top: "3rem",
+  left: -2,
+  right: -2,
+  zIndex: 10,
+  fontSize: ".85rem",
+  fontWeight: "500",
+  color: "secondary.100",
+
+  "& > section": {
+    display: "flex",
+    alignItems: "center",
+    columnGap: ".5rem",
+    px: "1rem",
+    py: ".4rem",
+    cursor: "pointer",
+    fontSize: ".85rem",
+
+    _hover: {
+      bg: "#BCE3C9/30",
+    },
+  },
+
+  "@media screen and (max-width: 768px)": {
+    columnGap: "1rem",
+    left: 0,
+    right: 0,
+    borderColor: "#dedfe2",
+
+    "& > section": {
+      _hover: {
+        bg: "transparent",
+      },
+    },
+  },
+});
 
 export const navMenuIcon = css.raw({
   fontSize: "1.5rem",
@@ -61,6 +97,7 @@ export const navImage = css({
 });
 
 export const navSearchContainer = css.raw({
+  position: "relative",
   py: ".8rem",
   px: "1rem",
   border: "2px solid #BCE3C9",
@@ -74,7 +111,9 @@ export const navSearchContainer = css.raw({
 export const navInput = css({
   w: "40%",
   fontSize: ".8rem",
-  fontFamily: "lato",
+  fontFamily: "quicksand",
+  color: "secondary.100",
+  fontWeight: "bold",
 
   _placeholder: {
     color: "secondary.600",
@@ -101,9 +140,9 @@ export const navLocationCont = css.raw({
 export const navUserCont = css.raw({
   alignSelf: "center",
 
-  '@media screen and (max-width: 993px)': {
-    columnGap: "1rem"
-  }
+  "@media screen and (max-width: 993px)": {
+    columnGap: "1rem",
+  },
 });
 
 export const navUserText = css({
@@ -113,7 +152,7 @@ export const navUserText = css({
   position: "relative",
   top: ".2rem",
 
-  hideBelow: "lg"
+  hideBelow: "lg",
 });
 
 export const mobileMenuView = css.raw({
@@ -125,7 +164,7 @@ export const mobileMenuView = css.raw({
   zIndex: "100",
   boxSizing: "border-box",
 
-  '@media screen and (max-width: 359px)': {
-    w: "100%"
-  }
+  "@media screen and (max-width: 359px)": {
+    w: "100%",
+  },
 });

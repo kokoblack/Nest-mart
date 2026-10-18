@@ -7,6 +7,11 @@ export const searchContainer = css.raw({
   border: "1px solid #ECECEC",
   rounded: "10px",
   w: "100%",
+
+  "@media screen and (max-width: 1104px)": {
+    px: "1rem",
+    py: ".7rem",
+  },
 });
 
 export const searchInput = css.raw({

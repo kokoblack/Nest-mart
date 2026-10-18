@@ -28,12 +28,16 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCartStore } from "../redux/CartReducer";
 import { useWishlistStore } from "../redux/WishlistReducer";
+import useSearch from "../hooks/useSearch";
+import SearchBox from "../components/global/SearchBox";
 
 const TopNavBar = () => {
   const [view, setView] = useState(false);
+  const {search, searchdata, setSearch, handleEnterSearch, handleSearch} =
+    useSearch();
 
-  const cartItemTotal = useCartStore(state => state.items)
-  const wishlistItemTotal = useWishlistStore(state => state.wishlists)
+  const cartItemTotal = useCartStore((state) => state.items);
+  const wishlistItemTotal = useWishlistStore((state) => state.wishlists);
 
   const handleMobileMenuView = () => {
     setView((prevState) => !prevState);
@@ -81,7 +85,13 @@ const TopNavBar = () => {
 
         <hr className={hr}></hr>
 
-        <input placeholder="Search for items..." className={navInput} />
+        <input
+          onChange={(e) => setSearch(e.target.value)}
+          onKeyDown={(e) => handleEnterSearch(e)}
+          value={search}
+          placeholder="Search for items..."
+          className={navInput}
+        />
 
         <CiSearch
           className={css(marginLeft, {
@@ -89,6 +99,14 @@ const TopNavBar = () => {
             fontSize: "1.2rem",
           })}
         />
+
+        {search !== "" && searchdata.length >= 1 && (
+          <SearchBox
+            search={search}
+            searchdata={searchdata}
+            handleSearch={handleSearch}
+          />
+        )}
       </section>
 
       <section className={css(flex.raw({ columnGap: "sm" }), navLocationCont)}>
@@ -105,8 +123,18 @@ const TopNavBar = () => {
         className={css({ h: "fit-content", alignSelf: "center" }, flex.raw())}
       >
         <nav className={css(flex.raw({ columnGap: "md" }), navUserCont)}>
-          <TopNavIcon icon={<FaRegHeart />} count={wishlistItemTotal.length} name="Wishlist" link="Wishlist" />
-          <TopNavIcon icon={<GrCart />} count={cartItemTotal.length} name="Cart" link="cart" />
+          <TopNavIcon
+            icon={<FaRegHeart />}
+            count={wishlistItemTotal.length}
+            name="Wishlist"
+            link="Wishlist"
+          />
+          <TopNavIcon
+            icon={<GrCart />}
+            count={cartItemTotal.length}
+            name="Cart"
+            link="cart"
+          />
 
           <div
             className={css(flex.raw({ columnGap: "xsm" }), {
@@ -116,14 +144,15 @@ const TopNavBar = () => {
             <span className={css({ fontSize: "1.2rem", hideBelow: "480px" })}>
               <LuUser />
             </span>
-            <Link to=""><p className={navUserText}>Account</p></Link>
-            
+            <Link to="">
+              <p className={navUserText}>Account</p>
+            </Link>
           </div>
         </nav>
       </section>
 
       <section id="show" className={css(mobileMenuView, view ? show : hide)}>
-        <MobileMenu setView={setView}/>
+        <MobileMenu setView={setView} />
       </section>
     </header>
   );

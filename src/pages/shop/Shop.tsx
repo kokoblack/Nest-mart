@@ -24,11 +24,41 @@ import ProductCardListView from "../../components/global/ProductCardListView";
 import { useState } from "react";
 import DealOfTheDay from "../home/DealOfTheDay";
 import Banner from "../../components/global/Banner";
-// import MoveRightOrLeft from "../../components/global/MoveRightOrLeft";
+import { useShopStore } from "../../redux/ShopReducer";
 
 const Shop = () => {
   const [view, setView] = useState(false);
+  const [type, setType] = useState("Show All");
   const cat = ["Cabbage", "Broccoli", "Artichoke", "celery", "spinach"];
+  const category = [
+    "Show All",
+    "Snack",
+    "Hodo Foods",
+    "Vegetables",
+    "Pet Foods",
+    "Cream",
+    "Coffes",
+    "Meats",
+  ];
+  const [number, setNumber] = useState(20);
+
+  const { name } = useShopStore();
+
+  const data = product.filter((data) => {
+    const matchesSearch =
+    name.trim() === "" ||
+    data.name.toLowerCase().includes(name.trim().toLowerCase());
+
+  const matchesCategory =
+    type === "Show All" ||
+    data.category === type;
+
+  return (
+    name.trim() !== "" || type !== ""
+  ) && matchesSearch && matchesCategory;
+  });
+
+  console.log(type);
 
   return (
     <main>
@@ -48,9 +78,11 @@ const Shop = () => {
               shopFilterSec,
             )}
           >
-            <p className={css(shopSearchResultText)}>
-              We found <span>29</span> items for you!
-            </p>
+            {name !== "" && (
+              <p className={css(shopSearchResultText)}>
+                We found <span>{data.length}</span> items for you!
+              </p>
+            )}
             <div
               className={css(
                 flex.raw({ type: "endX", columnGap: "md" }),
@@ -58,16 +90,15 @@ const Shop = () => {
               )}
             >
               <DisplayType setView={setView} />
-              <ShowItems />
-              <SortItems />
-              {/* <MoveRightOrLeft/> */}
+              <ShowItems number={number} setNumber={setNumber} />
+              <SortItems type={type} cat={category} setType={setType} />
             </div>
           </section>
 
           <section className={css(shopHide)}>
             {!view && (
               <section className={css(shopProdCard)}>
-                {product.slice(0, 20).map((data, index) => (
+                {data.slice(0, number).map((data, index) => (
                   <ProductCard key={index} {...data} />
                 ))}
               </section>
@@ -75,7 +106,7 @@ const Shop = () => {
 
             {view && (
               <section className={css(shopProdCardListView)}>
-                {product.slice(0, 20).map((data, index) => (
+                {data.slice(0, number).map((data, index) => (
                   <ProductCardListView key={index} {...data} />
                 ))}
               </section>
@@ -84,7 +115,7 @@ const Shop = () => {
 
           <section className={css(shopShow)}>
             <section className={css(shopProdCardListView)}>
-              {product.slice(0, 20).map((data, index) => (
+              {data.slice(0, number).map((data, index) => (
                 <ProductCardListView key={index} {...data} />
               ))}
             </section>

@@ -13,9 +13,38 @@ import { flex } from "../../style/recipe/flex";
 import { blogContentCont, blogSideMenu } from "../../style/pages/blog/blog";
 import Banner from "../../components/global/Banner";
 import Pagination from "../../components/global/Pagination";
+import { useState } from "react";
+import { Cont } from "../../style/component/global/sortItems";
 
 const Blog = () => {
-  const cat = ["Shopping", "Recips", "Kitchen", "News", "Food"];
+  const [search, setSearch] = useState("");
+  const [number, setNumber] = useState(20);
+  const [type, setType] = useState("Show All");
+  const cat = [
+    "Show All",
+    "Side Dish",
+    "Soups and Stews",
+    "Salad",
+    "Dessert",
+    "Breakfast",
+    "Vegan",
+    "Dairy Free",
+    "Gluten Free",
+    "Soups",
+    "Vegetarian",
+  ];
+
+  const searchdata = blogdata.filter((data) => {
+    const matchesSearch =
+      search.trim() === "" ||
+      data.title.toLowerCase().includes(search.trim().toLowerCase());
+
+    const matchesCategory = type === "Show All" || data.category === type;
+
+    return (
+      (search.trim() !== "" || type !== "") && matchesSearch && matchesCategory
+    );
+  });
 
   return (
     <main>
@@ -29,21 +58,27 @@ const Blog = () => {
       >
         <section className={css({ w: "100%" })}>
           <section
-            className={css(flex.raw({ type: "endX", columnGap: "md" }), {
+            className={css(Cont, flex.raw({ type: "endX", columnGap: "md" }), {
               mb: "2.5rem",
             })}
           >
-            <ShowItems />
-            <SortItems />
+            <section className={css(flex.raw({ type: "endX", columnGap: "md" }))}>
+              <ShowItems number={number} setNumber={setNumber} />
+              <SortItems type={type} cat={cat} setType={setType} />
+            </section>
+            <div className={css({ hideFrom: "1104px"})}>
+              <Search search={search} setSearch={setSearch} />
+            </div>
           </section>
 
           <section className={css(blogContentCont)}>
-            {blogdata.slice(0, 20).map((data, index) => (
+            {searchdata.slice(0, number).map((data, index) => (
               <BlogContent key={index} {...data} />
             ))}
           </section>
 
           <section>
+            {searchdata.length > number}
             <Pagination />
           </section>
         </section>
@@ -51,7 +86,7 @@ const Blog = () => {
         <section
           className={css(blogSideMenu, flex.raw({ vertical: "vertical" }))}
         >
-          <Search />
+          <Search search={search} setSearch={setSearch} />
           <Category />
           <Product text="Trending Now" />
           <Gallary />
